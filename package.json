@@ -17,7 +17,7 @@
     "footprint": "799513de74ed02a9daa4c2cd9e4275bb405f78c7"
   },
   "repository": {
-    "url": "https://github.com/Unity-Technologies/com.unity.lego.modelimporter.git",
+    "url": "https://github.com/purna/com.unity.lego.modelimporter.git",
     "type": "git",
     "revision": "a3c44376f45e6ebb6dd8cc7a985998c37c7301f2"
   }

@@ -1321,15 +1321,20 @@ namespace LEGOModelImporter
             return IsUndoRedoEvent(currentEvent);
         }
 
+     // Replace the IsOverSceneView() method in SceneBrickBuilder.cs
+        // Location: Around line 1330
+
         public static bool IsOverSceneView()
         {
-            if(SceneView.mouseOverWindow == null)
+            // Add null checks to prevent NullReferenceException
+            if (SceneView.mouseOverWindow == null)
             {
                 return false;
             }
+            
             System.Type windowOver = SceneView.mouseOverWindow.GetType();
             System.Type sceneView = typeof(SceneView);
-            return windowOver.Equals(sceneView);
+            return windowOver != null && windowOver.Equals(sceneView);
         }
 
         static bool sceneViewHasFocus = false;

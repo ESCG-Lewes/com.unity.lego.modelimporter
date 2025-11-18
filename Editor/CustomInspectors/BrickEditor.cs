@@ -9,7 +9,7 @@ using LEGOMaterials;
 namespace LEGOModelImporter
 {
     /// <summary>
-    /// Custom editor for bricks
+    /// Custom editor for bricks with decoupling support
     /// </summary>
     [CustomEditor(typeof(Brick)), CanEditMultipleObjects]
     internal class BrickEditor : Editor
@@ -31,10 +31,82 @@ namespace LEGOModelImporter
             serializedObject.Update();
 
             EditorGUI.BeginDisabledGroup(true);
-
             EditorGUILayout.PropertyField(designIDProp);
-
             EditorGUI.EndDisabledGroup();
+
+            // Show parent hierarchy info
+            var brick = (Brick)target;
+            var modelGroup = brick.GetComponentInParent<ModelGroup>();
+            if (modelGroup != null)
+            {
+                EditorGUILayout.Space();
+                EditorGUILayout.LabelField("Hierarchy", EditorStyles.boldLabel);
+                EditorGUI.BeginDisabledGroup(true);
+                EditorGUILayout.TextField("Model Group", modelGroup.groupName);
+                if (modelGroup.transform.parent != null)
+                {
+                    var model = modelGroup.GetComponentInParent<Model>();
+                    if (model != null)
+                    {
+                        EditorGUILayout.TextField("Model", model.name);
+                    }
+                }
+                EditorGUI.EndDisabledGroup();
+                
+                // Show decoupling button
+                if (targets.Length == 1)
+                {
+                    EditorGUILayout.Space();
+                    if (BrickDecoupler.CanDecoupleBrick(brick))
+                    {
+                        if (!ToolsSettings.LockBricksAfterPlacement)
+                        {
+                            EditorGUILayout.HelpBox("Brick will be automatically decoupled when moved while deselected.", MessageType.Info);
+                        }
+                        
+                        if (GUILayout.Button("Decouple Brick Now"))
+                        {
+                            BrickDecoupler.DecoupleBrick(brick);
+                            GUIUtility.ExitGUI();
+                        }
+                    }
+                    else if (ToolsSettings.LockBricksAfterPlacement)
+                    {
+                        EditorGUILayout.HelpBox("Decoupling disabled: Lock Bricks After Placement is enabled. Disable it in LEGO Tools > Brick Building Settings.", MessageType.Warning);
+                    }
+                }
+                else if (targets.Length > 1)
+                {
+                    var canDecoupleAll = true;
+                    foreach (var t in targets)
+                    {
+                        var b = (Brick)t;
+                        if (!BrickDecoupler.CanDecoupleBrick(b))
+                        {
+                            canDecoupleAll = false;
+                            break;
+                        }
+                    }
+                    
+                    if (canDecoupleAll)
+                    {
+                        EditorGUILayout.Space();
+                        if (GUILayout.Button($"Decouple {targets.Length} Bricks"))
+                        {
+                            var bricks = new List<Brick>();
+                            foreach (var t in targets)
+                            {
+                                bricks.Add((Brick)t);
+                            }
+                            BrickDecoupler.DecoupleBricks(bricks);
+                            GUIUtility.ExitGUI();
+                        }
+                    }
+                }
+            }
+
+            EditorGUILayout.Space();
+            EditorGUILayout.LabelField("Materials", EditorStyles.boldLabel);
 
             // Collect material IDs for each selected brick.
             brickToMaterialIDs.Clear();
@@ -254,5 +326,4 @@ namespace LEGOModelImporter
             }
         }
     }
-
 }

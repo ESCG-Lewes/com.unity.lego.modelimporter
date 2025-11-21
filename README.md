@@ -29,4 +29,4 @@ LEGO Companion License (“License”) Software Copyright © 2020 LEGO System A/
 
 For licensing details see [LICENSE.md](LICENSE.md)
 
-“com.unity.lego.modelimporter-8.0.1”: “git+https://x-oauth-basic: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"
+

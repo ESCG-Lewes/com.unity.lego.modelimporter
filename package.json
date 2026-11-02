@@ -11,7 +11,7 @@
     "com.unity.lego.materials": "3.0.1"
   },
   "repository": {
-    "url": "https://github.com/ESCG-Lewes/com.unity.lego.modelimporter-8.0.2.git",
+    "url": "https://github.com/ESCG-Lewes/com.unity.lego.modelimporter.git",
     "type": "git"
   }
 }

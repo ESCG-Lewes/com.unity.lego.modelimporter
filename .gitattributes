@@ -1,1 +1,2 @@
-*.zip filter=lfs diff=lfs merge=lfs -text
+# Part archives are stored in ordinary Git; keep large archives split below 100 MiB.
+*.zip -filter -diff -merge -text

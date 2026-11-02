@@ -89,7 +89,6 @@ namespace LEGOModelImporter
             {
                 rotateDirection = InteractionKey.None;
                 nudgeDirection = InteractionKey.None;
-                if (currentSelectionState != value) { Debug.Log("[LEGO-DEBUG] selection state: " + currentSelectionState + " -> " + value); }
                 currentSelectionState = value;
             }
         }
@@ -594,14 +593,8 @@ namespace LEGOModelImporter
                     break;
                 case SelectionState.Dragging:
                     {
-                        if (current.type == EventType.MouseDrag && legoDebugDragLogs < 6)
-                        {
-                            legoDebugDragLogs++;
-                            Debug.Log("[LEGO-DEBUG] MouseDrag while Dragging. mouseDelta=" + currentMouseDelta + ", needs more than " + ToolsSettings.StickySnapDistance);
-                        }
                         if(current.type == EventType.MouseUp)
                         {
-                            Debug.Log("[LEGO-DEBUG] MouseUp before the move started. mouseDelta=" + currentMouseDelta + ", needed more than " + ToolsSettings.StickySnapDistance + " plus a MouseDrag event");
                             // We select on mouse up and in case we haven't yet started a drag
                             currentMouseDelta = 0.0f;
                             CurrentSelectionState = SelectionState.Selected;
@@ -1732,64 +1725,19 @@ namespace LEGOModelImporter
             SetupSceneGUI();
         }
 
-        private static bool legoDebugReportedRunning = false;
-        private static int legoDebugDragLogs = 0;
-
-        private static void LegoDebugMouseDown()
-        {
-            legoDebugDragLogs = 0;
-            var ray = HandleUtility.GUIPointToWorldRay(currentEvent.mousePosition);
-            PhysicsScene ps;
-            var stage = PrefabStageUtility.GetCurrentPrefabStage();
-            if (stage != null)
-            {
-                ps = stage.scene.GetPhysicsScene();
-            }
-            else
-            {
-                ps = PhysicsSceneExtensions.GetPhysicsScene(EditorSceneManager.GetActiveScene());
-            }
-
-            string report = "[LEGO-DEBUG] MouseDown. BrickBuildingOn=" + ToolsSettings.IsBrickBuildingOn
-                + ", hotControl=" + GUIUtility.hotControl
-                + ", viewToolActive=" + Tools.viewToolActive
-                + ", alt=" + currentEvent.alt
-                + ", overSceneView=" + IsOverSceneView()
-                + ", state=" + CurrentSelectionState
-                + ", activeScene=" + EditorSceneManager.GetActiveScene().name
-                + ", tool=" + Tools.current + ", toolsHidden=" + Tools.hidden + ", focusBrickSet=" + (focusBrick != null)
-                + ", stickyDistance=" + ToolsSettings.StickySnapDistance;
-
-            RaycastHit hit;
-            if (ps.Raycast(ray.origin, ray.direction, out hit, Mathf.Infinity, Physics.DefaultRaycastLayers, QueryTriggerInteraction.Ignore))
-            {
-                var hitBrickComponent = hit.collider.gameObject.GetComponentInParent<Brick>();
-                report += " | RAY HIT '" + hit.collider.gameObject.name + "' layer=" + LayerMask.LayerToName(hit.collider.gameObject.layer)
-                    + " scene=" + hit.collider.gameObject.scene.name
-                    + " brickFound=" + (hitBrickComponent != null)
-                    + (hitBrickComponent != null ? " hasConnectivity=" + hitBrickComponent.HasConnectivity() : "");
-            }
-            else
-            {
-                report += " | RAY HIT NOTHING (no non-trigger collider under the mouse in the active scene)";
-            }
-
-            Debug.Log(report);
-        }
-
         private static void OnSceneGUIBuilding(SceneView sv)
         {
             // In case we have multiple scene views, we only want the one we have in focus
-            SceneView sceneView = SceneView.lastActiveSceneView;
+            if (sv != SceneView.lastActiveSceneView) return;
+            SceneView sceneView = sv;
             var stage = PrefabStageUtility.GetCurrentPrefabStage();
             if (stage != null && stage.mode == PrefabStage.Mode.InContext)
             {
                 SetupSceneGUI();
             }
 
-            if (currentEvent == null) return;
-            if (!legoDebugReportedRunning) { legoDebugReportedRunning = true; Debug.Log("[LEGO-DEBUG] OnSceneGUIBuilding is running (Brick Building is ON)."); }
-            if (currentEvent.type == EventType.MouseDown && currentEvent.button == 0) { LegoDebugMouseDown(); }
+            if (currentEvent == null || sceneView.camera == null) return;
+            int brickControl = GUIUtility.GetControlID("LEGOBrickDrag".GetHashCode(), FocusType.Passive);
 
             // Used to reset rotate shortcut, so you can't hold to rotate
             if(currentEvent.type == EventType.KeyUp 
@@ -1837,20 +1785,11 @@ namespace LEGOModelImporter
             // Allowed to means:
             // - The mouse is over the scene view. There is no reason to check for a brick if we are not mousing over the scene view
             // - If hot control is zero, we are sure that we are not interacting with any handle/tool (move tool, rotation tool etc.)
-            // EXPERIMENT: Another control (not a LEGO one) grabbed the mouse while a brick drag was starting.
-            // Take the mouse back so the drag can continue, and log it.
-            if (GUIUtility.hotControl != 0 && CurrentSelectionState == SelectionState.Dragging)
-            {
-                Debug.Log("[LEGO-DEBUG] TAKING OVER hotControl " + GUIUtility.hotControl + " (event=" + currentEvent.type + ", mouseDelta=" + currentMouseDelta + ") to continue the brick drag.");
-                GUIUtility.hotControl = 0;
-            }
-
-            if (GUIUtility.hotControl != 0)
+            if (GUIUtility.hotControl != 0 && GUIUtility.hotControl != brickControl)
             {
                 // Dragging a gizmo over a brick starts the dragging state
                 if (CurrentSelectionState == SelectionState.Dragging)
                 {
-                    Debug.Log("[LEGO-DEBUG] DRAG CANCELLED because another control is active. hotControl=" + GUIUtility.hotControl + ", event=" + currentEvent.type + ", tool=" + Tools.current + ", toolsHidden=" + Tools.hidden + ", focusBrickSet=" + (focusBrick != null) + ", mouseDelta=" + currentMouseDelta);
                     CurrentSelectionState = SelectionState.NoSelection;
                 }
                 currentMouseDelta = 0.0f;
@@ -1864,7 +1803,7 @@ namespace LEGOModelImporter
 
                 if (hitBrick != null || (focusBrick != null && CurrentSelectionState == SelectionState.Moving))
                 {
-                    HandleUtility.AddDefaultControl(0);
+                    HandleUtility.AddDefaultControl(brickControl);
                 }
 
                 if (CurrentSelectionState != SelectionState.Dragging && isCurrentDuplicateEvent)
@@ -1875,7 +1814,25 @@ namespace LEGOModelImporter
                 
                 if(isCurrentPickingEvent)
                 {
-                    EvaluateSelectionState(currentEvent, sceneView.camera, sceneView);
+                    var eventType = currentEvent.type;
+                    bool ownsMouse = GUIUtility.hotControl == brickControl;
+                    bool canStartDrag = eventType != EventType.MouseDown || ownsMouse ||
+                        (!Tools.viewToolActive && !currentEvent.alt && HandleUtility.nearestControl == brickControl);
+                    if (canStartDrag)
+                    {
+                        EvaluateSelectionState(currentEvent, sceneView.camera, sceneView);
+                        if (eventType == EventType.MouseDown && currentEvent.button == 0 &&
+                            CurrentSelectionState == SelectionState.Dragging && GUIUtility.hotControl == 0)
+                        {
+                            GUIUtility.hotControl = brickControl;
+                            ownsMouse = true;
+                        }
+                    }
+                    if (ownsMouse && (eventType == EventType.MouseDown || eventType == EventType.MouseDrag || eventType == EventType.MouseUp))
+                    {
+                        if (eventType == EventType.MouseUp) GUIUtility.hotControl = 0;
+                        currentEvent.Use();
+                    }
                 }
             }
 
@@ -2299,6 +2256,7 @@ namespace LEGOModelImporter
             {
                 if(!CheckPlaying())
                 {
+                    var connectionsToUpdate = new HashSet<PlanarFeature>();
                     foreach(var field in dirtyFields)
                     {                                            
                         if(field)
@@ -2320,7 +2278,7 @@ namespace LEGOModelImporter
                                                 dirtyKnobsAndTubes.Add(tube.gameObject);
                                             }
                                         }
-                                        connection.UpdateKnobsAndTubes();
+                                        connectionsToUpdate.Add(connection);
                                     }
                                 }
                             }
@@ -2329,6 +2287,10 @@ namespace LEGOModelImporter
                     if(dirtyKnobsAndTubes.Count > 0)
                     {
                         Undo.RegisterCompleteObjectUndo(dirtyKnobsAndTubes.ToArray(), "Updating dirty connections");
+                    }
+                    foreach (var connection in connectionsToUpdate)
+                    {
+                        connection.UpdateKnobsAndTubes();
                     }
                     dirtyKnobsAndTubes.Clear();
                 }

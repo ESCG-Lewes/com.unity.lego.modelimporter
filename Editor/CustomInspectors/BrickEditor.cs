@@ -57,11 +57,11 @@ namespace LEGOModelImporter
                 if (targets.Length == 1)
                 {
                     EditorGUILayout.Space();
-                    if (BrickDecoupler.CanDecoupleBrick(brick))
+                    if (BrickDecoupler.CanDecoupleBrick(brick) && !ToolsSettings.LockBricksAfterPlacement)
                     {
                         if (!ToolsSettings.LockBricksAfterPlacement)
                         {
-                            EditorGUILayout.HelpBox("Brick will be automatically decoupled when moved while deselected.", MessageType.Info);
+                            EditorGUILayout.HelpBox("Decoupling disconnects this brick and separates its model group.", MessageType.Info);
                         }
                         
                         if (GUILayout.Button("Decouple Brick Now"))
@@ -77,7 +77,7 @@ namespace LEGOModelImporter
                 }
                 else if (targets.Length > 1)
                 {
-                    var canDecoupleAll = true;
+                    var canDecoupleAll = !ToolsSettings.LockBricksAfterPlacement;
                     foreach (var t in targets)
                     {
                         var b = (Brick)t;

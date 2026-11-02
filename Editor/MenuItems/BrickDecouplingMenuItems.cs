@@ -50,9 +50,9 @@ namespace LEGOModelImporter
                 var newSelection = new List<GameObject>();
                 foreach (var group in newGroups)
                 {
-                    if (group != null && group.transform.parent != null)
+                    if (group != null)
                     {
-                        newSelection.Add(group.transform.parent.gameObject);
+                        newSelection.Add(group.gameObject);
                     }
                 }
                 Selection.objects = newSelection.ToArray();

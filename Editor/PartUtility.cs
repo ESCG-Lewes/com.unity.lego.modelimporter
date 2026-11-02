@@ -560,7 +560,18 @@ namespace LEGOModelImporter
 
             OpenDB();
 
-            var entry = legacyPartsZipArchive.GetEntry(designID + ".fbx");
+            if (useLegacyUnzipped)
+            {
+                var sourcePath = Path.Combine(legacyPartsUnzippedPath, designID + ".fbx");
+                if (!File.Exists(sourcePath)) return false;
+                var destination = Path.Combine(geometryPath, legacyDir, lightmapped ? lightmappedDir : "", lodDir, designID + ".fbx");
+                Directory.CreateDirectory(Path.GetDirectoryName(destination));
+                File.Copy(sourcePath, destination, true);
+                AssetDatabase.ImportAsset(destination);
+                return true;
+            }
+
+            var entry = legacyPartsZipArchive?.GetEntry(designID + ".fbx");
             if (entry != null)
             {
                 var fileName = entry.Name;
@@ -600,7 +611,18 @@ namespace LEGOModelImporter
             {
                 OpenDB();
 
-                var entry = commonPartsZipArchive.GetEntry(name + ".fbx");
+                if (useCommonUnzipped)
+                {
+                    var sourcePath = Path.Combine(commonPartsUnzippedPath, name + ".fbx");
+                    if (!File.Exists(sourcePath)) return false;
+                    var destination = Path.Combine(geometryPath, commonPartsDir, lightmapped ? lightmappedDir : "", lodDir, name + ".fbx");
+                    Directory.CreateDirectory(Path.GetDirectoryName(destination));
+                    File.Copy(sourcePath, destination, true);
+                    AssetDatabase.ImportAsset(destination);
+                    return true;
+                }
+
+                var entry = commonPartsZipArchive?.GetEntry(name + ".fbx");
                 if (entry != null)
                 {
                     var fileName = entry.Name;

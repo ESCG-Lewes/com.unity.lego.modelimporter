@@ -100,6 +100,7 @@ namespace LEGOModelImporter
 #if UNITY_EDITOR
         void OnEnable()
         {
+            RemoveInvalidConnections();
             // Re-establish connections in case we already have some.
             // If we have some in Awake, that usually means we have undone a destroy and need
             // to re-establish one-way connections.
@@ -116,7 +117,8 @@ namespace LEGOModelImporter
                     continue;
                 }
 
-                if(otherField.connectedTo.Length <= otherIndex || otherIndex == -1)
+                if (otherField.connectedTo == null || otherIndex < 0 ||
+                    otherIndex >= otherField.connectedTo.Length || !otherField.HasFeature(otherIndex))
                 {
                     markedForRemoval.Add(connection);
                     continue;
@@ -135,7 +137,8 @@ namespace LEGOModelImporter
             foreach(int connection in markedForRemoval)
             {
                 connected.Remove(connection);
-                connections[connection].UpdateKnobsAndTubes();
+                connectedTo[connection].Reset();
+                if (HasFeature(connection)) connections[connection].UpdateKnobsAndTubes();
             }
             Connection.RegisterPrefabChanges(this);
         }
@@ -147,6 +150,7 @@ namespace LEGOModelImporter
 
         void OnDestroy()
         {
+            RemoveInvalidConnections();
             if (!EditorApplication.isPlaying && !EditorApplication.isPlayingOrWillChangePlaymode)
             {
                 var toRecord = new HashSet<ConnectionField>();
@@ -242,6 +246,7 @@ namespace LEGOModelImporter
         /// <inheritdoc/>
         public override HashSet<ConnectionField> DisconnectAll()
         {
+            RemoveInvalidConnections();
             // Return the fields that were disconnected if needed by caller.
             HashSet<ConnectionField> result = new HashSet<ConnectionField>();
 
@@ -261,6 +266,7 @@ namespace LEGOModelImporter
         /// <inheritdoc/>
         public override HashSet<ConnectionField> DisconnectAllInvalid()
         {
+            RemoveInvalidConnections();
             // Return the fields that were disconnected if needed by caller.
             HashSet<ConnectionField> result = new HashSet<ConnectionField>();
 
@@ -283,6 +289,7 @@ namespace LEGOModelImporter
         /// <inheritdoc/>
         public override HashSet<ConnectionField> DisconnectInverse(ICollection<Brick> bricksToKeep)
         {
+            RemoveInvalidConnections();
             // Return the fields that were disconnected if needed by caller.
             HashSet<ConnectionField> result = new HashSet<ConnectionField>();
 
@@ -433,9 +440,29 @@ namespace LEGOModelImporter
             connected.Remove(index);
         }
 
+        bool HasFeature(int index)
+        {
+            return connections != null && index >= 0 && index < connections.Length && connections[index] != null;
+        }
+
+        void RemoveInvalidConnections()
+        {
+            if (connected == null) connected = new List<int>();
+            for (var i = connected.Count - 1; i >= 0; i--)
+            {
+                var index = connected[i];
+                if (GetConnection(index) != null) continue;
+
+                connected.RemoveAt(i);
+                if (connectedTo != null && index >= 0 && index < connectedTo.Length)
+                    connectedTo[index].Reset();
+                if (HasFeature(index)) connections[index].UpdateKnobsAndTubes();
+            }
+        }
+
         internal bool HasConnection(int index)
         {
-            if(connectedTo == null) return false;
+            if (connectedTo == null || index < 0 || index >= connectedTo.Length) return false;
             var entry = connectedTo[index];
             if(entry.IsEmpty())
             {
@@ -455,8 +482,10 @@ namespace LEGOModelImporter
         /// <returns>Returns connection that the given connection is connected to</returns>
         public PlanarFeature GetConnection(int index)
         {
+            if (!HasFeature(index) || connectedTo == null || index >= connectedTo.Length) return null;
             var entry = connectedTo[index];
-            return entry.field?.connections[entry.indexOfConnection];
+            if (!entry.field || !entry.field.HasFeature(entry.indexOfConnection)) return null;
+            return entry.field.connections[entry.indexOfConnection];
         }
 
         /// <summary>
@@ -628,7 +657,7 @@ namespace LEGOModelImporter
 
         internal void Disconnect(int index, bool updateKnobsAndTubes = true)
         {
-            if(index >= connectedTo.Length)
+            if (!HasFeature(index) || connectedTo == null || index >= connectedTo.Length)
             {
                 return;
             }
@@ -648,6 +677,13 @@ namespace LEGOModelImporter
                 }
                 return;
             }            
+
+            if (otherField.connectedTo == null || indexOfConnection < 0 ||
+                indexOfConnection >= otherField.connectedTo.Length || !otherField.HasFeature(indexOfConnection))
+            {
+                if (updateKnobsAndTubes) connections[index].UpdateKnobsAndTubes();
+                return;
+            }
 
             otherField.connectedTo[indexOfConnection].Reset();
             otherField.OnDisconnect(otherField.connections[indexOfConnection]);

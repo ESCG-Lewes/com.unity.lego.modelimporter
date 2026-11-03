@@ -1514,12 +1514,12 @@ namespace LEGOModelImporter
         static void OnBrickEnabled(Brick enabledBrick)
         {
             sceneChanged = true;
-            if(IsUndoRedoEvent(currentEvent)) return;
+            if(IsUndoRedoEvent(currentEvent) || !enabledBrick) return;
             if(enabledBrick.HasConnectivity())
             {
                 foreach(var part in enabledBrick.parts)
                 {
-                    if(!part.connectivity)
+                    if(!part || !part.connectivity)
                     {
                         continue;
                     }
@@ -1528,15 +1528,19 @@ namespace LEGOModelImporter
                     {
                         if(field is PlanarField pf)
                         {
+                            if (pf.connections == null || pf.connectedTo == null) continue;
                             foreach (var connection in pf.connections)
                             {
+                                if (connection == null || connection.index < 0 || connection.index >= pf.connectedTo.Length) continue;
                                 // For each connection, remove the one-way reference to the previous connection
                                 if (connection.HasConnection())
                                 {
                                     var tuple = pf.connectedTo[connection.index];
                                     var connectedField = tuple.field;
-                                    var connectionInField = connectedField.connectedTo[tuple.indexOfConnection];
-                                    if(connectionInField.field != pf)
+                                    var hasReciprocalConnection = connectedField && connectedField.connectedTo != null &&
+                                        tuple.indexOfConnection >= 0 && tuple.indexOfConnection < connectedField.connectedTo.Length &&
+                                        connectedField.connectedTo[tuple.indexOfConnection].field == pf;
+                                    if (!hasReciprocalConnection)
                                     {
                                         pf.connectedTo[connection.index].Reset();
                                         pf.connected.Remove(connection.index);

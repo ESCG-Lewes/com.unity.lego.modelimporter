@@ -29,12 +29,15 @@ namespace LEGOModelImporter
         /// <inheritdoc/>
         public override bool IsVisible()
         {
-            if(!field.HasConnection(connectionIndex))
+            if (!field || !part || field.connections == null || connectionIndex < 0 ||
+                connectionIndex >= field.connections.Length || !field.HasConnection(connectionIndex))
             {
                 return true;
             }
             var connection = field.connections[connectionIndex];
             var connectedTo = field.GetConnection(connectionIndex);
+            if (connection == null || connectedTo == null || !connectedTo.field || !connectedTo.field.connectivity ||
+                !connectedTo.field.connectivity.part) return true;
             var notCovering = (connection.flags & PlanarFeature.flagsCoveringKnob) == 0 || (connectedTo.flags & PlanarFeature.flagsCoveringKnob) == 0;
             notCovering |= MouldingColour.IsAnyTransparent(part.materialIDs) || MouldingColour.IsAnyTransparent(connectedTo.field.connectivity.part.materialIDs);
 

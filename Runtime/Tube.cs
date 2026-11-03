@@ -30,10 +30,12 @@ namespace LEGOModelImporter
         /// <inheritdoc/>
         public override bool IsVisible()
         {
-            if(!field || field.connections == null) return true;
+            if (!field || field.connections == null || connections == null || !part) return true;
             foreach (var connectionIndex in connections)
             {                
+                if (connectionIndex < 0 || connectionIndex >= field.connections.Length) return true;
                 var connection = field.connections[connectionIndex];
+                if (connection == null) return true;
                 // FIXME Temporary fix to tube removal while we work on connections that are related/non-rejecting but not connected.
                 // FIXME This fix allows for tubes to work without reimporting existing models. Should be removed at a later state.
                 if (connection.IsRelevantForTube())
@@ -43,6 +45,8 @@ namespace LEGOModelImporter
                         return true;
                     }
                     var connectedTo = field.GetConnection(connectionIndex);
+                    if (connectedTo == null || !connectedTo.field || !connectedTo.field.connectivity ||
+                        !connectedTo.field.connectivity.part) return true;
 
                     var notCovering = (connection.flags & PlanarFeature.flagsCoveringTube) == 0 || (connectedTo.flags & PlanarFeature.flagsCoveringTube) == 0;
                     notCovering |= MouldingColour.IsAnyTransparent(part.materialIDs) || MouldingColour.IsAnyTransparent(connectedTo.field.connectivity.part.materialIDs);

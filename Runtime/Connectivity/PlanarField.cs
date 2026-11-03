@@ -462,14 +462,7 @@ namespace LEGOModelImporter
 
         internal bool HasConnection(int index)
         {
-            if (connectedTo == null || index < 0 || index >= connectedTo.Length) return false;
-            var entry = connectedTo[index];
-            if(entry.IsEmpty())
-            {
-                entry.Reset();
-                return false;
-            }
-            return true;
+            return GetConnection(index) != null;
         }
 
         /// <summary>

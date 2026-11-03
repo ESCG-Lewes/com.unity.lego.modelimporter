@@ -26,7 +26,7 @@ namespace LEGOModelImporter
 
         public BrickBuildingToggleButton()
         {
-            string toggleBrickBuildingShortcut = ShortcutManager.instance.GetShortcutBinding("Main Menu/" + ToolsSettings.brickBuildingMenuPath).ToString();
+            string toggleBrickBuildingShortcut = LEGOToolsOverlay.GetShortcutText(ToolsSettings.brickBuildingMenuPath);
             string toggleBrickBuildingTooltip = "Toggle Brick Building " + toggleBrickBuildingShortcut;
 
             text = "";
@@ -63,11 +63,11 @@ namespace LEGOModelImporter
         public SelectConnectedToggleButton(string offIconPath, string onIconPath, bool isOnButton)
         {
             onButton = isOnButton;
-            string toggleSelectConnectedShortcut = ShortcutManager.instance.GetShortcutBinding("Main Menu/" + ToolsSettings.selectConnectedMenuPath).ToString();
+            string toggleSelectConnectedShortcut = LEGOToolsOverlay.GetShortcutText(ToolsSettings.selectConnectedMenuPath);
             text = "";
             onIcon = AssetDatabase.LoadAssetAtPath<Texture2D>(onIconPath);
             offIcon = AssetDatabase.LoadAssetAtPath<Texture2D>(offIconPath);
-            tooltip = (onButton ? selectConnectedTooltip : selectSingleTooltip) + " Toggle with " + toggleSelectConnectedShortcut;
+            tooltip = (onButton ? selectConnectedTooltip : selectSingleTooltip) + (string.IsNullOrEmpty(toggleSelectConnectedShortcut) ? "" : " Toggle with " + toggleSelectConnectedShortcut);
             this.RegisterValueChangedCallback(Changed);
 
             SetValueWithoutNotify(onButton ? ToolsSettings.SelectConnected : !ToolsSettings.SelectConnected);
@@ -145,6 +145,21 @@ namespace LEGOModelImporter
     [Icon(iconPath)]
     public class LEGOToolsOverlay : ToolbarOverlay
     {
+        // Layout restoration can create the overlay before menu shortcuts are registered.
+        internal static string GetShortcutText(string menuPath)
+        {
+            var manager = ShortcutManager.instance;
+            var shortcutId = "Main Menu/" + menuPath;
+            foreach (var availableId in manager.GetAvailableShortcutIds())
+            {
+                if (availableId == shortcutId)
+                {
+                    return manager.GetShortcutBinding(shortcutId).ToString();
+                }
+            }
+            return "";
+        }
+
         private static List<string> buttonIds = new List<string>();
 
         private const string toolsOverlayId = "com.unity.lego.modelimporter.toolsOverlayId";

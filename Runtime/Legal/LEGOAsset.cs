@@ -229,7 +229,7 @@ namespace LEGOModelImporter
                     // We know that the one mesh will not be transformed, so it's safe to ignore the transform on the CombineInstance.
                     combinedMesh = combineInstances[0].mesh;
                 }
-                else if (combineInstances.Count > 1 || ((Vector3)combineInstances[0].transform.GetColumn(3)).sqrMagnitude >= 0.0001f)
+                else if (combineInstances.Count > 0)
                 {
                     // Otherwise, if there's more than one or it was not in origin, create and save a mesh asset (if it does not exist already).
                     // Then reference that mesh asset.

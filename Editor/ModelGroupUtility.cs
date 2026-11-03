@@ -356,6 +356,18 @@ namespace LEGOModelImporter
         /// <param name="undoBehavior">Whether or not to register undo for the recomputation of hierarchy</param>
         public static void RecomputeHierarchy(IEnumerable<Brick> bricks, UndoBehavior undoBehavior = UndoBehavior.withUndo)
         {
+            // Editor queues can retain destroyed bricks after deletion or reimport.
+            var liveBricks = new List<Brick>();
+            if (bricks != null)
+            {
+                foreach (var brick in bricks)
+                {
+                    if (brick) liveBricks.Add(brick);
+                }
+            }
+            if (liveBricks.Count == 0) return;
+            bricks = liveBricks;
+
             // Group numbers are numbers in parentheses
             // So group 1 with three bricks is shown as (1, 1, 1) 
             // In case the group is part of a prefab it is suffixed with a p like (1p, 1p)

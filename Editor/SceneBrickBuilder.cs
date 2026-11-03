@@ -2037,7 +2037,18 @@ namespace LEGOModelImporter
                         // 1. If there was no previous connection: use this connection
                         // 2. If the previous connection was colliding, then if the new one doesn't choose that one
                         // 3. If both or neither connections were colliding, then choose the one that is closest
-                        if(chosenConnection.IsEmpty() || (chosenConnection.colliding && !result.colliding) || (chosenConnection.colliding == result.colliding && result.maxSqrDistance <= chosenConnection.maxSqrDistance))
+                        // Keep the current snap when candidates are nearly equally close.
+                        // Otherwise tiny mouse movements can alternate between orientations.
+                        const float snapDistanceTolerance = 0.01f;
+                        var resultIsCurrent = result.srcConnection == currentConnection.srcConnection && result.dstConnection == currentConnection.dstConnection;
+                        var chosenIsCurrent = chosenConnection.srcConnection == currentConnection.srcConnection && chosenConnection.dstConnection == currentConnection.dstConnection;
+                        var equallyClose = Mathf.Abs(result.maxSqrDistance - chosenConnection.maxSqrDistance) <= snapDistanceTolerance;
+                        var preferStableRotation = equallyClose &&
+                            ((resultIsCurrent && !chosenIsCurrent) ||
+                             (resultIsCurrent == chosenIsCurrent && Mathf.Abs(result.angleToConnect) < Mathf.Abs(chosenConnection.angleToConnect) - 0.1f));
+                        if (chosenConnection.IsEmpty() || (chosenConnection.colliding && !result.colliding) ||
+                            (chosenConnection.colliding == result.colliding &&
+                             (result.maxSqrDistance < chosenConnection.maxSqrDistance - snapDistanceTolerance || preferStableRotation)))
                         {
                             chosenConnection = result;
                             pivot = currentPivot;

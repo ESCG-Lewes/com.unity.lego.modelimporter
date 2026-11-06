@@ -64,6 +64,7 @@ namespace LEGOModelImporter
 
         private static Dictionary<string, string> LDrawMaterialToLEGOMaterial;
         private static Dictionary<string, string> LDrawBrickToLEGOBrick;
+        private static Dictionary<string, string> StudioPartAliases;
         private static Dictionary<string, Matrix4x4> LDrawBrickToTransformation;
         private static Dictionary<string, List<AssemblyPart>> LDrawAssembly;
 
@@ -120,6 +121,12 @@ namespace LEGOModelImporter
                     Debug.LogWarning($"Duplicate material mapping: {materialNode.Attributes["ldraw"].Value}. Overwriting old value {LDrawMaterialToLEGOMaterial[materialNode.Attributes["ldraw"].Value]}");
                 }
                 LDrawMaterialToLEGOMaterial[materialNode.Attributes["ldraw"].Value] = materialNode.Attributes["lego"].Value;
+            }
+
+            StudioPartAliases = new Dictionary<string, string>(StringComparer.OrdinalIgnoreCase);
+            foreach (XmlElement alias in mappingRoot.SelectNodes("StudioPartAlias"))
+            {
+                StudioPartAliases[alias.GetAttribute("ldraw")] = alias.GetAttribute("part");
             }
 
             LDrawBrickToLEGOBrick = new Dictionary<string, string>();
@@ -499,10 +506,15 @@ namespace LEGOModelImporter
             }
 
             var studioPart = ldrawID + ".dat";
+            if (StudioPartAliases.TryGetValue(studioPart, out var canonicalPart))
+            {
+                studioPart = canonicalPart;
+            }
+
             if (StudioPartBundles.Contains(studioPart))
             {
                 // Keep the LDraw origin. The FBX was generated in the same coordinate system.
-                var numericPrefix = Regex.Match(ldrawID, @"^\d+").Value;
+                var numericPrefix = Regex.Match(studioPart, @"^\d+").Value;
                 var studioDesignID = int.TryParse(numericPrefix, out var numericID) ? numericID.ToString() : "0";
                 brick.parts.Add(new Part
                 {

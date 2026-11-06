@@ -23417,4 +23417,10 @@
   </Assembly>
 
 
+  <!-- BrickLink part x1042b is LDraw 716.dat, the variant with stud notches. -->
+  <StudioPartAlias ldraw="x1042b.dat" part="716.dat" />
+  <StudioPartAlias ldraw="3023old.dat" part="3023a.dat" />
+  <StudioPartAlias ldraw="3062old.dat" part="u9026.dat" />
+  <StudioPartAlias ldraw="3660old.dat" part="3660a.dat" />
+  <StudioPartAlias ldraw="x1042a.dat" part="716a.dat" />
 </LDrawMapping>

@@ -50,7 +50,7 @@ namespace LEGOModelImporter
             try
             {
                 foreach (var brick in selected) brick.DisconnectAll();
-                ModelGroupUtility.RecomputeHierarchy(affected);
+                ModelGroupUtility.RecomputeHierarchy(affected, isolatedBricks: selected);
                 foreach (var brick in selected)
                 {
                     var group = brick.GetComponentInParent<ModelGroup>();

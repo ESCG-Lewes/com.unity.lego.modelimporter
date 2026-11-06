@@ -41,9 +41,10 @@ namespace LEGOModelImporter
 
                 i.meshCompression = ModelImporterMeshCompression.Medium;
 
-                i.generateSecondaryUV = false;
+                var studioPart = assetPath.StartsWith(StudioPartBundles.GeometryPath + "/", System.StringComparison.Ordinal);
+                i.generateSecondaryUV = studioPart && assetPath.StartsWith(StudioPartBundles.GeometryPath + "/Lightmapped/", System.StringComparison.Ordinal);
 
-                i.globalScale = 100;
+                i.globalScale = studioPart ? 1 : 100;
                 i.useFileScale = true;
             }
         }

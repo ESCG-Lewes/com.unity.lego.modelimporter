@@ -202,6 +202,8 @@ namespace LEGOModelImporter
 				/// </summary>
 				public string partDesignId;
 
+            internal string studioPart;
+
 				/// <summary>
                 /// The materials that this part has
                 /// </summary>

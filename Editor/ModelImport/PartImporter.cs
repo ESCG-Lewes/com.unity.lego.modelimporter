@@ -288,6 +288,20 @@ namespace LEGOModelImporter
             return new Bounds(root.position, Vector3.zero);
         }
 
+        internal static void SetStudioMaterials(Part part, LXFMLDoc.Brick.Part.Material[] materials)
+        {
+            if (materials.Length == 0)
+            {
+                return;
+            }
+
+            var material = LoadMaterial(materials[0].colorId);
+            foreach (var renderer in part.GetComponentsInChildren<MeshRenderer>())
+            {
+                renderer.sharedMaterial = material;
+            }
+        }
+
         private static Material LoadMaterial(int colourID)
         {
             Material material = null;

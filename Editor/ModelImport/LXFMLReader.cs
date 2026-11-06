@@ -47,6 +47,7 @@ namespace LEGOModelImporter
                 parts[i].refId = Convert.ToInt32(partNode.Attributes["refID"].Value);
                 parts[i].brickDesignId = brick.designId;
                 parts[i].partDesignId = partNode.Attributes["designID"].Value.Split(';')[0]; // TODO: Use version.
+                parts[i].studioPart = partNode.Attributes["studioPart"]?.Value;
                 parts[i].materials = ParseUtils.StringOfMaterialToMaterialArray(partNode.Attributes["materials"].Value); // TODO: Use shader id.
 
                 var decoAttrib = partNode.Attributes["decoration"];

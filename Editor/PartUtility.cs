@@ -16,20 +16,24 @@ namespace LEGOModelImporter
     /// </summary>
     internal static class PartUtility
     {
-        public static readonly string designIdMappingPath = "Packages/com.unity.lego.modelimporter/Data/designid.xml";
-        public static readonly string legacyPartsPath = "Packages/com.unity.lego.modelimporter/Data/LegacyParts.zip";
+        internal static readonly string packageDataPath = Path.Combine(
+            UnityEditor.PackageManager.PackageInfo.FindForAssembly(typeof(PartUtility).Assembly)?.resolvedPath
+                ?? "Packages/com.unity.lego.modelimporter", "Data");
+
+        public static readonly string designIdMappingPath = Path.Combine(packageDataPath, "designid.xml");
+        public static readonly string legacyPartsPath = Path.Combine(packageDataPath, "LegacyParts.zip");
 
         /// <summary>
         /// The path of the new parts zip
         /// </summary>
-        public static readonly string newPartsPath = "Packages/com.unity.lego.modelimporter/Data/NewParts.zip";
-        public static readonly string commonPartsPath = "Packages/com.unity.lego.modelimporter/Data/CommonParts.zip";
+        public static readonly string newPartsPath = Path.Combine(packageDataPath, "NewParts.zip");
+        public static readonly string commonPartsPath = Path.Combine(packageDataPath, "CommonParts.zip");
         
         
         // Add unzipped folder paths
-        public static readonly string legacyPartsUnzippedPath = "Packages/com.unity.lego.modelimporter/Data/LegacyParts";
-        public static readonly string newPartsUnzippedPath = "Packages/com.unity.lego.modelimporter/Data/NewParts";
-        public static readonly string commonPartsUnzippedPath = "Packages/com.unity.lego.modelimporter/Data/CommonParts";
+        public static readonly string legacyPartsUnzippedPath = Path.Combine(packageDataPath, "LegacyParts");
+        public static readonly string newPartsUnzippedPath = Path.Combine(packageDataPath, "NewParts");
+        public static readonly string commonPartsUnzippedPath = Path.Combine(packageDataPath, "CommonParts");
        
        public static readonly string geometryPath = "Assets/LEGO Data/Geometry";
         public static readonly string collidersPath = "Assets/LEGO Data/Colliders";
@@ -672,24 +676,33 @@ namespace LEGOModelImporter
             return File.Exists(Path.Combine(collidersPath, designID + ".prefab"));
         }
 
-        public static bool UnpackConnectivityForPart(string designID, bool forceUpdate = false)
+        private static XmlDocument LoadPartPrimitive(string designID)
+        {
+            OpenDB();
+            var entry = newPartsZipArchive?.GetEntry("CollisionBox_Connectivity_Info/" + designID + ".xml");
+            if (entry == null)
+            {
+                return null;
+            }
+
+            using (var stream = entry.Open())
+            {
+                var doc = new XmlDocument();
+                doc.Load(stream);
+                return doc;
+            }
+        }
+
+        public static bool UnpackConnectivityForPart(string designID, bool forceUpdate = false, XmlDocument source = null)
         {
             if (File.Exists(Path.Combine(connectivityPath, designID + ".prefab")) && !forceUpdate)
             {
                 return true;
             }
 
-            OpenDB();
-
-            var partConnectivityPath = "CollisionBox_Connectivity_Info/" + designID + ".xml";
-            var entry = newPartsZipArchive.GetEntry(partConnectivityPath);
-            if (entry != null)
+            var doc = source ?? LoadPartPrimitive(designID);
+            if (doc != null)
             {
-                var zipStream = entry.Open();
-
-                var doc = new XmlDocument();
-                doc.Load(zipStream);
-
                 var primitiveNode = doc.SelectSingleNode("LEGOPrimitive");
                 var connectivityNode = primitiveNode.SelectSingleNode("Connectivity");
                 if (connectivityNode != null)
@@ -1005,24 +1018,16 @@ namespace LEGOModelImporter
         /// <param name="designID">The design ID of the part</param>
         /// <param name="forceUpdate">Whether or not to force unpacking</param>
         /// <returns>Returns <see langword="true"/> if the part was unpacked or already exists, <see langword="false"/> otherwise</returns>
-        public static bool UnpackCollidersForPart(string designID, bool forceUpdate = false)
+        public static bool UnpackCollidersForPart(string designID, bool forceUpdate = false, XmlDocument source = null)
         {
             if (File.Exists(Path.Combine(collidersPath, designID + ".prefab")) && !forceUpdate)
             {
                 return true;
             }
 
-            OpenDB();
-
-            var partCollisionPath = "CollisionBox_Connectivity_Info/" + designID + ".xml";
-            var entry = newPartsZipArchive.GetEntry(partCollisionPath);
-            if (entry != null)
+            var doc = source ?? LoadPartPrimitive(designID);
+            if (doc != null)
             {
-                var zipStream = entry.Open();
-
-                var doc = new XmlDocument();
-                doc.Load(zipStream);
-
                 var primitiveNode = doc.SelectSingleNode("LEGOPrimitive");
                 var collisionNode = primitiveNode.SelectSingleNode("Collision");
 

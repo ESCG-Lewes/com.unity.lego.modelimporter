@@ -354,7 +354,8 @@ namespace LEGOModelImporter
         /// </remarks>
         /// <param name="bricks">The bricks that we need to check the hierarchy for</param>
         /// <param name="undoBehavior">Whether or not to register undo for the recomputation of hierarchy</param>
-        public static void RecomputeHierarchy(IEnumerable<Brick> bricks, UndoBehavior undoBehavior = UndoBehavior.withUndo)
+        public static void RecomputeHierarchy(IEnumerable<Brick> bricks, UndoBehavior undoBehavior = UndoBehavior.withUndo,
+            ISet<Brick> isolatedBricks = null)
         {
             // Editor queues can retain destroyed bricks after deletion or reimport.
             var liveBricks = new List<Brick>();
@@ -489,7 +490,7 @@ namespace LEGOModelImporter
                     continue;
                 }                
 
-                if(!brick.HasConnectivity())
+                if(!brick.HasConnectivity() && !(isolatedBricks?.Contains(brick) ?? false))
                 {
                     var group = GetGroupInParent(brick.gameObject);
                     var model = GetModelInParent(brick.gameObject);
@@ -671,11 +672,27 @@ namespace LEGOModelImporter
 
                 var bricksInGroup = group.GetComponentsInChildren<Brick>(true);
                 var clustersForGroup = new List<List<Brick>>();
+                if (isolatedBricks != null && System.Array.Exists(bricksInGroup, brick => isolatedBricks.Contains(brick)))
+                {
+                    // Keep the other loose parts together when explicitly separating a brick.
+                    var remainder = new List<Brick>();
+                    foreach (var brick in bricksInGroup)
+                    {
+                        if (!brick.HasConnectivity() && !isolatedBricks.Contains(brick))
+                        {
+                            remainder.Add(brick);
+                        }
+                    }
+                    if (remainder.Count > 0)
+                    {
+                        clustersForGroup.Add(remainder);
+                    }
+                }
 
                 // If this group contains more than one cluster, split
                 foreach (var brick in bricksInGroup)
                 {                        
-                    if (brick.HasConnectivity())
+                    if (brick.HasConnectivity() || (isolatedBricks?.Contains(brick) ?? false))
                     {
                         if(checkedBricks.Contains(brick))
                         {

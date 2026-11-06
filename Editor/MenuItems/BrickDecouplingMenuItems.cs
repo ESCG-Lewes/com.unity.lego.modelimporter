@@ -88,16 +88,14 @@ namespace LEGOModelImporter
         private static List<Brick> GetSelectedBricks()
         {
             var bricks = new List<Brick>();
-            
+            var selected = new HashSet<Brick>();
+
             foreach (var go in Selection.gameObjects)
             {
-                if (go != null)
+                var brick = go ? go.GetComponentInParent<Brick>() : null;
+                if (brick && selected.Add(brick) && BrickDecoupler.CanDecoupleBrick(brick))
                 {
-                    var brick = go.GetComponent<Brick>();
-                    if (brick != null && BrickDecoupler.CanDecoupleBrick(brick))
-                    {
-                        bricks.Add(brick);
-                    }
+                    bricks.Add(brick);
                 }
             }
             

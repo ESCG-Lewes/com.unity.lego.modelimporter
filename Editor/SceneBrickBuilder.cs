@@ -1351,18 +1351,36 @@ namespace LEGOModelImporter
                 physicsScene = PhysicsSceneExtensions.GetPhysicsScene(EditorSceneManager.GetActiveScene());
             }
             
-            if (physicsScene.Raycast(currentRay.origin, currentRay.direction, out hit, Mathf.Infinity, Physics.DefaultRaycastLayers, QueryTriggerInteraction.Ignore))
+            var hitCollider = physicsScene.Raycast(currentRay.origin, currentRay.direction, out hit,
+                Mathf.Infinity, Physics.DefaultRaycastLayers, QueryTriggerInteraction.Ignore);
+            var colliderBrick = hitCollider ? hit.collider.GetComponentInParent<Brick>() : null;
+
+            // A visible brick can have no solid collider. Use Scene View picking
+            // for those bricks and keep the nearer physics hit when it occludes one.
+            var picked = HandleUtility.PickGameObject(mousePosition, false);
+            var visibleBrick = picked ? picked.GetComponentInParent<Brick>() : null;
+            if (visibleBrick && !visibleBrick.HasConnectivity() && visibleBrick != colliderBrick &&
+                TryGetVisibleBrickHit(visibleBrick, currentRay, out var distance) &&
+                (!hitCollider || distance < hit.distance))
             {
-                var brick = hit.collider.gameObject.GetComponentInParent<Brick>();
-                if(brick)
+                hit = new RaycastHit { point = currentRay.GetPoint(distance), distance = distance };
+                return visibleBrick;
+            }
+
+            return colliderBrick;
+        }
+
+        private static bool TryGetVisibleBrickHit(Brick brick, Ray ray, out float distance)
+        {
+            distance = float.PositiveInfinity;
+            foreach (var renderer in brick.GetComponentsInChildren<MeshRenderer>())
+            {
+                if (renderer.enabled && renderer.bounds.IntersectRay(ray, out var rendererDistance))
                 {
-                    if(brick.HasConnectivity())
-                    {
-                        return brick;
-                    }
+                    distance = Mathf.Min(distance, rendererDistance);
                 }
-            }            
-            return null;
+            }
+            return !float.IsPositiveInfinity(distance);
         }
 
         private static void UpdateMouse(Vector3 newMousePosition)
@@ -1426,23 +1444,9 @@ namespace LEGOModelImporter
 
         private static Brick FindBrick(GameObject go, bool checkParent)
         {
-            Brick brick;
-            if(checkParent)
-            {
-                brick = go.GetComponentInParent<Brick>();
-                if (brick && brick.HasConnectivity())
-                {
-                    return brick;
-                }
-            }
-            brick = go.GetComponent<Brick>();
-            if (brick && brick.HasConnectivity())
-            {
-                return brick;
-            }
-            return null;
+            return checkParent ? go.GetComponentInParent<Brick>() : go.GetComponent<Brick>();
         }
-        
+
         private static void QueueSelection(HashSet<Brick> selection)
         {
             queuedSelection = new List<GameObject>();
@@ -2691,10 +2695,7 @@ namespace LEGOModelImporter
                     {
                         newSelection.Add(brick.gameObject);
 
-                        if (brick.HasConnectivity())
-                        {
-                            selectedBricks.Add(brick);
-                        }
+                        selectedBricks.Add(brick);
                     }
 
                     changed = bricks.Length > 0;

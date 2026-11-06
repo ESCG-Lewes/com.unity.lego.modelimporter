@@ -1,0 +1,1702 @@
+part	boxes	planar fields	clip/bar fields	inferred studs	limitations
+102285p01.dat	1120	2	0	0	connection 0/10
+10509p01.dat	977	4	0	0	
+10509p02.dat	977	4	0	0	
+11241p01.dat	820	3	0	0	connection 0/14
+11241p02.dat	820	3	0	0	connection 0/14
+11329.dat	0	0	2	0	no Studio collider file
+11467p01.dat	1216	2	4	0	
+11467p02.dat	1216	2	4	0	
+11568p01.dat	294	1	0	0	connection 0/14
+11575p01.dat	381	1	0	0	connection 0/14
+11602p01.dat	0	0	0	0	no Studio collider file; no Studio connection file
+11777p01.dat	564	0	2	0	
+11777p02.dat	564	0	2	0	
+11778p01.dat	558	0	2	0	
+11778p02.dat	558	0	2	0	
+12888p01.dat	105	1	0	0	
+12891p01.dat	122	1	0	0	
+13392p01.dat	554	2	0	0	connection 0/14
+13392p02.dat	554	2	0	0	connection 0/14
+13786p01.dat	190	1	0	0	
+13786p02.dat	190	1	0	0	
+13786p03.dat	190	1	0	0	
+13786p04.dat	190	1	0	0	
+13786p05.dat	190	1	0	0	
+13786p06.dat	190	1	0	0	
+13786p07.dat	190	1	0	0	
+13786p09.dat	0	0	0	0	no Studio collider file; no Studio connection file
+1410p01.dat	59	1	0	0	
+14734p01.dat	403	1	0	0	connection 0/14
+15429p01.dat	79	2	0	0	
+15429p02.dat	79	2	0	0	
+15429p03.dat	79	2	0	0	
+15429p04.dat	79	2	0	0	
+15429p05.dat	79	2	0	0	
+15429p06.dat	79	2	0	0	
+15429p07.dat	79	2	0	0	
+15429p09.dat	79	2	0	0	
+15429pb13.dat	79	2	0	0	
+1569p01.dat	91	1	0	0	
+1570.dat	48	2	0	0	connection 0/10
+18905p01.dat	54	0	0	0	connection 6/65429
+18905p02.dat	54	0	0	0	connection 6/65429
+18905p03.dat	54	0	0	0	connection 6/65429
+19727.dat	14	1	0	0	
+19727p00.dat	14	1	0	0	
+19727p02.dat	14	1	0	0	
+19727p03.dat	14	1	0	0	
+19727p05.dat	14	1	0	0	
+20308.dat	22	1	0	0	grid 2/30
+20308p01.dat	22	1	0	0	grid 2/30
+20308p02.dat	22	1	0	0	grid 2/30
+20308p03.dat	22	1	0	0	grid 2/30
+20512p01.dat	75	0	0	0	connection 6/31
+20690p01.dat	506	1	1	0	
+20690p01c01.dat	0	0	0	0	no Studio collider file; no Studio connection file
+20691p01.dat	158	0	1	0	
+2142.dat	238	0	2	0	connection 0/6
+23714.dat	23	1	0	0	connection 0/10
+24196p01.dat	704	1	0	0	connection 0/6; connection 6/1035
+2490p40.dat	141	2	2	0	connection 0/14; grid 2/30
+2490p41.dat	141	2	2	0	connection 0/14; grid 2/30
+2490p42.dat	141	2	2	0	connection 0/14; grid 2/30
+2490p43.dat	164	2	2	0	connection 0/14; grid 2/30
+2490p4j.dat	141	2	2	0	connection 0/14; grid 2/30
+2546p01.dat	85	1	1	0	
+2546p02.dat	85	1	1	0	
+2547bc02.dat	743	1	2	0	grid 2/30
+2581p01.dat	176	1	0	0	connection 0/10
+26064.dat	283	1	1	0	
+26074p01.dat	247	2	0	0	
+26074p02.dat	247	2	0	0	
+26078p01.dat	206	1	0	0	
+26078p02.dat	206	1	0	0	
+27152p01.dat	73	1	0	0	
+2889p01.dat	54	1	0	0	
+2889p02.dat	54	1	0	0	
+29602p01.dat	221	1	0	0	
+29685pb01.dat	100	1	0	0	
+30461c01.dat	1571	5	0	0	connection 6/104; connection 6/108
+30462.dat	0	1	0	0	connection 4/107; no supported collision boxes
+33207p01.dat	484	1	0	0	
+35757p01.dat	43	1	0	0	
+36756pb01.dat	134	3	1	0	
+37276p01.dat	16	2	0	0	
+37297.dat	185	2	0	0	connection 0/2
+3769.dat	63	2	1	0	connection 4/4
+3770.dat	4	0	2	0	
+38547p01.dat	204	0	3	0	
+38801p01.dat	298	0	1	0	
+3918p01.dat	52	1	0	0	connection 0/14
+3918p02.dat	52	1	0	0	connection 0/14
+3918p03.dat	52	1	0	0	connection 0/14
+3918p04.dat	52	1	0	0	connection 0/14
+3918p05.dat	52	1	0	0	connection 0/14
+39742p03.dat	241	1	0	0	
+40933p01.dat	936	1	0	0	connection 0/2; connection 6/65368
+40934p01.dat	430	0	0	0	connection 6/65369
+40934p02.dat	430	0	0	0	connection 6/65369
+40934p03.dat	430	0	0	0	connection 6/65369
+41835p02.dat	69	1	0	0	
+41835pb01.dat	67	1	0	0	
+42090.dat	2035	1	0	0	grid 3/60
+43746p01.dat	1342	5	7	0	connection 0/14; connection 0/3
+43750p01.dat	1730	2	0	0	connection 0/10; connection 0/3
+43936p01.dat	33	2	0	0	connection 0/2
+4491a.dat	56	2	1	0	grid 2/30
+4493c01.dat	849	5	0	0	connection 4/159
+4493c02.dat	849	5	0	0	connection 4/159
+4493c03.dat	849	2	0	0	
+4493c04.dat	849	5	0	0	connection 4/159
+4493pw1c00.dat	849	5	0	0	connection 4/159
+4493pw2c00.dat	849	5	0	0	connection 4/159
+45106p01.dat	173	0	0	0	connection 6/105; invalid rotation, remainder unread
+4587.dat	146	2	0	0	connection 6/53; grid 2/30
+49661p03.dat	0	1	0	0	no Studio collider file
+49661p04.dat	0	1	0	0	no Studio collider file
+49661pb01.dat	0	1	0	0	no Studio collider file
+49661pb02.dat	0	1	0	0	no Studio collider file
+51874p01.dat	183	0	2	0	grid 2/30
+51874p02.dat	183	0	2	0	grid 2/30
+51874p03.dat	183	0	2	0	grid 2/30
+53075p01.dat	218	3	0	0	
+53075p02.dat	218	3	0	0	
+5717.dat	340	0	1	0	connection 0/2
+5785.dat	172	1	0	0	
+6175.dat	649	2	0	0	
+6245p01.dat	171	2	0	0	connection 0/10
+6251p01.dat	211	1	0	0	
+6251p02.dat	211	1	0	0	
+6251p03.dat	211	1	0	0	
+6251p04.dat	211	1	0	0	
+6251p05.dat	211	1	0	0	
+62575p01.dat	23	1	0	0	connection 0/10
+6333p01.dat	91	1	0	0	
+64452p01.dat	918	2	2	0	connection 6/209
+64452p02.dat	918	2	2	0	connection 6/209
+65428p01.dat	1812	1	0	0	connection 0/2; connection 6/65368
+65428p02.dat	1812	1	0	0	connection 0/2; connection 6/65368
+65428p03.dat	1812	1	0	0	connection 0/2; connection 6/65368
+65428p04.dat	1812	1	0	0	connection 0/2; connection 6/65368
+6649p01.dat	330	3	0	0	
+66965.dat	216	1	2	0	
+66965p01.dat	216	1	2	0	
+67040p01.dat	222	1	0	0	connection 0/10
+67040p02.dat	222	1	0	0	connection 0/10
+67229p01.dat	247	0	0	0	connection 6/31
+67229p02.dat	247	0	0	0	connection 6/31
+67337p01.dat	682	2	0	0	
+67337p04.dat	682	2	0	0	
+67631.dat	151	1	0	0	
+67632.dat	291	1	0	0	
+67632p01.dat	291	1	0	0	
+67632p02.dat	291	1	0	0	
+69060.dat	1863	5	0	0	
+69060p01.dat	1863	5	0	0	
+69945p01.dat	43	1	1	0	
+7095.dat	765	0	7	0	
+7443.dat	13	2	0	0	
+75174p01.dat	890	4	0	4	connection 0/2; connection 6/104; connection 6/108; invalid rotation, remainder unread
+75174p01c01.dat	1666	2	0	0	connection 0/2; connection 6/104; connection 6/108; invalid rotation, remainder unread
+76442c01.dat	1470	2	0	0	connection 6/104; invalid rotation, remainder unread
+76443c01.dat	1044	5	1	0	
+78532p01.dat	83	2	0	0	
+78532p02.dat	83	2	0	0	
+8038p01.dat	23	0	1	0	
+8043.dat	16	1	1	0	
+80497.dat	196	1	2	0	
+80513p01.dat	172	1	0	0	
+80672ap01.dat	1009	5	0	0	connection 0/14
+80672ap02.dat	1009	5	0	0	connection 0/14
+80679p01.dat	126	1	0	0	connection 0/10
+80679p02.dat	126	1	0	0	connection 0/10
+80679p03.dat	126	1	0	0	connection 0/10
+80686.dat	88	1	0	0	
+80686p01.dat	88	1	0	0	
+80686p02.dat	88	1	0	0	
+80686p03.dat	88	1	0	0	
+82445p01.dat	509	3	0	0	
+82445p02.dat	509	3	0	0	
+86057.dat	65	0	1	0	grid 2/30
+86058.dat	63	0	1	0	grid 2/30
+86879.dat	30	2	0	0	grid 2/30
+87621p01.dat	405	2	0	0	
+87621p02.dat	405	2	0	0	
+88291p01.dat	2168	2	0	0	
+88618p01.dat	918	3	1	0	
+88618p01c01.dat	1054	3	0	0	
+90001c01p01.dat	972	2	0	0	connection 0/10
+92084p01.dat	295	1	0	0	
+92084pb05.dat	295	1	0	0	
+92586p01.dat	380	2	0	0	
+93085p01.dat	0	0	0	0	no Studio collider file; no Studio connection file
+93085p02.dat	1628	5	0	0	
+93085p03.dat	1628	5	0	0	
+93085p03d01.dat	0	0	0	0	no Studio collider file; no Studio connection file
+93085p04.dat	1628	5	0	0	
+93088p01.dat	403	1	0	0	connection 0/14
+93088p02.dat	398	1	0	0	connection 0/14
+93089p01.dat	298	1	2	0	
+93089p02.dat	298	1	2	0	
+93089p03.dat	298	1	2	0	
+95341p01.dat	345	2	0	0	
+95341p02.dat	345	2	0	0	
+95342p01.dat	132	1	1	0	
+95342p02.dat	132	1	1	0	
+98382p01.dat	199	1	0	0	
+98386p01.dat	308	1	0	0	connection 0/14
+98387p01.dat	256	1	0	0	connection 0/14
+98387p02.dat	256	1	0	0	connection 0/14
+98388p01.dat	208	1	1	0	connection 0/14
+98388p02.dat	208	1	1	0	connection 0/14
+98388p04.dat	208	1	1	0	connection 0/14
+98388pb06.dat	3	1	1	0	connection 0/14
+98389p01.dat	271	1	0	0	connection 0/10; connection 0/14
+_72362.dat	14	2	2	0	connection 0/6
+bl_10352c01pb06.dat	13	4	0	0	
+bl_10352c01pb07.dat	0	0	0	0	no Studio collider file; no Studio connection file
+bl_10352c01pb08.dat	0	0	0	0	no Studio collider file; no Studio connection file
+bl_104287pb02.dat	0	0	2	0	connection 0/3; no supported collision boxes
+bl_104288pb02.dat	0	0	2	0	connection 0/3; no supported collision boxes
+bl_105143pb02.dat	13	3	0	0	
+bl_105143pb03.dat	13	3	0	0	
+bl_105143pb05.dat	13	3	0	0	
+bl_112411.dat	18	1	0	0	
+bl_112411pb01.dat	18	1	0	0	
+bl_112958pb01.dat	7	2	0	0	connection 0/14
+bl_13786pb11.dat	7	1	4	0	
+bl_1413.dat	132	1	0	0	
+bl_1413pb02.dat	5	1	0	0	
+bl_1413pb03.dat	5	1	0	0	
+bl_1578.dat	14	0	3	0	grid 2/30
+bl_20512pb05.dat	75	0	0	0	connection 6/31
+bl_27063pb01.dat	0	0	0	0	no Studio collider file; no Studio connection file
+bl_3171.dat	55	0	3	0	
+bl_3215pb01.dat	14	2	0	0	
+bl_3379.dat	136	0	0	0	no Studio connection file
+bl_3531.dat	160	0	0	0	no Studio connection file
+bl_3753.dat	2	1	0	0	
+bl_4048.dat	65	0	7	0	
+bl_41835pb04.dat	8	1	0	0	
+bl_41835pb05.dat	8	1	0	0	
+bl_41835pb06.dat	8	1	0	0	
+bl_4899pb01.dat	5	0	3	0	
+bl_49579pb04.dat	23	1	0	0	connection 0/14
+bl_49972.dat	493	0	0	0	no Studio connection file
+bl_5502.dat	0	1	0	0	no supported collision boxes
+bl_5981.dat	8	1	1	0	connection 0/2
+bl_67361.dat	106	2	0	0	connection 0/2; connection 0/6
+bl_68444pb02.dat	1	1	1	0	connection 0/3
+bl_68445pb02.dat	1	1	1	0	connection 0/3
+bl_6903pb02.dat	5	1	0	0	connection 0/14
+bl_70922.dat	74	1	2	0	
+bl_7188pb01.dat	4	1	0	0	
+bl_74188pb01.dat	482	3	0	0	
+bl_7511.dat	0	0	1	0	no supported collision boxes
+bl_77864pb01.dat	292	1	1	0	
+bl_80017.dat	15	2	2	0	connection 0/6
+bl_8037pb01.dat	4	1	0	0	
+bl_80674.dat	17	1	0	0	connection 0/14
+bl_80674pb01.dat	0	0	0	0	no Studio collider file; no Studio connection file
+bl_80674pb02.dat	0	0	0	0	no Studio collider file; no Studio connection file
+bl_80674pb03.dat	1	1	0	0	connection 0/14
+bl_80674pb05.dat	1	1	0	0	connection 0/14
+bl_80674pb06.dat	1	1	0	0	connection 0/14
+bl_8240.dat	0	0	1	0	grid 2/30; no supported collision boxes
+bl_82445pb03.dat	9	3	0	0	
+bl_82445pb04.dat	9	3	0	0	
+bl_8254.dat	0	0	2	0	grid 2/30; no Studio collider file
+bl_92084pb03.dat	4	1	0	0	
+bl_92586pb02.dat	12	2	0	0	
+bl_95341pb03.dat	364	3	0	0	
+bl_98057.dat	0	0	0	0	no Studio connection file; no supported collision boxes
+bl_98061c01pb16.dat	7	1	0	0	connection 0/5
+bl_98062c01pb16.dat	7	1	0	0	connection 0/5
+bl_98088p06.dat	490	0	2	0	
+bl_98088pb05.dat	0	0	2	0	no supported collision boxes
+bl_98089p06.dat	498	0	2	0	
+bl_bb1308c04.dat	38	2	6	0	grid 2/30
+bl_bb1319pb01c01.dat	17	2	1	0	connection 0/14; connection 6/318
+u9570p01.dat	178	0	1	0	
+10049.dat	15	0	1	0	
+10049p01.dat	15	0	1	0	
+10053.dat	6	0	1	0	
+10169p01.dat	79	1	1	0	
+10169p02.dat	79	1	1	0	
+10169p03.dat	79	1	1	0	
+10172p01.dat	0	2	3	0	no Studio collider file
+102498p01.dat	17	1	2	0	
+11245p01.dat	0	1	1	0	no Studio collider file
+11245p02.dat	0	1	1	0	no Studio collider file
+11439p01.dat	14	0	1	0	grid 2/30
+11439p02.dat	14	0	1	0	grid 2/30
+11439p03.dat	14	0	1	0	grid 2/30
+11439p04.dat	14	0	1	0	grid 2/30
+11640p01.dat	35	0	2	0	grid 2/30
+11640p02.dat	35	0	2	0	grid 2/30
+13562.dat	12	0	1	0	grid 2/30
+13808p01.dat	0	0	0	0	no Studio collider file; no Studio connection file
+13952.dat	29	0	3	0	grid 2/30
+1411p01.dat	69	0	1	0	
+15445.dat	0	0	3	0	no Studio collider file
+1566.dat	21	1	3	0	
+1621p01.dat	7	0	1	0	
+1621p02.dat	7	0	1	0	
+16478.dat	64	1	0	0	
+16981.dat	63	0	3	0	
+17010.dat	27	0	1	0	
+17011.dat	0	2	2	0	grid 2/30; no Studio collider file
+1747.dat	84	0	2	0	
+18031.dat	28	0	1	0	
+18034.dat	15	0	1	0	
+18673.dat	41	2	3	0	
+18787.dat	20	0	1	0	
+18788.dat	11	0	1	0	
+18789.dat	24	0	1	0	
+18791.dat	16	0	1	0	
+18792.dat	0	0	2	0	no Studio collider file
+18836p40.dat	5	0	2	0	
+18836p42.dat	5	0	2	0	
+18836pb03.dat	5	0	2	0	
+18836pq0.dat	5	0	2	0	
+18983pb01.dat	16	0	1	0	
+1997.dat	190	0	1	0	
+20546.dat	23	0	1	0	
+20546p01.dat	23	0	1	0	grid 2/30
+20546p02.dat	23	0	1	0	grid 2/30
+21271p01.dat	23	2	0	0	
+21700p01.dat	13	0	1	0	
+22921.dat	51	2	2	0	
+23345.dat	4	2	2	0	connection 0/10
+2374.dat	279	3	0	0	
+24093d01.dat	0	0	0	0	no Studio collider file; no Studio connection file
+24093d02.dat	0	0	0	0	no Studio collider file; no Studio connection file
+24093p01.dat	12	0	3	0	connection 6/268
+24093p03.dat	12	0	3	0	connection 6/268
+24093p04.dat	12	0	3	0	connection 6/268
+24093p05.dat	12	0	3	0	connection 6/268
+24093pb26.dat	12	0	3	0	connection 6/268
+24093pc1.dat	12	0	3	0	connection 6/268
+24108pe2.dat	0	2	1	0	no Studio collider file
+24108pe3.dat	0	2	1	0	no Studio collider file
+24144.dat	0	3	3	0	grid 2/30; no Studio collider file
+25866c02.dat	7	0	2	0	grid 2/30
+2586d01.dat	0	0	0	0	no Studio collider file; no Studio connection file
+2586p30.dat	7	0	2	0	
+2586p40.dat	7	0	2	0	
+2586p4b.dat	7	0	2	0	
+2586p4c.dat	7	0	2	0	
+2586p4d.dat	7	0	2	0	
+2586p4f.dat	7	0	2	0	
+2586p4g.dat	7	0	2	0	
+2586p4h.dat	7	0	2	0	
+2586p4j.dat	7	0	2	0	
+2586p4k.dat	7	0	2	0	
+2586p4l.dat	7	0	2	0	
+2586pb006.dat	7	0	2	0	
+2586pb007.dat	7	0	2	0	
+2586ph1.dat	7	0	2	0	
+2586ph2.dat	7	0	2	0	
+2586ps1.dat	7	0	2	0	
+2586pw1.dat	7	0	2	0	
+2586pw2.dat	7	0	2	0	
+25975p01.dat	16	0	2	0	
+25975p02.dat	16	0	2	0	
+2656.dat	0	2	0	0	connection 6/1044; no Studio collider file
+2674a.dat	25	0	1	0	
+2674b.dat	19	0	1	0	
+2674c.dat	15	0	1	0	
+2674d.dat	26	0	1	0	
+2674e.dat	15	0	1	0	
+2674f.dat	33	0	1	0	
+2682a.dat	0	2	1	0	no Studio collider file
+2821.dat	9	2	0	0	
+30152ap02.dat	0	0	0	0	no Studio collider file; no Studio connection file
+30164p01.dat	315	4	1	0	connection 4/90; grid 2/30
+30198.dat	24	0	3	0	connection 6/101; grid 2/30
+30637.dat	64	1	0	0	connection 6/27
+30639.dat	67	2	0	0	connection 6/27
+30639p02.dat	67	2	0	0	connection 6/27
+30924.dat	21	0	1	0	
+3130.dat	17	1	0	0	connection 4/65390
+3131.dat	13	2	0	0	connection 4/65391
+32606.dat	22	0	1	0	connection 0/14; grid 2/30
+33009dm0.dat	0	0	0	0	no Studio collider file; no Studio connection file
+33009pb037.dat	0	0	0	0	no Studio collider file; no Studio connection file
+33009pb040.dat	0	0	0	0	no Studio collider file; no Studio connection file
+33009pb042.dat	0	0	0	0	no Studio collider file; no Studio connection file
+33009pb043.dat	0	0	0	0	no Studio collider file; no Studio connection file
+33031.dat	1	1	0	0	connection 0/10
+33172c03.dat	0	0	0	0	no Studio collider file; no Studio connection file
+33172c04.dat	0	0	0	0	no Studio collider file; no Studio connection file
+34172pb03.dat	0	1	0	0	no Studio collider file
+3565.dat	41	3	2	0	
+35700.dat	9	2	0	0	
+35700d01.dat	0	0	0	0	no Studio collider file; no Studio connection file
+35700pb01.dat	9	2	0	0	
+35700pb02.dat	9	2	0	0	
+35700pb05.dat	9	2	0	0	
+35809p01.dat	13	0	1	0	
+35809p02.dat	13	0	1	0	
+35809p03.dat	13	0	1	0	
+35860pb01.dat	14	2	2	0	grid 2/30
+36083a.dat	77	0	2	0	
+36083b.dat	143	0	2	0	
+36083c.dat	57	0	1	0	
+36083d.dat	28	0	0	0	connection 0/14
+36083e.dat	187	0	3	0	
+36083f.dat	53	0	2	0	
+36752a.dat	7	0	4	0	
+36752c01.dat	20	0	2	0	
+37178-f1.dat	18	0	1	0	
+37341a.dat	8	0	1	0	
+37341b.dat	9	0	1	0	
+37341c.dat	4	0	1	0	grid 2/30
+37341d.dat	36	0	2	0	
+37341e.dat	21	0	1	0	
+3742c01.dat	21	4	0	0	connection 0/14
+3748.dat	1	0	2	0	
+3757.dat	15	0	1	0	
+37681.dat	51	1	2	0	connection 0/14
+37702p01.dat	19	0	1	0	connection 6/269
+37720a.dat	13	2	0	0	connection 0/10
+37720b.dat	9	1	0	0	connection 0/10
+37720c.dat	46	0	2	0	grid 2/30
+37720d.dat	67	0	1	0	grid 2/30
+37720e.dat	42	2	0	0	
+3813.dat	43	0	2	0	
+3846d01.dat	0	0	0	0	no Studio collider file; no Studio connection file
+3846d02.dat	0	0	0	0	no Studio collider file; no Studio connection file
+3846d03.dat	0	0	0	0	no Studio collider file; no Studio connection file
+3846d04.dat	0	0	0	0	no Studio collider file; no Studio connection file
+3846d07.dat	0	0	0	0	no Studio collider file; no Studio connection file
+3846p01.dat	15	0	2	0	grid 2/30
+3846p40.dat	15	0	2	0	grid 2/30
+3846p44.dat	15	0	2	0	grid 2/30
+3846p45.dat	15	0	2	0	grid 2/30
+3846p46.dat	15	0	2	0	grid 2/30
+3846p47.dat	15	0	2	0	grid 2/30
+3846p48.dat	15	0	2	0	grid 2/30
+3846p4c.dat	15	0	2	0	grid 2/30
+3846p4d.dat	15	0	2	0	grid 2/30
+3846p4e.dat	15	0	2	0	grid 2/30
+3846p4f.dat	15	0	2	0	grid 2/30
+3846p4g.dat	15	0	2	0	grid 2/30
+3846p4h.dat	15	0	2	0	grid 2/30
+3846p4j.dat	15	0	2	0	grid 2/30
+3846p4k.dat	15	0	2	0	grid 2/30
+3846p4l.dat	15	0	2	0	grid 2/30
+3846p4t.dat	15	0	2	0	grid 2/30
+3846p4u.dat	15	0	2	0	grid 2/30
+3846p4x.dat	15	0	2	0	grid 2/30
+3846p4y.dat	15	0	2	0	grid 2/30
+3846p4z.dat	15	0	2	0	grid 2/30
+3846p50.dat	15	0	2	0	grid 2/30
+3846pb001.dat	0	0	0	0	no Studio collider file; no Studio connection file
+3846pb033.dat	15	0	2	0	grid 2/30
+3846pb039.dat	0	0	0	0	no Studio collider file; no Studio connection file
+3846pb35.dat	15	0	2	0	grid 2/30
+3846pb36.dat	15	0	2	0	grid 2/30
+3846pb42.dat	15	0	2	0	grid 2/30
+3846pb44.dat	15	0	2	0	grid 2/30
+3846pb55.dat	15	0	2	0	grid 2/30
+38648c01.dat	56	0	1	0	
+3885.dat	7	0	1	0	
+3899p01.dat	14	1	2	0	grid 2/30
+3899p02.dat	14	1	2	0	grid 2/30
+3899p03.dat	14	1	2	0	grid 2/30
+3899p04.dat	14	1	2	0	grid 2/30
+3899p05.dat	14	1	2	0	grid 2/30
+3899p07.dat	14	1	2	0	grid 2/30
+3899p08.dat	14	1	2	0	grid 2/30
+3899p09.dat	14	1	2	0	grid 2/30
+3900d01.dat	0	0	0	0	no Studio collider file; no Studio connection file
+3900p01.dat	22	1	1	0	grid 2/30
+39144.dat	3	1	2	0	
+39144p01.dat	3	1	2	0	
+39802pb01.dat	8	0	1	0	grid 2/30
+40598a.dat	16	1	0	0	
+40598b.dat	6	2	1	0	connection 0/10
+40598c.dat	60	0	1	0	grid 2/30
+40598d.dat	54	0	1	0	grid 2/30
+4082.dat	81	2	0	0	
+42511c02.dat	191	2	4	0	grid 2/30
+42511c04.dat	191	2	4	0	grid 2/30
+42511c06.dat	191	2	4	0	grid 2/30
+42511c07.dat	191	2	4	0	grid 2/30
+42876.dat	51	0	2	0	
+4325.dat	148	0	8	0	
+4345ap03.dat	26	2	0	0	connection 6/162
+4345apb01.dat	0	0	0	0	no Studio collider file; no Studio connection file
+4345apb02.dat	0	0	0	0	no Studio collider file; no Studio connection file
+4345bp03.dat	14	2	0	0	connection 6/162
+4345pb02.dat	0	0	0	0	no Studio collider file; no Studio connection file
+4346d03.dat	0	0	0	0	no Studio collider file; no Studio connection file
+4346d04.dat	0	0	0	0	no Studio collider file; no Studio connection file
+4346d05.dat	0	0	0	0	no Studio collider file; no Studio connection file
+4346p01.dat	11	0	0	0	connection 6/163
+4346p03.dat	11	0	0	0	connection 6/163
+4346p04.dat	11	0	0	0	connection 6/163
+4346p05.dat	11	0	0	0	connection 6/163
+4346p06.dat	11	0	0	0	connection 6/163
+4346p60.dat	11	0	0	0	connection 6/163
+4346p61.dat	11	0	0	0	connection 6/163
+4346p68.dat	11	0	0	0	connection 6/163
+4346pb04a.dat	0	0	0	0	no Studio collider file; no Studio connection file
+4346pb04b.dat	0	0	0	0	no Studio collider file; no Studio connection file
+4346ps1.dat	11	0	0	0	connection 6/163
+4346ps2.dat	11	0	0	0	connection 6/163
+4346ps3.dat	11	0	0	0	connection 6/163
+4346pw01.dat	11	0	0	0	connection 6/163
+4349p01.dat	10	2	2	0	grid 2/30
+4449-f1.dat	3	0	1	0	
+4449d01-f1.dat	0	0	0	0	no Studio collider file; no Studio connection file
+4449d02-f1.dat	0	0	0	0	no Studio collider file; no Studio connection file
+4452.dat	53	2	4	0	
+4461.dat	65	2	0	0	
+4497b.dat	10	0	1	0	
+4532bpb01.dat	0	0	0	0	no Studio collider file; no Studio connection file
+4533pb006.dat	0	0	0	0	no Studio collider file; no Studio connection file
+4535.dat	8	0	0	0	connection 6/173
+4627.dat	5	0	0	0	connection 6/180
+4628.dat	15	0	0	0	connection 6/178
+4629.dat	41	1	0	0	connection 6/179; connection 6/181; grid 2/30
+4739a.dat	50	1	0	0	connection 6/309
+4739b.dat	50	1	0	0	connection 6/185
+47674.dat	749	1	0	0	connection 4/166; connection 4/168
+47674c01.dat	1322	4	0	0	connection 0/10; connection 0/6
+47675.dat	131	2	0	0	connection 0/10; connection 0/6; connection 4/167
+47676.dat	68	2	0	0	connection 0/6; connection 4/169
+48245d01.dat	0	0	0	0	no Studio collider file; no Studio connection file
+49595a.dat	65	1	0	0	
+49595b.dat	10	1	0	0	connection 0/10
+49595c.dat	15	1	0	0	
+49595d.dat	7	1	0	0	
+49595e.dat	13	0	1	0	
+49595f.dat	29	0	1	0	
+49595g.dat	40	0	1	0	
+49649c01.dat	287	1	3	0	
+4972.dat	22	0	1	0	
+4972p01.dat	22	0	1	0	
+50018a.dat	32	2	3	0	
+50018b.dat	44	2	3	0	grid 2/30
+50018c.dat	25	1	2	0	grid 2/30
+50018d.dat	25	2	2	0	
+50018e.dat	39	1	2	0	
+50018f.dat	0	1	1	0	no Studio collider file
+50018g.dat	51	2	1	0	grid 2/30
+5058.dat	171	2	2	0	grid 2/30
+5151.dat	8	2	0	0	
+518.dat	329	0	3	0	
+5234.dat	127	0	1	0	
+53020.dat	8	0	1	0	
+53118.dat	21	1	0	0	
+53118pb01.dat	21	1	0	0	
+5330p01.dat	63	2	3	0	
+5330p02.dat	63	2	3	0	
+5491.dat	102	1	1	0	connection 6/56
+55707a.dat	46	0	2	0	grid 2/30
+55707b.dat	73	0	2	0	grid 2/30
+55707c.dat	5	0	1	0	
+55707e.dat	2	0	1	0	
+5644.dat	7	0	1	0	grid 2/30
+5689.dat	24	2	1	0	
+577c01.dat	14	2	3	0	
+577c02.dat	19	2	4	0	
+57899.dat	74	0	3	0	grid 2/30
+5822.dat	94	1	1	0	connection 0/10
+58247.dat	47	0	3	0	grid 2/30
+5903.dat	9	0	1	0	connection 0/14; grid 2/30
+5904.dat	4	2	0	0	connection 0/10; connection 0/14
+59231p40.dat	18	0	2	0	grid 2/30
+59231p4h.dat	18	0	2	0	grid 2/30
+6017.dat	35	1	0	0	connection 0/14
+60659.dat	778	0	1	0	grid 2/30
+61190a.dat	25	0	3	0	
+61199.dat	14	1	1	0	
+61856p40.dat	7	0	2	0	
+6196.dat	8	0	1	0	connection 6/65403
+6197.dat	59	6	0	0	connection 6/65402
+6198.dat	10	0	1	0	connection 8/65397
+6256p01.dat	115	1	16	0	
+6256p02.dat	115	1	16	0	
+6256ph1.dat	115	1	16	0	
+62698-f2.dat	0	0	0	0	no Studio collider file; no Studio connection file
+62809c01.dat	56	0	4	0	
+64567b.dat	9	2	3	0	
+65067.dat	209	7	2	0	grid 2/30
+65080p01.dat	34	1	1	0	
+65080p02.dat	34	1	1	0	
+65128.dat	277	0	0	0	connection 4/65430
+65128c01.dat	285	0	0	0	connection 6/65433
+65129.dat	187	9	0	0	connection 0/10
+65132.dat	75	4	4	0	connection 6/26
+65146.dat	0	0	0	0	connection 4/65431; connection 6/65433; no Studio collider file
+65253.dat	6457	6	0	0	connection 0/2
+65468d.dat	31	2	0	0	connection 0/10
+65581.dat	114	3	1	0	
+6647.dat	5	1	0	0	
+66909.dat	5	2	1	0	
+66967.dat	48	1	0	0	connection 0/10; connection 0/14
+67075.dat	9	2	0	0	connection 0/2
+68211.dat	7	0	1	0	connection 0/17; grid 2/30
+68495p01.dat	40	2	1	0	
+68495p02.dat	40	2	1	0	
+68495p03.dat	40	2	1	0	
+68495p04.dat	40	2	1	0	
+68495p06.dat	40	2	1	0	
+68504.dat	4	1	1	0	connection 0/14; connection 0/2
+69.dat	24	1	0	0	connection 4/194
+6900.dat	18	1	0	0	connection 0/6
+6901.dat	0	2	1	0	connection 0/10; no Studio collider file
+69066.dat	12	3	0	0	grid 2/30
+69767.dat	45	3	1	0	connection 6/65402
+69944p01.dat	28	0	1	0	
+69947p01.dat	1	0	2	0	
+70.dat	23	0	1	0	connection 4/195; grid 2/30
+7077.dat	61	2	1	0	connection 0/10
+7096.dat	22	2	2	0	grid 2/30
+71396p01c01.dat	0	0	0	0	no Studio connection file; no supported collision boxes
+72024.dat	208	6	0	0	connection 0/10
+72490.dat	699	8	0	0	connection 0/10; connection 4/65340; grid 3/60
+72490b.dat	261	0	0	0	connection 4/65341
+72490c01.dat	2202	8	0	0	connection 0/10; grid 3/60
+729.dat	269	1	0	0	
+73117.dat	37	4	4	0	
+73828.dat	56	0	3	0	
+74948p01.dat	100	1	0	0	
+74948p02.dat	100	1	0	0	
+7571.dat	41	6	4	0	connection 0/10
+75902p01.dat	14	0	2	0	
+75902p02.dat	14	0	2	0	
+75902p03.dat	14	0	2	0	
+75902p04.dat	14	0	2	0	
+75902p05.dat	5	0	2	0	
+75902p06.dat	14	0	2	0	
+75902p07.dat	14	0	2	0	
+75902p08.dat	14	0	2	0	
+75902p0b.dat	14	0	2	0	
+75902pb0.dat	5	0	2	0	
+75902pb1.dat	5	0	2	0	
+75902pb2.dat	14	0	2	0	
+75902ps1.dat	14	0	2	0	
+75904pb02.dat	33	0	1	0	grid 2/30
+76700.dat	91	0	3	0	
+7711.dat	26	1	0	0	connection 0/10; connection 6/162
+7712.dat	7	1	0	0	connection 6/163
+7727.dat	79	2	2	0	grid 2/30
+78801.dat	11	0	1	0	
+79735.dat	9	0	1	0	
+79736.dat	46	1	1	0	connection 0/10; connection 0/14; connection 6/24
+79743.dat	46	2	1	0	connection 0/10
+79816.dat	22	1	0	0	
+80179.dat	6	0	1	0	
+8040.dat	12	0	2	0	connection 0/14
+80716p01.dat	22	0	2	0	
+80835.dat	16	2	0	0	connection 6/185
+86501.dat	383	0	0	0	no Studio connection file
+87561p01.dat	207	1	6	0	grid 2/30
+87997p01.dat	126	0	1	0	
+87997p02.dat	126	0	1	0	
+87997p03.dat	126	0	1	0	
+87997p04.dat	126	0	1	0	
+88288p01.dat	0	0	0	0	no Studio collider file; no Studio connection file
+90370p01.dat	31	0	1	0	
+90370p02.dat	31	0	1	0	
+90370pb03.dat	31	0	1	0	
+90370pb04.dat	31	0	1	0	
+90370pb05.dat	31	0	1	0	
+90391p01.dat	48	0	1	0	grid 2/30
+90391p03.dat	0	0	1	0	grid 2/30; no Studio collider file
+90397d02.dat	0	0	0	0	no Studio collider file; no Studio connection file
+90397p02.dat	183	2	6	0	grid 2/30
+90397pb003.dat	0	0	0	0	no Studio collider file; no Studio connection file
+90397pb007.dat	6	2	6	0	grid 2/30
+90397pb008.dat	183	2	6	0	grid 2/30
+90398p01.dat	5	1	0	0	
+9044ap02.dat	0	0	0	0	no Studio collider file; no Studio connection file
+90463.dat	26	0	1	0	grid 2/30
+90508p01.dat	78	0	1	0	grid 2/30
+90509p01.dat	3	1	0	0	
+90826.dat	21	1	1	0	connection 0/6
+91884p01.dat	33	1	2	0	
+91884p02.dat	33	1	2	0	
+91884p03.dat	33	1	2	0	
+91884p04.dat	33	1	2	0	
+92738.dat	21	0	3	0	grid 2/30
+92747p01.dat	7	0	2	0	
+92747pb05.dat	7	0	2	0	
+92747pb06.dat	7	0	2	0	
+92747pb07.dat	7	0	2	0	
+92747pb08.dat	7	0	2	0	
+92747pb09.dat	7	0	2	0	
+93080bpb001.dat	0	0	0	0	no Studio collider file; no Studio connection file
+93080c.dat	33	0	1	0	grid 2/30
+93081c.dat	28	0	1	0	connection 0/14; grid 2/30
+93081d.dat	0	0	1	0	connection 0/14; grid 2/30; no Studio collider file
+93082a.dat	42	1	1	0	
+93082b.dat	0	1	0	0	no Studio collider file
+93082c.dat	0	1	0	0	no Studio collider file
+93082d.dat	81	0	4	0	grid 2/30
+93082e.dat	30	0	1	0	
+93082f.dat	0	1	0	0	no Studio collider file
+93082g.dat	13	1	0	0	
+93082h.dat	13	0	1	0	
+93082i.dat	15	0	1	0	
+93090p01.dat	58	1	1	0	
+93090p02.dat	58	1	1	0	
+93090p03.dat	58	1	1	0	
+93091p01.dat	43	1	1	0	
+93091p02.dat	28	1	1	0	
+93094c03.dat	8	0	2	0	grid 2/30
+93220pb01.dat	36	0	1	0	
+93220pb02.dat	5	0	1	0	
+93220pb03.dat	36	0	1	0	
+93220pb04.dat	7	0	1	0	
+93221p01.dat	49	3	1	0	grid 2/30
+93221p02.dat	49	3	1	0	grid 2/30
+93221p04.dat	49	3	1	0	grid 2/30
+93221p06.dat	49	3	1	0	grid 2/30
+93221pb03.dat	49	3	1	0	grid 2/30
+93221pb05.dat	49	3	1	0	grid 2/30
+93549pb02.dat	59	2	1	0	
+93549pb03.dat	59	2	1	0	
+93549pb04.dat	59	2	1	0	
+93549pb05.dat	59	2	1	0	
+93549pb07.dat	59	2	1	0	
+93549pb08.dat	63	2	1	0	
+93551p01.dat	5	0	1	0	grid 2/30
+93551p02.dat	5	0	1	0	grid 2/30
+93552p01.dat	16	0	1	0	
+93552p02.dat	16	0	1	0	
+93552p03.dat	16	0	1	0	
+93552p04.dat	16	0	1	0	
+93552p05.dat	16	0	1	0	
+93552p06.dat	16	0	1	0	
+93564p01.dat	45	0	1	0	
+93564p02.dat	45	0	1	0	
+93568p01.dat	29	1	0	0	connection 0/10
+93568p02.dat	29	1	0	0	connection 0/10
+94318.dat	0	0	0	0	no Studio connection file; no supported collision boxes
+95228p01.dat	27	2	2	0	
+95228pb04.dat	27	2	2	0	
+95330p01.dat	30	0	1	0	grid 2/30
+98367p01.dat	10	1	2	0	
+98368pb002.dat	48	1	1	0	grid 2/30
+98372p01.dat	55	0	1	0	
+98372p02.dat	55	0	1	0	
+98393a.dat	6	0	1	0	
+98393b.dat	44	0	1	0	
+98393bpb01.dat	0	0	0	0	no Studio collider file; no Studio connection file
+98393c.dat	36	0	1	0	
+98393d.dat	21	0	0	0	no Studio connection file
+98393e.dat	7	0	1	0	
+98393f.dat	36	0	2	0	
+98393g.dat	40	0	1	0	connection 0/17
+98393h.dat	13	0	0	0	connection 0/17
+98393i.dat	5	0	1	0	
+98393j.dat	13	0	1	0	
+bl_11251pb01.dat	0	0	0	0	no Studio collider file; no Studio connection file
+bl_1624.dat	3	0	1	0	connection 4/51
+bl_18744.dat	2	1	0	0	
+bl_1941.dat	23	2	6	0	
+bl_19807.dat	18	0	1	0	
+bl_19807a.dat	20	0	4	0	
+bl_19900pb03.dat	0	0	3	0	grid 2/30; no supported collision boxes
+bl_2135.dat	7	1	0	0	connection 0/5; connection 6/56
+bl_23945pb02.dat	30	2	2	0	connection 0/10
+bl_23945pb03.dat	30	2	0	0	connection 0/10
+bl_24093pb070.dat	12	0	3	0	connection 6/268
+bl_24093pb078.dat	12	0	3	0	connection 6/268
+bl_24855.dat	4	0	2	0	connection 0/17; grid 2/30
+bl_2586pb012.dat	0	0	0	0	no Studio collider file; no Studio connection file
+bl_2663.dat	595	0	3	0	
+bl_2665.dat	6	0	1	0	grid 2/30
+bl_3206.dat	88	0	3	0	grid 2/30
+bl_3566.dat	157	1	1	0	
+bl_35703c01.dat	0	0	0	0	no Studio collider file; no Studio connection file
+bl_35703c02.dat	0	0	0	0	no Studio collider file; no Studio connection file
+bl_3846pb062.dat	0	0	0	0	no Studio collider file; no Studio connection file
+bl_3846pb063.dat	15	0	2	0	grid 2/30
+bl_3846pb064.dat	15	0	2	0	grid 2/30
+bl_3846pb065.dat	0	0	0	0	no Studio collider file; no Studio connection file
+bl_3846pb066.dat	15	0	2	0	grid 2/30
+bl_3846pb080.dat	3	0	2	0	grid 2/30
+bl_4972pb02.dat	7	0	2	0	
+bl_4972pb04.dat	7	0	2	0	
+bl_5215.dat	57	0	2	0	grid 2/30
+bl_53118pb02.dat	7	1	0	0	
+bl_6018.dat	1	0	5	0	grid 2/30
+bl_6330pb13.dat	1	1	0	0	connection 0/14
+bl_65700.dat	12	2	0	0	connection 0/14
+bl_66964.dat	31	0	1	0	
+bl_68495pb05.dat	15	2	1	0	
+bl_69767c01.dat	45	3	1	0	connection 6/65402; connection 6/65403
+bl_69903.dat	15	0	0	0	connection 0/17
+bl_7060pb01.dat	4	1	0	0	
+bl_7096pb01.dat	12	2	2	0	grid 2/30
+bl_7185.dat	0	0	3	0	grid 2/30; no supported collision boxes
+bl_7257.dat	20	0	2	0	
+bl_7264.dat	0	2	1	0	no supported collision boxes
+bl_7268pb01.dat	7	0	1	0	grid 2/30
+bl_75902pb28.dat	14	0	2	0	
+bl_75902pb29.dat	14	0	2	0	
+bl_75902pb30.dat	2	0	2	0	
+bl_75902pb35.dat	2	0	2	0	
+bl_7649pb01.dat	9	0	1	0	
+bl_7649pb02.dat	9	0	1	0	
+bl_77078.dat	1	0	2	0	grid 2/30
+bl_7737.dat	2	0	0	0	connection 0/17
+bl_7741.dat	11	2	1	0	
+bl_7905.dat	1	2	1	0	
+bl_79741.dat	15	0	1	0	
+bl_80436.dat	35	0	2	0	
+bl_80437.dat	13	0	1	0	
+bl_80440.dat	145	3	2	0	connection 6/56
+bl_80444pb01.dat	29	0	1	0	
+bl_80487.dat	109	1	3	0	
+bl_80503pb01.dat	47	0	2	0	
+bl_8098.dat	0	1	0	0	no supported collision boxes
+bl_8136.dat	1	0	2	0	grid 2/30
+bl_90398pb067.dat	3	1	0	0	
+bl_92747pb18.dat	10	0	2	0	
+bl_92747pb19.dat	10	0	2	0	
+u1104.dat	107	3	0	0	
+u9078.dat	28	0	0	0	no Studio connection file
+u9078p01.dat	0	0	0	0	no Studio collider file; no Studio connection file
+u9079.dat	34	0	0	0	no Studio connection file
+u9080.dat	57	1	0	0	
+u9119.dat	335	1	0	0	
+u9328ap01c01.dat	0	0	0	0	no Studio collider file; no Studio connection file
+u9328ap02c01.dat	0	0	0	0	no Studio collider file; no Studio connection file
+1.dat	9	2	0	0	connection 8/2
+11002.dat	40	2	2	0	connection 0/10; connection 6/3
+1126.dat	10	1	0	0	
+1744.dat	311	2	1	0	connection 0/10; connection 0/6
+1745.dat	15	2	0	0	
+1746.dat	0	4	0	0	no Studio collider file
+1748.dat	15	1	0	0	
+1749.dat	180	2	0	0	connection 0/2
+1750.dat	29	3	2	0	grid 2/30
+1751.dat	5	1	0	0	
+1762.dat	22	1	0	0	
+18591.dat	139	2	0	0	connection 0/3
+18601.dat	254	12	0	0	
+1871.dat	16	1	0	0	
+1874.dat	88	4	0	0	grid 2/30
+18922.dat	348	14	0	0	
+1974.dat	280	2	0	0	connection 0/2
+2.dat	9	2	0	0	connection 8/2
+2040.dat	102	4	2	0	
+2041.dat	103	1	0	0	
+2042.dat	14	2	0	0	connection 6/1050
+2042c01.dat	0	2	0	0	no Studio collider file
+2042c02.dat	0	2	0	0	no Studio collider file
+2042c03.dat	0	2	0	0	no Studio collider file
+2043.dat	8	0	0	0	connection 6/1051
+2044.dat	455	1	0	0	connection 6/40
+2044c01.dat	0	3	0	0	no Studio collider file
+2045.dat	89	2	0	0	connection 6/41
+2046.dat	483	4	0	0	grid 2/30
+2048.dat	442	4	0	0	connection 6/1007
+2049.dat	10	0	0	0	connection 6/1006
+21.dat	59	2	0	0	
+2131.dat	21	3	0	0	connection 6/42
+2145.dat	216	3	2	0	
+2146.dat	72	1	0	0	connection 6/65334
+2146c01.dat	181	5	0	0	
+2146c02.dat	181	5	0	0	
+21699.dat	15	0	3	0	grid 2/30
+2229.dat	14	1	0	0	connection 6/33
+2310.dat	11	3	0	0	
+2337.dat	73	1	0	0	connection 6/46; connection 6/47
+2412a.dat	5	1	0	0	grid 2/30
+2412b.dat	5	1	0	0	grid 2/30
+24445.dat	0	2	0	0	connection 0/11; no Studio collider file
+2448.dat	63	4	0	0	grid 2/30
+2453a.dat	5	2	0	0	
+2453b.dat	6	2	0	0	
+2476a.dat	9	2	0	0	connection 0/3
+2476b.dat	19	2	0	0	connection 0/3
+2493c01.dat	22	2	0	0	grid 2/30
+2493c02.dat	22	2	0	0	grid 2/30
+2493c03.dat	22	2	0	0	grid 2/30
+25195.dat	22	4	0	0	
+25893a.dat	5	1	1	0	
+2596.dat	89	2	2	0	
+2605c01.dat	52	6	0	0	connection 0/10
+2612.dat	359	32	0	0	
+2628.dat	137	14	0	0	
+2629.dat	231	21	0	0	
+263.dat	17	3	0	0	grid 2/30
+2634c02.dat	110	2	0	0	grid 2/30
+2635d01.dat	0	0	0	0	no Studio collider file; no Studio connection file
+264.dat	79	1	0	0	
+2641.dat	82	4	0	0	
+2641ad01.dat	0	0	0	0	no Studio collider file; no Studio connection file
+2657.dat	13	1	0	0	connection 6/1045
+2662.dat	332	4	4	0	grid 2/30
+2681.dat	151	2	4	0	
+272.dat	26	2	0	0	
+2745.dat	33	0	0	0	connection 0/6
+2752.dat	22	2	0	0	grid 2/30
+276.dat	63	1	7	0	grid 2/30
+276c01.dat	0	5	5	0	no Studio collider file
+27a.dat	11	2	0	0	connection 4/64
+27ac01.dat	11	2	0	0	
+27b.dat	5	2	0	0	connection 4/64
+27bc01.dat	5	2	0	0	
+27c.dat	5	2	0	0	connection 4/64
+27cc01.dat	5	2	0	0	
+281.dat	108	1	0	0	grid 2/30
+2826.dat	195	6	0	0	grid 2/30
+2874.dat	23	0	0	0	connection 8/21
+28782.dat	102	5	0	0	
+28802.dat	10	3	0	0	grid 2/30
+2918.dat	295	0	0	0	connection 4/77
+2937.dat	83	2	0	0	
+29a.dat	6	2	0	0	connection 4/86
+29ac01.dat	0	2	0	0	no Studio collider file
+29b.dat	3	2	0	0	connection 4/86
+29bc01.dat	0	2	0	0	no Studio collider file
+29c.dat	2	2	0	0	connection 4/86
+29cc01.dat	0	2	0	0	no Studio collider file
+3.dat	5	0	0	0	connection 8/3
+3001b.dat	16	2	1	0	connection 0/10
+30034.dat	9	1	1	0	grid 2/30
+30073.dat	3	2	0	0	
+30074.dat	3	2	0	0	
+30075.dat	103	2	0	0	connection 0/10
+30079.dat	69	4	0	0	
+30101.dat	49	7	6	0	connection 6/92; grid 2/30
+30102.dat	24	2	0	0	connection 6/93
+30129.dat	156	0	0	0	no Studio connection file
+30151b.dat	77	2	0	0	connection 6/33
+30178c02.dat	12	0	0	0	connection 6/97
+30178c03.dat	12	0	0	0	connection 6/97
+30178c04.dat	12	0	0	0	connection 6/97
+30178c05.dat	12	0	0	0	connection 6/97
+30182.dat	70	4	0	0	
+30185c01.dat	134	6	0	0	grid 2/30
+30185c02.dat	134	6	0	0	grid 2/30
+30185c04.dat	134	6	0	0	grid 2/30
+30185c05.dat	134	6	0	0	grid 2/30
+30195.dat	179	10	0	0	
+30211.dat	117	7	3	0	connection 0/10
+30212.dat	433	9	0	0	grid 2/30
+30219.dat	61	2	3	0	connection 1/3
+3023a.dat	7	2	0	0	
+3023b.dat	12	2	0	0	grid 2/30
+30298.dat	306	1	6	0	connection 6/26
+30321.dat	3	0	0	0	connection 4/103
+30343c02.dat	147	6	2	0	connection 0/14; grid 2/30
+30350a.dat	23	1	2	0	
+30350b.dat	13	1	2	0	
+30350c.dat	15	1	2	0	
+30359a.dat	42	6	1	0	connection 0/6; grid 2/30
+30361a.dat	14	4	0	0	connection 0/2; connection 0/6
+30361d.dat	27	4	0	0	connection 0/2; connection 0/6
+30367a.dat	29	2	0	0	connection 0/10; connection 6/33
+30367c.dat	0	2	0	0	connection 0/6; connection 6/33; no Studio collider file
+3040a.dat	24	2	0	0	
+3040b.dat	31	2	0	0	grid 2/30
+3044a.dat	26	1	0	0	
+3044b.dat	32	1	0	0	grid 2/30
+3044c.dat	26	1	0	0	
+3048a.dat	15	1	0	0	
+3048b.dat	15	1	0	0	grid 2/30
+3049a.dat	14	1	0	0	
+3049c.dat	26	1	0	0	
+3049d.dat	12	1	0	0	
+30520.dat	97	2	0	0	connection 0/6
+3058a.dat	222	8	0	0	grid 2/30
+3058b.dat	222	8	0	0	grid 2/30
+30621.dat	166	14	0	0	connection 0/2; connection 0/3; grid 2/30
+30625.dat	0	3	1	0	connection 0/2; connection 6/26; no Studio collider file
+3062a.dat	12	2	0	0	
+3062b.dat	8	2	1	0	
+3063a.dat	50	2	0	0	
+3063b.dat	50	2	0	0	
+30645.dat	509	16	4	0	connection 0/2; connection 0/6; grid 2/30
+30646.dat	158	2	5	0	connection 0/6; grid 2/30
+30650.dat	21	0	0	0	no Studio connection file
+3068a.dat	5	1	0	0	connection 6/33
+3068b.dat	5	1	0	0	connection 6/33
+3069a.dat	5	1	0	0	
+3069b.dat	5	1	0	0	
+3070a.dat	5	1	0	0	
+3070b.dat	5	1	0	0	
+3081a.dat	11	2	0	0	connection 4/108
+3081ac01.dat	0	2	0	0	no Studio collider file
+3081b.dat	5	2	0	0	connection 4/108
+3081bc01.dat	0	2	0	0	no Studio collider file
+3087a.dat	6	2	0	0	connection 4/110
+3087ac01.dat	0	2	0	0	no Studio collider file
+3087b.dat	3	2	0	0	connection 4/110
+3087bc01.dat	3	2	0	0	
+3087c.dat	2	2	0	0	connection 4/110
+3087cc01.dat	2	2	0	0	
+3137a.dat	21	2	0	0	connection 0/10
+3160.dat	266	4	0	0	grid 2/30
+3161.dat	165	4	0	0	grid 2/30
+3166.dat	90	3	0	0	grid 2/30
+3170.dat	94	2	0	0	connection 1/3; grid 2/30
+3172.dat	12	4	0	0	connection 0/2; grid 2/30
+3183b.dat	47	2	0	0	connection 1/2; grid 2/30
+31a.dat	17	2	0	0	connection 4/112
+31ac01.dat	0	2	0	0	no Studio collider file
+31b.dat	8	2	0	0	connection 4/112
+31bc01.dat	0	2	0	0	no Studio collider file
+31cc01.dat	0	2	0	0	no Studio collider file
+3204.dat	56	2	0	0	connection 1/65333
+3220.dat	114	2	0	0	grid 2/30
+3224.dat	40	2	1	0	grid 2/30
+3245b.dat	11	2	0	0	connection 0/6
+3245c.dat	15	2	0	0	
+3250.dat	299	8	0	0	connection 0/2; connection 0/6
+32627.dat	60	2	0	0	
+3263.dat	53	4	0	0	grid 2/30
+32ac01.dat	0	2	0	0	no Studio collider file
+32b.dat	10	2	0	0	connection 4/132
+32bc01.dat	0	2	0	0	no Studio collider file
+33089.dat	400	2	1	0	
+3317.dat	28	3	0	0	connection 6/126; grid 2/30
+33227.dat	95	4	0	0	connection 6/54; grid 2/30
+33230.dat	788	2	0	0	
+33287.dat	143	1	0	0	connection 0/6; connection 6/33
+3358.dat	20	4	0	0	connection 0/10; connection 6/28
+3359.dat	7	2	1	0	connection 0/11; connection 6/29; grid 2/30
+3383.dat	103	2	0	0	grid 2/30
+3384.dat	56	2	0	0	grid 2/30
+3386.dat	7	3	1	0	
+3388.dat	56	2	0	0	grid 2/30
+3389.dat	56	2	0	0	grid 2/30
+3395.dat	1	1	0	0	
+3396.dat	25	1	0	0	
+33ac01.dat	0	2	0	0	no Studio collider file
+33bc01.dat	0	2	0	0	no Studio collider file
+3417.dat	13	6	0	0	connection 4/92; grid 2/30
+3462.dat	22	2	0	0	connection 6/133
+3481.dat	39	2	0	0	connection 6/133
+3491.dat	24	2	0	0	connection 1/2
+3492c01.dat	359	0	3	0	connection 0/14; connection 1/11
+3504.dat	54	3	0	0	grid 2/30
+3505.dat	55	3	0	0	grid 2/30
+35103.dat	109	4	0	0	connection 4/92; connection 6/96
+3535.dat	43	2	0	0	
+35394.dat	281	2	0	0	connection 0/6; connection 6/94
+3544.dat	66	3	0	0	
+3545.dat	67	3	0	0	
+35470.dat	72	4	0	0	
+35477.dat	44	2	0	0	grid 2/30
+3563.dat	26	1	0	0	grid 2/30
+3567.dat	12	1	0	0	
+3569.dat	259	1	0	0	connection 0/6
+3571.dat	4	1	0	0	grid 2/30
+3572.dat	59	3	0	0	
+3573.dat	66	2	0	0	
+3579.dat	19	2	0	0	connection 6/22; grid 2/30
+3614a.dat	56	2	1	0	connection 1/3
+3614b.dat	0	0	0	0	no Studio collider file; no Studio connection file
+3628.dat	8	0	4	0	
+36451a.dat	1	0	0	0	connection 0/17
+3660a.dat	14	2	0	0	grid 2/30
+3660b.dat	8	2	0	0	
+3661.dat	15	2	3	0	connection 0/10; connection 0/14; grid 2/30
+3678a.dat	34	2	0	0	
+3678b.dat	34	2	0	0	
+3684c.dat	43	2	0	0	
+37452.dat	20	2	0	0	
+3747a.dat	18	2	0	0	grid 2/30
+3747b.dat	9	7	0	0	grid 2/30
+37494.dat	89	0	8	0	grid 2/30
+3761.dat	62	2	0	0	connection 0/14; connection 6/138; connection 6/218
+3762.dat	7	0	1	0	connection 6/139
+3766.dat	65	5	0	0	
+3777.dat	112	5	0	0	connection 0/2; grid 2/30
+3779.dat	13	2	0	0	connection 1/2
+3794a.dat	6	2	0	0	grid 2/30
+3794b.dat	6	2	0	0	grid 2/30
+3839a.dat	24	2	2	0	grid 2/30
+3839b.dat	22	2	2	0	grid 2/30
+3863.dat	82	1	0	0	
+3888ac01.dat	683	7	1	0	
+3888ac02.dat	637	7	2	0	
+3890c01.dat	88	2	0	0	
+3890c02.dat	88	2	0	0	
+3890c03.dat	35	2	0	0	
+3890c04.dat	35	2	0	0	
+3890c05.dat	35	2	0	0	
+3890c06.dat	15	2	0	0	
+3890c07.dat	15	2	0	0	
+3940a.dat	3	2	2	0	connection 6/33
+3942a.dat	19	2	0	0	connection 0/6; connection 6/33
+3942c.dat	17	2	1	0	connection 0/6; connection 6/33
+39611.dat	48	2	2	0	
+3995.dat	45	2	0	0	connection 0/10; connection 6/28
+3996.dat	44	2	0	0	connection 0/10; connection 6/28
+3999.dat	65	1	0	0	connection 6/1021
+4000.dat	45	0	2	0	connection 6/1020
+4000c01.dat	86	1	2	0	
+40249.dat	30	2	0	0	connection 6/93
+40253.dat	45	7	6	0	connection 6/92; grid 2/30
+4032a.dat	44	2	0	0	connection 0/6; connection 6/33
+4041.dat	167	6	0	0	
+4042.dat	135	2	11	0	connection 0/7
+4045b.dat	24	1	0	0	
+40687.dat	34	2	0	0	connection 0/3
+4071.dat	20	2	0	0	connection 0/17; connection 6/150
+4072.dat	138	1	0	0	connection 0/14; connection 6/151
+4081a.dat	13	4	1	0	
+4081b.dat	11	4	1	0	
+4085a.dat	9	2	1	0	
+4085b.dat	9	2	1	0	
+4085c.dat	11	2	1	0	
+4086.dat	335	2	0	0	
+4088.dat	34	2	0	0	
+4089.dat	75	2	0	0	connection 1/3; grid 2/30
+40942.dat	43	0	0	0	connection 8/65421
+4094a.dat	175	1	1	0	
+4151c.dat	68	14	0	0	grid 2/30
+4168.dat	79	2	0	0	
+4169.dat	23	3	0	0	grid 2/30
+41769b.dat	23	2	0	0	
+41770b.dat	24	2	0	0	
+4190.dat	58	2	0	0	
+420.dat	13	0	0	0	connection 8/26; connection 8/29
+4206.dat	103	0	7	0	
+421.dat	13	0	0	0	connection 8/27
+422.dat	19	2	0	0	connection 0/14
+4223.dat	131	2	1	0	connection 0/10
+4231.dat	178	2	0	0	
+42509.dat	1	0	0	0	connection 6/305
+42819.dat	75	2	0	0	connection 4/146
+4285a.dat	48	2	0	0	connection 0/10
+4285b.dat	64	2	0	0	connection 0/10
+42862.dat	38	2	0	0	
+4304.dat	29	4	0	0	
+43058.dat	417	20	0	0	connection 0/2; connection 0/3
+43060.dat	190	11	0	0	connection 0/2; connection 0/3
+4320c01.dat	309	1	0	0	connection 0/10
+4320c02.dat	309	1	0	0	connection 0/10
+4320c03.dat	306	1	0	0	connection 0/10
+4320c04.dat	306	1	0	0	connection 0/10
+4320c05.dat	309	1	0	0	connection 0/10
+4323.dat	228	4	4	0	connection 0/11
+4324.dat	17	0	1	0	
+4327.dat	158	0	1	0	
+4331.dat	132	0	3	0	
+4334.dat	157	0	4	0	connection 0/14
+4335.dat	180	0	6	0	
+4336.dat	90	2	0	0	
+4343c01.dat	15	2	0	0	
+4347c01.dat	26	2	0	0	grid 2/30
+4362ac01.dat	663	48	0	48	no Studio connection file
+43722b.dat	14	2	0	0	
+43723b.dat	0	2	0	0	no Studio collider file
+43967.dat	70	2	0	0	connection 4/146
+4412.dat	21	4	0	0	connection 0/2; connection 0/6
+4413.dat	546	8	0	0	connection 0/2; connection 0/6
+4430.dat	245	0	2	0	
+4437.dat	63	0	2	0	
+44375a.dat	41	6	0	0	connection 0/10
+44375b.dat	53	6	0	0	connection 0/10
+4439.dat	96	0	3	0	
+4440.dat	56	0	1	0	
+44511.dat	590	6	4	0	connection 0/6; grid 2/30
+4460a.dat	51	2	1	0	
+4460b.dat	47	2	0	0	
+4468.dat	248	1	0	0	connection 6/1024
+4469.dat	17	1	0	0	connection 6/1025
+4475.dat	133	9	0	0	grid 2/30
+4483.dat	14	0	0	0	connection 4/235
+44861.dat	7	2	1	0	grid 2/30
+44865.dat	11	3	0	0	connection 0/3
+45.dat	62	1	0	0	
+453a.dat	24	2	0	0	connection 4/160
+453ac01.dat	0	2	0	0	no Studio collider file
+453b.dat	12	2	0	0	connection 4/160
+453bc01.dat	0	2	0	0	connection 4/160; no Studio collider file
+453cc01.dat	11	2	0	0	connection 4/160
+45406c02.dat	202	3	1	0	connection 6/26
+45406c03.dat	202	3	1	0	connection 6/26
+45522.dat	89	2	0	0	grid 2/30
+4569.dat	44	2	0	0	
+45695.dat	122	2	5	0	connection 0/6; grid 2/30
+4585.dat	18	3	0	0	grid 2/30
+4607.dat	79	7	0	0	
+4608.dat	92	2	0	0	
+4609.dat	17	2	1	0	
+4610.dat	58	1	2	0	
+4610c01.dat	83	3	1	0	
+4611.dat	119	1	22	0	connection 0/14; connection 6/151
+4612.dat	566	7	0	0	
+4613.dat	265	6	4	0	connection 0/10
+4613c01.dat	514	6	0	0	connection 0/10
+4616a.dat	132	3	5	0	connection 0/17
+4616ac01.dat	0	2	4	0	no Studio collider file
+4616b.dat	138	4	4	0	connection 0/2
+4652.dat	151	3	0	0	connection 6/1040; connection 6/200; grid 2/30
+47115.dat	564	52	0	0	connection 0/6
+47116.dat	856	2	4	0	connection 0/6; grid 2/30
+47117.dat	30	2	1	0	connection 0/6; connection 8/10; grid 2/30
+47122.dat	359	6	2	0	connection 0/6; grid 2/30
+47376.dat	146	2	3	0	
+4743.dat	87	4	0	0	
+4747.dat	36	3	0	0	connection 0/10; connection 0/3
+4748.dat	40	6	0	0	
+4750.dat	782	22	0	0	connection 0/2; grid 2/30
+4779.dat	296	4	0	0	connection 4/224; connection 4/225
+4780c01.dat	351	1	0	0	
+4781.dat	465	2	0	0	
+4782.dat	185	2	0	0	connection 0/3
+4783.dat	135	3	0	0	
+4784.dat	270	3	0	0	grid 2/30
+47855.dat	179	6	2	0	connection 0/6; grid 2/30
+4793.dat	1165	2	0	0	
+4794a.dat	35	0	1	0	
+4796c01.dat	666	2	1	0	
+47976.dat	397	18	0	0	connection 0/2; connection 0/6
+48147.dat	188	5	0	0	connection 0/2; connection 0/3
+48165.dat	39	2	0	0	
+4823c01.dat	346	2	0	0	
+4823c02.dat	346	2	0	0	
+4841.dat	2000	12	0	0	connection 6/65385; connection 6/65387; grid 2/30
+4842.dat	173	12	0	0	connection 1/3
+4843.dat	61	4	0	0	connection 0/2; connection 6/65386
+4856b.dat	24	4	0	0	
+4866.dat	48	2	0	0	grid 2/30
+48729a.dat	14	0	2	0	grid 2/30
+48729b.dat	17	0	2	0	grid 2/30
+4874.dat	959	5	1	0	connection 6/188
+4875.dat	138	1	0	0	connection 6/189
+4876.dat	470	3	0	0	connection 0/14; grid 2/30
+48995.dat	22	3	0	0	connection 0/10
+49736.dat	89	2	0	0	connection 6/1032; connection 6/1033
+49737.dat	0	0	0	0	connection 6/1032; connection 6/1033; no Studio collider file
+4974.dat	5	7	0	0	
+5032.dat	78	2	2	0	connection 4/93
+5065.dat	145	3	0	0	grid 2/30
+5066.dat	28	2	2	0	grid 2/30
+509.dat	50	4	0	0	connection 0/10
+5090.dat	13	5	0	0	
+5091.dat	14	1	0	0	
+5092.dat	14	1	0	0	
+5093.dat	12	2	0	0	
+5095.dat	12	0	0	0	invalid rotation, remainder unread
+50990a.dat	4	2	0	0	connection 0/10; connection 6/33
+50990b.dat	16	2	0	0	connection 0/10
+5103.dat	31	2	0	0	grid 2/30
+5117.dat	181	13	0	0	connection 0/10; connection 0/2
+5119.dat	122	14	0	0	connection 0/2; grid 2/30
+5120.dat	169	6	0	0	grid 2/30
+5152.dat	53	4	0	0	
+5174.dat	23	2	0	0	connection 0/10
+5175.dat	17	3	0	0	
+5241.dat	108	3	0	0	grid 2/30
+5252.dat	24	2	0	0	connection 0/10; connection 0/6
+5257.dat	94	2	2	0	
+5258.dat	73	2	2	0	grid 2/30
+5259.dat	19	1	0	0	grid 2/30
+5260.dat	80	1	0	0	grid 2/30
+5264.dat	0	1	1	0	no Studio collider file
+5274.dat	170	5	0	0	grid 2/30
+5331.dat	11	2	0	0	connection 6/33
+5382.dat	58	3	0	0	
+5404.dat	27	1	0	0	grid 2/30
+5414.dat	57	3	0	0	
+5415.dat	57	3	0	0	
+5466.dat	34	2	0	0	connection 4/182; connection 6/97
+5489.dat	221	0	0	0	connection 0/6
+5497.dat	82	1	0	0	grid 2/30
+5498.dat	76	1	0	0	grid 2/30
+5518.dat	7	2	0	0	
+5520.dat	18	1	0	0	
+5532.dat	101	4	0	0	
+5540.dat	44	2	0	0	grid 2/30
+556.dat	24	0	4	0	grid 2/30
+5630.dat	108	0	11	0	
+5649.dat	68	1	0	0	
+5651.dat	65	3	0	0	
+5654.dat	37	2	0	0	
+5686.dat	35	2	1	0	
+5712.dat	23	4	0	0	grid 2/30
+5841.dat	20	3	0	0	
+5842.dat	73	3	0	0	grid 2/30
+5843.dat	52	3	0	0	
+5844.dat	99	3	0	0	
+5845.dat	126	3	0	0	
+5846.dat	27	3	0	0	
+5847.dat	22	3	0	0	
+5848.dat	10	1	0	0	
+5849.dat	17	1	0	0	
+5852.dat	20	3	0	0	
+5853.dat	52	3	0	0	grid 2/30
+5854.dat	35	3	0	0	grid 2/30
+5906.dat	56	3	0	0	
+5907.dat	35	2	0	0	
+5924.dat	18	1	0	0	
+5925.dat	90	4	0	0	grid 2/30
+60470a.dat	22	2	2	0	connection 1/2; grid 2/30
+60470b.dat	18	2	2	0	connection 1/2; grid 2/30
+60475a.dat	12	2	1	0	
+60475b.dat	6	2	1	0	
+604a.dat	39	2	0	0	connection 4/180
+604ac01.dat	0	2	0	0	no Studio collider file
+604bc01.dat	0	2	0	0	no Studio collider file
+60583b.dat	11	2	2	0	
+60592c02.dat	9	2	0	0	
+60592c03.dat	9	2	0	0	
+60592c04.dat	9	2	0	0	
+60592c05.dat	9	2	0	0	
+60592c06.dat	9	2	0	0	
+60592c07.dat	9	2	0	0	
+60592c08.dat	9	2	0	0	
+60592c09.dat	9	2	0	0	
+60592c10.dat	9	2	0	0	
+6069.dat	45	4	0	0	grid 2/30
+60797c02.dat	14	1	0	0	connection 6/97
+60797c03.dat	14	1	0	0	connection 6/97
+60797c04.dat	17	1	0	0	connection 6/97
+6084.dat	100	1	0	0	connection 6/47
+6121.dat	164	6	0	0	grid 2/30
+61409b.dat	21	1	0	0	
+6152b.dat	69	2	0	0	grid 2/30
+6156.dat	0	2	0	0	grid 2/30; no Studio collider file
+6159c01.dat	24	2	0	0	grid 2/30
+6160a.dat	17	2	0	0	grid 2/30
+6161.dat	1459	14	0	0	
+6168.dat	28	1	0	0	connection 0/10
+6169.dat	802	15	0	0	
+6214.dat	24	2	3	0	
+6320.dat	5	2	0	0	
+6331.dat	79	2	4	0	connection 0/10; connection 0/6
+64570.dat	20	3	0	0	
+645a.dat	36	2	0	0	connection 4/184
+645ac01.dat	36	2	0	0	
+645b.dat	18	2	0	0	connection 4/184
+645cc01.dat	0	2	0	0	no Studio collider file
+646a.dat	46	2	0	0	connection 4/186
+646ac01.dat	46	2	0	0	
+646b.dat	28	2	0	0	connection 4/186
+646bc01.dat	0	2	0	0	no Studio collider file
+646cc01.dat	0	2	0	0	no Studio collider file
+65092.dat	4	1	0	0	
+65138.dat	57	2	0	0	connection 0/10; connection 6/115; connection 6/65432
+65140.dat	113	7	0	0	
+65473.dat	95	0	0	0	connection 0/6
+65486.dat	151	8	0	0	
+6567c01.dat	0	2	0	0	grid 2/30; no Studio collider file
+6567c02.dat	0	2	0	0	grid 2/30; no Studio collider file
+6567c03.dat	0	2	0	0	grid 2/30; no Studio collider file
+65734.dat	54	2	0	0	
+65735.dat	41	2	0	0	grid 2/30
+65783.dat	313	2	2	0	connection 0/6
+66252.dat	24	4	2	0	
+66606.dat	256	4	0	0	
+66787.dat	185	4	0	0	grid 2/30
+66789.dat	122	11	0	0	
+66790.dat	122	21	0	0	
+66792.dat	76	9	0	0	
+66855.dat	43	2	0	0	connection 0/10
+66857.dat	29	1	0	0	
+6686.dat	167	2	4	0	
+66955.dat	90	4	0	0	grid 2/30
+66956.dat	37	1	0	0	grid 2/30
+66961.dat	147	2	4	0	
+670.dat	70	2	0	0	connection 6/212
+67095.dat	39	1	0	0	
+671.dat	15	0	0	0	connection 6/213
+67329.dat	11	5	0	0	
+67440.dat	65	2	0	0	grid 2/30
+67759.dat	242	6	0	0	grid 2/30
+678.dat	25	0	0	0	no Studio connection file
+67810.dat	29	3	0	0	
+679.dat	24	2	0	0	
+67929.dat	67	4	0	0	
+67950.dat	158	4	0	0	
+6798.dat	34	2	0	0	connection 6/322; grid 2/30
+6801.dat	50	3	0	0	
+68013.dat	39	2	0	0	
+6805.dat	94	1	51	0	
+6806.dat	19	1	0	0	
+6822.dat	44	4	0	0	
+6823.dat	45	4	0	0	
+6826.dat	17	2	0	0	grid 2/30
+68297.dat	67	3	0	0	
+6830.dat	84	1	0	0	connection 0/2
+68325.dat	175	2	0	0	connection 0/10; connection 6/115
+68382.dat	23	3	0	0	connection 0/3
+685.dat	651	3	1	0	
+68568.dat	35	4	0	0	grid 2/30
+68869.dat	64	5	0	0	
+6908.dat	4	1	0	0	
+6929.dat	34	3	0	0	
+6930.dat	34	3	0	0	
+6934.dat	5	1	0	0	
+6957.dat	111	4	0	0	grid 2/30
+6970.dat	12	3	0	0	grid 2/30
+69729.dat	5	1	0	0	
+69906.dat	30	3	0	0	
+69934.dat	214	11	8	0	
+69958.dat	555	18	0	0	connection 0/10
+700a.dat	605	1	0	0	
+702.dat	44	2	0	0	
+7037.dat	10	3	0	0	grid 2/30
+70495.dat	107	4	0	0	grid 2/30
+7049a.dat	54	2	3	0	
+7049b.dat	54	2	3	0	
+7052.dat	16	0	19	0	connection 0/14; grid 2/30
+7062.dat	157	7	0	0	grid 2/30
+7064.dat	185	11	0	0	connection 0/10; connection 0/2
+70646.dat	97	6	2	0	
+7068.dat	121	2	8	0	connection 0/10; connection 6/33; connection 6/72
+70681.dat	50	3	0	0	
+7078.dat	55	0	5	0	
+709.dat	88	2	0	0	connection 6/132
+71075a.dat	8	2	0	0	
+71076a.dat	22	2	0	0	
+711.dat	46	2	0	0	connection 6/132
+71183.dat	9	0	2	0	
+71184.dat	11	0	1	0	
+7126.dat	15	1	0	0	
+712a.dat	118	2	0	0	
+7133.dat	5	3	1	0	
+7134.dat	16	1	0	0	
+713a.dat	116	2	0	0	
+716.dat	94	2	0	0	
+716a.dat	80	6	0	0	
+71752.dat	20	2	0	0	connection 0/6; connection 6/33
+71771.dat	60	3	0	0	
+71772.dat	188	13	0	0	connection 0/10
+7202.dat	53	3	0	0	grid 2/30
+72040.dat	1285	2	0	0	connection 0/2
+7205.dat	46	1	0	0	grid 2/30
+7206.dat	46	1	0	0	grid 2/30
+721.dat	96	1	0	0	connection 6/214
+7211.dat	22	4	0	0	
+7212.dat	87	2	0	0	
+7217.dat	74	4	0	0	
+722.dat	3	0	0	0	connection 6/215
+7236.dat	59	4	0	0	
+7249.dat	80	2	0	0	grid 2/30
+7261.dat	12	2	0	0	
+7276.dat	28	2	0	0	connection 4/182
+728.dat	269	2	0	0	
+72869.dat	22	0	2	0	
+7302.dat	37	2	0	0	grid 2/30
+73110.dat	92	7	0	0	connection 0/2
+73111.dat	2	2	0	0	connection 0/10; connection 0/6
+7323.dat	81	4	0	0	grid 2/30
+7324.dat	38	2	0	0	connection 0/6
+733.dat	305	2	0	0	
+73312.dat	18	2	0	0	
+73313.dat	16	2	0	0	
+73435c02.dat	13	2	0	0	
+73435c03.dat	13	2	0	0	
+73435c04.dat	13	2	0	0	
+73436c03.dat	13	2	0	0	
+73436c04.dat	13	2	0	0	
+7344.dat	332	6	0	0	grid 2/30
+73562.dat	20	4	0	0	connection 0/10
+73642.dat	456	9	0	0	grid 2/30
+73682.dat	117	4	1	0	
+737.dat	29	4	0	0	connection 0/10
+73764.dat	26	2	0	0	connection 6/33
+73825.dat	7	3	0	0	
+73831.dat	22	2	0	0	grid 2/30
+73832.dat	95	10	0	0	
+73878.dat	89	4	0	0	connection 4/182
+74166.dat	227	24	0	0	
+74169.dat	55	0	0	0	connection 0/10; connection 6/33; invalid rotation, remainder unread
+7452.dat	10	3	0	0	grid 2/30
+74611.dat	171	7	0	0	connection 0/10; connection 6/115; connection 6/65432
+749.dat	45	2	2	0	
+7508.dat	33	2	1	0	grid 2/30
+7519.dat	29	2	0	0	
+7520.dat	29	2	0	0	
+7527.dat	48	2	0	0	grid 2/30
+753.dat	53	4	0	0	connection 0/10
+7531.dat	19	4	0	0	grid 2/30
+7532.dat	1	2	0	0	
+7534.dat	25	2	2	0	grid 2/30
+753c01.dat	0	2	0	0	no Studio collider file
+753c02.dat	0	2	0	0	no Studio collider file
+7547.dat	35	3	0	0	grid 2/30
+75539.dat	18	2	0	0	
+7591.dat	10	2	0	0	connection 0/10
+75979bp01.dat	0	0	0	0	no Studio collider file; no Studio connection file
+75979bp02.dat	0	0	0	0	no Studio collider file; no Studio connection file
+7652.dat	103	3	0	0	grid 2/30
+7664.dat	183	10	0	0	grid 2/30
+76776.dat	667	4	0	0	
+76795.dat	72	2	0	0	
+76796.dat	201	6	0	0	grid 2/30
+76797.dat	65	2	0	0	
+76798.dat	281	2	0	0	connection 0/6; grid 2/30
+7688.dat	0	1	0	0	no Studio collider file
+76959.dat	13	2	2	0	grid 2/30
+77107.dat	208	0	0	0	connection 0/2; connection 0/6
+77180.dat	412	3	0	0	connection 0/10
+77182.dat	414	3	0	0	connection 0/10
+7729.dat	6	5	0	0	
+7757.dat	1	0	0	0	connection 6/323
+7768.dat	8	0	1	0	connection 0/14
+7769.dat	16	4	0	0	grid 2/30
+77808.dat	34	2	2	0	grid 2/30
+77813.dat	13	1	0	0	
+77842.dat	30	6	0	0	grid 2/30
+77844.dat	17	4	0	0	grid 2/30
+77845.dat	22	2	2	0	grid 2/30
+77850.dat	21	2	3	0	grid 2/30
+7797.dat	72	6	0	0	
+7798.dat	5	1	0	0	
+7812.dat	4	3	0	0	
+78168.dat	45	2	0	0	
+7818.dat	6	1	0	0	
+7821.dat	17	2	0	0	grid 2/30
+7825.dat	23	1	0	0	grid 2/30
+78256.dat	9	2	1	0	grid 2/30
+78257.dat	50	2	2	0	
+78258.dat	17	0	2	0	connection 0/14; grid 2/30
+7827.dat	13	1	0	0	
+7828.dat	4	1	0	0	
+7829.dat	4	1	0	0	
+78329.dat	14	2	0	0	grid 2/30
+7835.dat	28	1	0	0	grid 2/30
+7836.dat	24	1	0	0	
+78443.dat	38	3	0	0	
+78444.dat	41	3	0	0	
+78522.dat	126	3	0	0	connection 0/10
+7853.dat	31	1	0	0	
+78594.dat	34	4	0	0	
+7863.dat	30	5	0	0	grid 2/30
+7864.dat	45	3	0	0	connection 0/10
+78666.dat	39	2	0	0	
+787.dat	58	1	0	0	connection 0/10
+7885.dat	63	2	0	0	connection 0/6
+78886.dat	50	2	0	0	
+789.dat	228	4	4	0	connection 0/11
+7891.dat	17	4	0	0	grid 2/30
+790.dat	50	1	1	0	grid 2/30
+7904.dat	19	2	0	0	
+791.dat	7	0	0	0	connection 6/219
+79180.dat	50	4	0	0	connection 0/10
+79194.dat	5	1	1	0	
+7930.dat	7	1	0	0	connection 4/18; connection 6/23
+79387.dat	80	12	0	0	grid 2/30
+79389.dat	7	3	0	0	
+79393.dat	38	2	0	0	
+79491.dat	20	3	0	0	grid 2/30
+7961.dat	125	10	0	0	grid 2/30
+79730.dat	43	2	0	0	connection 6/170; connection 6/97
+7975.dat	33	1	0	0	
+79756.dat	44	1	0	0	grid 2/30
+79757.dat	26	1	0	0	grid 2/30
+79846.dat	130	6	0	0	connection 0/10
+79850.dat	122	2	1	0	connection 0/6
+79897.dat	57	4	0	0	
+79987.dat	8	2	2	0	grid 2/30
+8.dat	19	1	0	0	connection 6/56
+80015.dat	0	6	0	0	no Studio collider file
+80029.dat	13	2	0	0	grid 2/30
+80031.dat	154	11	0	0	
+8005.dat	51	4	0	0	grid 2/30
+8008.dat	41	6	0	0	
+800c01.dat	0	1	2	0	no Studio collider file
+80177.dat	40	4	0	0	
+80178.dat	41	1	0	0	invalid rotation, remainder unread
+80222.dat	66	2	0	0	grid 2/30
+80337.dat	0	2	1	0	connection 0/10; connection 4/65423; no Studio collider file
+80400a.dat	69	4	0	0	connection 6/304; grid 2/30
+80432.dat	44	5	0	0	connection 0/2; connection 6/33; connection 8/65401
+80433.dat	36	3	0	0	connection 0/2; connection 6/33; connection 8/65400
+80543.dat	15	4	0	0	
+80545.dat	48	2	0	0	
+80573.dat	115	2	0	0	grid 2/30
+8064.dat	0	2	0	0	no Studio collider file
+80677.dat	10	1	0	0	
+80683.dat	27	2	1	0	connection 6/305
+80796.dat	11	4	0	0	
+8083.dat	151	16	0	0	grid 2/30
+8097.dat	160	6	0	0	grid 2/30
+8165.dat	5	1	0	0	
+8181.dat	23	2	0	0	connection 0/2
+81911.dat	0	3	0	0	grid 2/30; no Studio collider file
+820.dat	218	3	0	0	connection 4/65330
+821a.dat	6	0	0	0	connection 0/14; connection 4/65331; connection 6/220
+821b.dat	6	0	0	0	connection 0/14; connection 4/65331; connection 6/220
+821c.dat	19	1	0	0	connection 0/14; connection 4/65331; connection 6/220
+822.dat	16	0	0	0	connection 0/17; connection 6/221
+822a.dat	30	0	0	0	connection 0/17; connection 6/221
+822b.dat	30	0	0	0	connection 0/17; connection 6/221
+8235.dat	21	2	0	0	grid 2/30
+825.dat	15	2	0	0	connection 0/10; connection 6/28
+826.dat	15	2	0	0	connection 0/10; connection 6/28
+83496.dat	1	4	0	0	
+837.dat	0	2	0	0	connection 6/222; connection 8/2; no supported collision boxes
+838.dat	0	0	0	0	connection 6/223; no supported collision boxes
+839.dat	31	1	0	0	connection 4/196; connection 8/2
+840.dat	33	0	0	0	connection 4/197
+841.dat	57	2	0	0	connection 6/224; connection 8/42
+8411.dat	2	1	0	0	
+842.dat	0	0	0	0	connection 8/43; no supported collision boxes
+843.dat	10	0	0	0	connection 6/225
+844.dat	0	0	0	0	connection 4/111; no supported collision boxes
+8442.dat	21	2	0	0	
+845.dat	0	0	0	0	connection 4/87; no supported collision boxes
+846.dat	0	0	0	0	connection 4/65; no supported collision boxes
+84868.dat	17	1	4	0	connection 0/10
+849.dat	0	0	0	0	connection 4/161; no supported collision boxes
+850.dat	18	0	0	0	connection 8/28
+851.dat	14	0	0	0	connection 8/26; connection 8/29
+852.dat	14	0	0	0	connection 8/27
+853.dat	0	0	0	0	connection 4/185; no supported collision boxes
+86148.dat	78	4	0	0	
+86876.dat	10	3	1	0	
+86996.dat	8	2	1	0	
+87375.dat	166	0	2	0	
+87398p01.dat	0	0	0	0	no Studio collider file; no Studio connection file
+88000.dat	31	2	0	0	
+88644p01.dat	0	0	0	0	no Studio collider file; no Studio connection file
+89648c03.dat	74	4	0	0	grid 2/30
+89681.dat	86	6	0	0	
+925.dat	29	2	0	0	
+92832.dat	204	8	0	0	
+947a.dat	22	2	0	0	grid 2/30
+947b.dat	14	2	0	0	grid 2/30
+957.dat	75	3	0	0	
+958.dat	1195	0	0	0	no Studio connection file
+962.dat	26	1	0	0	
+967.dat	101	2	0	0	connection 6/133
+98102.dat	64	1	1	0	
+98107.dat	1334	2	0	0	connection 0/10; connection 4/65388; connection 4/65389
+98878.dat	139	0	1	0	
+bl_4180.dat	38	2	2	0	
+bl_4365.dat	42	5	0	0	
+bl_4788c01.dat	706	7	0	0	connection 0/10
+bl_5057.dat	45	0	0	0	connection 0/6
+bl_5251.dat	371	10	0	0	
+bl_5256.dat	33	2	0	0	connection 0/6
+bl_5850.dat	10	3	0	0	
+bl_6493.dat	34	1	0	0	connection 0/2
+bl_6512.dat	38	2	2	0	grid 2/30
+bl_66897.dat	29	2	1	0	connection 6/3
+bl_7065.dat	11	0	1	0	
+bl_7081.dat	18	4	0	0	
+bl_7207.dat	6	1	0	0	grid 2/30
+bl_7219.dat	37	8	0	0	connection 0/2; grid 2/30
+bl_7241.dat	8	2	0	0	
+bl_7307.dat	0	0	6	0	grid 2/30; no Studio collider file
+bl_7426.dat	94	1	0	0	connection 0/6
+bl_7512.dat	10	3	0	0	
+bl_7518.dat	10	2	0	0	
+bl_7533.dat	16	2	0	0	grid 2/30
+bl_7613.dat	8	2	0	0	grid 2/30
+bl_7654.dat	32	2	0	0	connection 0/2; connection 0/6
+bl_7665.dat	9	2	0	0	
+bl_7674.dat	8	3	0	0	grid 2/30
+bl_7813.dat	31	6	0	0	connection 0/2; connection 0/6
+bl_7826.dat	10	1	0	0	
+bl_7871.dat	7	1	0	0	
+bl_7906.dat	4	1	0	0	
+bl_8010.dat	21	3	0	0	
+bl_8012.dat	5	1	0	0	grid 2/30
+bl_8034.dat	4	1	0	0	
+bl_8057.dat	13	3	0	0	connection 1/5
+bl_8079.dat	5	2	0	0	connection 6/33
+bl_8080.dat	20	2	1	0	connection 6/32; connection 6/62
+bl_8103.dat	17	3	0	0	grid 2/30
+bl_8135.dat	7	3	0	0	
+bl_8236.dat	63	4	0	0	
+bl_8241.dat	7	2	0	0	grid 2/30
+bl_8284.dat	0	0	14	0	grid 2/30; no Studio collider file
+bl_8295.dat	1	2	1	0	
+bl_89680.dat	120	7	0	0	grid 2/30
+u606.dat	0	0	0	0	no Studio collider file; no Studio connection file
+u608.dat	49	2	2	0	grid 2/30
+u609.dat	96	3	0	0	connection 0/10
+u669.dat	116	1	1	0	
+u686.dat	198	2	1	0	
+u9026.dat	12	2	0	0	
+u9143.dat	656	0	0	0	no Studio connection file
+u9154.dat	701	0	0	0	no Studio connection file
+u9155c01.dat	192	3	8	0	grid 2/30
+u9164.dat	100	0	15	0	grid 2/30
+u9165.dat	30	0	0	0	connection 0/14; connection 6/249
+u9166.dat	77	1	0	0	connection 6/248
+u9204c01.dat	918	5	2	0	
+u9205c01.dat	985	16	0	16	no Studio connection file
+u9206c01.dat	966	6	2	0	
+u9213.dat	492	1	0	0	
+u9370.dat	33	2	0	0	connection 6/1004
+u9370c01.dat	33	11	0	11	no Studio connection file
+u9370c02.dat	0	0	0	0	no Studio collider file; no Studio connection file
+u9370c03.dat	0	0	0	0	no Studio collider file; no Studio connection file
+u9370c04.dat	0	0	0	0	no Studio collider file; no Studio connection file
+u9371.dat	38	0	0	0	connection 6/1005
+u9412.dat	117	0	1	0	
+u9501c01.dat	46	2	0	0	connection 0/10; connection 6/28
+u9503c01.dat	48	2	0	0	connection 0/10; connection 6/28
+x508c01.dat	0	2	0	0	no Studio collider file

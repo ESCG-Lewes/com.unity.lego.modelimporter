@@ -2,6 +2,7 @@
 // Unauthorized copying of this file, via any medium is strictly prohibited
 
 using System;
+using System.Xml;
 using System.Collections.Generic;
 using System.IO;
 using UnityEditor;
@@ -170,6 +171,7 @@ namespace LEGOModelImporter
         /// <param name="undo">Whether or not to record undo on this action</param>
         public static void InstantiateModelBricks(LXFMLDoc lxfml, DictionaryIntToModelGroupImportSettings importSettings, ref Dictionary<int, Brick> resultBricks, int groupNumber = -1, bool undo = false)
         {
+            var studioConnections = new Dictionary<string, (XmlDocument document, string assetId)>(StringComparer.OrdinalIgnoreCase);
             for (var i = 0; i < lxfml.bricks.Count; ++i)
             {
                 if (i % 200 == 0)
@@ -199,9 +201,16 @@ namespace LEGOModelImporter
                 {
                     GameObject partToInstantiate = null;
 
-                    var partExistenceResult = PartUtility.UnpackPart(part.partDesignId, brickLightmapped, brickLod);
+                    var studioPart = !string.IsNullOrEmpty(part.studioPart);
+                    var partExistenceResult = studioPart
+                        ? new PartUtility.PartExistenceResult { designID = part.partDesignId, existence = PartUtility.PartExistence.Legacy }
+                        : PartUtility.UnpackPart(part.partDesignId, brickLightmapped, brickLod);
 
-                    if (partExistenceResult.existence != PartUtility.PartExistence.None)
+                    if (studioPart)
+                    {
+                        partToInstantiate = StudioPartBundles.Load(part.studioPart, brickLightmapped);
+                    }
+                    else if (partExistenceResult.existence != PartUtility.PartExistence.None)
                     {
                         // FIXME Make a note of changed design ids.
                         partToInstantiate = PartUtility.LoadPart(partExistenceResult.designID, brickLightmapped, partExistenceResult.existence == PartUtility.PartExistence.Legacy, brickLod);
@@ -209,7 +218,7 @@ namespace LEGOModelImporter
 
                     if (partToInstantiate == null)
                     {
-                        Debug.LogError("Missing part FBX -> " + partExistenceResult.designID);
+                        Debug.LogError("Missing part FBX -> " + (part.studioPart ?? partExistenceResult.designID));
                         continue;
                     }
                     var partGO = Object.Instantiate(partToInstantiate);
@@ -234,17 +243,34 @@ namespace LEGOModelImporter
                     }
 
                     // Create collider and connectivity information.
-                    var brickColliders = (group != null ? importSettings[group.number].colliders : false);
-                    var brickConnectivity = brickColliders && (group != null ? importSettings[group.number].connectivity : false);
+                    var brickColliders = group != null && importSettings[group.number].colliders;
+                    var brickConnectivity = brickColliders && importSettings[group.number].connectivity;
+                    var physicsId = partExistenceResult.designID;
+                    XmlDocument studioPrimitive = null;
+                    if (studioPart && brickColliders)
+                    {
+                        if (!studioConnections.TryGetValue(part.studioPart, out var metadata))
+                        {
+                            var document = StudioPartBundles.LoadConnections(part.studioPart);
+                            var id = document == null ? null :
+                                "Studio/" + Hash128.Compute(document.OuterXml) + "/" + Path.GetFileNameWithoutExtension(part.studioPart);
+                            metadata = (document, id);
+                            studioConnections.Add(part.studioPart, metadata);
+                        }
+                        studioPrimitive = metadata.document;
+                        physicsId = metadata.assetId;
+                        brickColliders = studioPrimitive?.SelectSingleNode("LEGOPrimitive/Collision/Box") != null;
+                        brickConnectivity &= brickColliders && studioPrimitive.SelectSingleNode("LEGOPrimitive/Connectivity/*") != null;
+                    }
 
                     if (brickColliders)
                     {
                         GameObject collidersToInstantiate = null;
 
-                        var collidersAvailable = PartUtility.UnpackCollidersForPart(partExistenceResult.designID);
+                        var collidersAvailable = PartUtility.UnpackCollidersForPart(physicsId, source: studioPrimitive);
                         if (collidersAvailable)
                         {
-                            collidersToInstantiate = PartUtility.LoadCollidersPrefab(partExistenceResult.designID);
+                            collidersToInstantiate = PartUtility.LoadCollidersPrefab(physicsId);
                         }
 
                         if (collidersToInstantiate == null && partExistenceResult.existence != PartUtility.PartExistence.Legacy)
@@ -269,10 +295,10 @@ namespace LEGOModelImporter
                     {
                         GameObject connectivityToInstantiate = null;
 
-                        var connectivityAvailable = PartUtility.UnpackConnectivityForPart(partExistenceResult.designID);
+                        var connectivityAvailable = PartUtility.UnpackConnectivityForPart(physicsId, source: studioPrimitive);
                         if (connectivityAvailable)
                         {
-                            connectivityToInstantiate = PartUtility.LoadConnectivityPrefab(partExistenceResult.designID);
+                            connectivityToInstantiate = PartUtility.LoadConnectivityPrefab(physicsId);
                         }
 
                         if (connectivityToInstantiate == null && partExistenceResult.existence != PartUtility.PartExistence.Legacy)
@@ -287,6 +313,10 @@ namespace LEGOModelImporter
                             connectivityGO.transform.SetParent(partGO.transform, false);
                             var connectivityComp = connectivityGO.GetComponent<Connectivity>();
                             partComp.connectivity = connectivityComp;
+                            if (studioPart)
+                            {
+                                connectivityComp.extents = ComputeBounds(partGO.transform);
+                            }
                             bounds = connectivityComp.extents;
                             connectivityComp.part = partComp;
 
@@ -305,7 +335,14 @@ namespace LEGOModelImporter
                         }
                     }
 
-                    PartImporter.SetMaterials(partComp, part.materials, partExistenceResult.existence == PartUtility.PartExistence.Legacy);
+                    if (studioPart)
+                    {
+                        PartImporter.SetStudioMaterials(partComp, part.materials);
+                    }
+                    else
+                    {
+                        PartImporter.SetMaterials(partComp, part.materials, partExistenceResult.existence == PartUtility.PartExistence.Legacy);
+                    }
                     PartImporter.SetDecorations(partComp, part.decorations, partExistenceResult.existence == PartUtility.PartExistence.Legacy);
 
                     SetStaticAndGIParams(partGO, brickStatic, brickLightmapped, true);

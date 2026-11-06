@@ -53,3 +53,39 @@ LEGO Companion License (“License”) Software Copyright © 2020 LEGO System A/
 For licensing details see [LICENSE.md](LICENSE.md)
 
 
+
+## Studio parts supplement
+
+Export a model from BrickLink Studio as **LDraw (.ldr)**, then open it in Unity
+with **LEGO Tools > Import Model**. This release adds FBX archives for animals,
+props and common building shapes such as plates, slopes, and doors and windows.
+The generator excludes Technic categories and skips flexible parts. Unity
+unpacks requested FBXs into `Assets/LEGO Data/Geometry/Studio` as needed.
+
+Supplemental parts use the model's main part colour and one level of detail.
+Enable **Colliders** and **Connectivity** when importing or reimporting a model
+to use the original Unity LEGO snapping system. The supplement converts
+supported Studio stud grids, clips, bars, and collision boxes. Some parts
+have missing data or use other connection types. See
+`Data/StudioConnections.tsv` for coverage by part. Printed colours and
+textures are outside the supplement's scope.
+
+To rebuild from the Studio library currently installed on your Mac, run
+`python3 Tools~/build_studio_parts.py`, then
+`python3 Tools~/build_studio_connections.py` from the package directory. On
+another installation, use `--studio <Studio installation folder>`. Each ZIP is
+independent and stays below 100,000,000 bytes. See `Data/StudioParts.tsv` for
+included part IDs and `Data/StudioParts-skipped.tsv` for conversion failures.
+
+The building-shapes bundle also includes bars, dishes, cylinders and exact
+Studio mould variants for small bricks, slopes, plates and tiles. Some of
+those variants previously shared a generic Unity mesh. Their exact geometry
+uses the supplemental import path with connection and collision data where
+available.
+
+Brick Building mode supports selecting and placing bricks without snap data,
+including visual-only parts. They can be decoupled from a group. Where Studio
+provides collision boxes but no usable connections, the generator can infer
+ordinary solid and hollow studs from explicit LDraw stud primitives.
+`Data/StudioConnections.tsv` identifies the inferred studs. Specialized joints
+still require authored connection data.

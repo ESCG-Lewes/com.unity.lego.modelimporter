@@ -4,6 +4,33 @@ All notable changes to this package will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
+## [8.0.5] - 2026-11-06
+
+### Added
+
+- Added support for 53 additional LDraw colour codes with LEGO Materials 3.0.2. All 226 palette codes from BrickLink Studio 2.26.10_1 resolved to Unity materials in a Unity 2022.3 import test.
+- Added approximate satin, glitter and speckle finishes using colour, opacity and surface settings.
+
+### Changed
+
+- Updated the LEGO Materials dependency to 3.0.2.
+
+### Fixed
+
+- Corrected Coral to use the existing Coral material.
+
+## [8.0.4] - 2026-11-06
+
+### Added
+
+- Added supplemental FBX bundles for 1,701 Studio parts across animals, props and building shapes.
+- Added Studio stud, clip and bar connectivity and collision boxes for supported parts. Added inferred studs where the source has explicit stud geometry and collision boxes.
+- Added free placement and decoupling for bricks without snap points.
+
+### Fixed
+
+- Decouple Selected Bricks now recognises selections made on a brick's mesh children.
+
 ## [8.0.1] - 2022-03-10
 
 ### Fixed

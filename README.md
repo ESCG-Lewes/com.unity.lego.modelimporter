@@ -17,10 +17,10 @@ Requires Unity 2021.2.7f1 or later and Git installed on your computer.
 
 1. Open **Window > Package Manager**.
 2. Click **+ > Add package from git URL**.
-3. Enter `https://github.com/ESCG-Lewes/com.unity.lego.modelimporter-8.0.2.git`.
+3. Enter `https://github.com/ESCG-Lewes/com.unity.lego.modelimporter.git`.
 4. Click **Add**.
 
-The package declares dependencies on LEGO Materials 3.0.0, Universal RP 12.1.2,
+The package declares dependencies on LEGO Materials 3.0.2, Universal RP 12.1.2,
 and Unity UI 1.0.0. Unity must be able to resolve these from its configured
 registries. If LEGO Materials cannot be resolved, install that package separately
 from its available source before adding this importer. Git dependencies belong
@@ -53,6 +53,10 @@ LEGO Companion License (“License”) Software Copyright © 2020 LEGO System A/
 For licensing details see [LICENSE.md](LICENSE.md)
 
 
+
+## BrickLink Studio 2 colour support
+
+Verified with **BrickLink Studio 2.26.10_1**. With the updated LEGO Model Importer and LEGO Materials packages installed, all 226 LDraw colour codes in that Studio palette resolve to Unity materials when importing `.ldr` models. Satin, glitter and speckle finishes are approximations. Glitter and speckle use material settings without individual rendered particles.
 
 ## Studio parts supplement
 

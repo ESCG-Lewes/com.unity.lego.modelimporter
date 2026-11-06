@@ -57,6 +57,46 @@
   <!-- === In LDraw, no official LEGO equivalent === -->
   <!-- Rubbers
        import them as non-rubber    --> <!-- LEGO Name / LDraw_Name -->
+  <Material ldraw="341" lego="200341" /> <!-- Studio Glitter Trans-Orange -->
+  <Material ldraw="360" lego="200360" /> <!-- Studio Satin Trans-Clear -->
+  <Material ldraw="362" lego="200362" /> <!-- Studio Satin Trans-Light Blue -->
+  <Material ldraw="363" lego="200363" /> <!-- Studio Satin Trans-Brown -->
+  <Material ldraw="364" lego="200364" /> <!-- Studio Satin Trans-Dark Pink -->
+  <Material ldraw="365" lego="200365" /> <!-- Studio Satin Trans-Purple -->
+  <Material ldraw="367" lego="200367" /> <!-- Studio Satin Trans-Bright Green -->
+  <Material ldraw="376" lego="200376" /> <!-- Studio Satin Trans-Yellow -->
+  <Material ldraw="402" lego="200402" /> <!-- Studio Reddish Orange -->
+  <Material ldraw="422" lego="200422" /> <!-- Studio Sienna -->
+  <Material ldraw="423" lego="200423" /> <!-- Studio Umber -->
+  <Material ldraw="424" lego="200424" /> <!-- Studio Ochre Yellow -->
+  <Material ldraw="430" lego="200430" /> <!-- Studio Warm Pink -->
+  <Material ldraw="431" lego="200431" /> <!-- Studio Blue Violet -->
+  <Material ldraw="510" lego="200510" /> <!-- Studio Fabuland Lime -->
+  <Material ldraw="10010" lego="210010" /> <!-- Studio Rubber Bright Green -->
+  <Material ldraw="10019" lego="210019" /> <!-- Studio Rubber Tan -->
+  <Material ldraw="10029" lego="210029" /> <!-- Studio Rubber Bright Pink -->
+  <Material ldraw="10030" lego="210030" /> <!-- Studio Rubber Medium Lavender -->
+  <Material ldraw="10035" lego="210035" /> <!-- Studio Rubber Trans-Bright Green -->
+  <Material ldraw="10036" lego="210036" /> <!-- Studio Rubber Trans-Red -->
+  <Material ldraw="10043" lego="210043" /> <!-- Studio Rubber Trans-Light Blue -->
+  <Material ldraw="10072" lego="210072" /> <!-- Studio Rubber Dark Bluish Gray -->
+  <Material ldraw="10073" lego="210073" /> <!-- Studio Rubber Medium Blue -->
+  <Material ldraw="10078" lego="210078" /> <!-- Studio Rubber Light Nougat -->
+  <Material ldraw="10179" lego="210179" /> <!-- Studio Bionicle Silver -->
+  <Material ldraw="10351" lego="210351" /> <!-- Studio Glitter Trans-Bright Green -->
+  <Material ldraw="10366" lego="210366" /> <!-- Studio Satin Trans-Dark Blue -->
+  <Material ldraw="10375" lego="210375" /> <!-- Studio Trans-Black -->
+  <Material ldraw="10378" lego="210378" /> <!-- Studio Rubber Sand Green -->
+  <Material ldraw="100003" lego="300003" /> <!-- Studio Dark Yellow -->
+  <Material ldraw="100007" lego="300007" /> <!-- Studio Neon Orange -->
+  <Material ldraw="100009" lego="300009" /> <!-- Studio Neon Green -->
+  <Material ldraw="100040" lego="210375" /> <!-- Studio Trans-Black -->
+  <Material ldraw="100167" lego="200402" /> <!-- Studio Reddish Orange -->
+  <Material ldraw="100238" lego="300238" /> <!-- Studio Bionicle Gold -->
+  <Material ldraw="100241" lego="300241" /> <!-- Studio Medium Tan -->
+  <Material ldraw="100249" lego="300249" /> <!-- Studio Reddish Copper -->
+  <Material ldraw="100255" lego="300255" /> <!-- Studio Pearl Brown -->
+  <Material ldraw="100273" lego="300273" /> <!-- Studio Bionicle Copper -->
   <Material ldraw="511"   lego="1"   /> <!-- White / Rubber_White -->
   <Material ldraw="375"   lego="2"   /> <!-- Grey / Rubber_Light_Gray -->
   <Material ldraw="324"   lego="21"  /> <!-- Bright Red / Rubber_Red -->
@@ -87,7 +127,7 @@
   <Material ldraw="64"    lego="26"  /> <!-- Black / Chrome_Black -->
   <Material ldraw="493"   lego="26"  /> <!-- Black / Magnet -->
   <Material ldraw="10047" lego="40"  /> <!-- Transparent / Trans_Sticker -->
-  <Material ldraw="132"   lego="132" /> <!-- Black Glitter / Speckle_Black_Silver -->
+  <Material ldraw="132"   lego="200132" /> <!-- Black Glitter / Speckle_Black_Silver -->
   <Material ldraw="495"   lego="139" /> <!-- Copper / Electric_Contact_Copper -->
   <Material ldraw="63"    lego="218" /> <!-- Reddish Lilac / Chrome_Pink -->
   <Material ldraw="80"    lego="298" /> <!-- Cool Silver, Drum Lacquered / Metallic_Silver -->
@@ -95,17 +135,17 @@
 
   <!-- === In LDraw, known LEGO colours but not in LDD === -->
   <!-- Import them as-should-be (= invisible but with shadows) --> <!-- LEGO Name / LDraw_Name -->
-  <Material ldraw="133"   lego="132" /> <!-- Black Glitter / Speckle_Black_Gold -->
-  <Material ldraw="293"   lego="293" /> <!-- Transparent Light Royal Blue / Trans_Light_Blue_Violet -->
-  <Material ldraw="295"   lego="295" /> <!-- Flamingo Pink / Flamingo_Pink -->
-  <Material ldraw="82"    lego="299" /> <!-- Warm Gold, Drum Lacquered / Gold Metalized / Laquered Gold / Metallic_Gold -->
-  <Material ldraw="300"   lego="300" /> <!-- Copper Drum Lacq / Metallic_Copper -->
+  <Material ldraw="133"   lego="200133" /> <!-- Black Glitter / Speckle_Black_Gold -->
+  <Material ldraw="293"   lego="200293" /> <!-- Transparent Light Royal Blue / Trans_Light_Blue_Violet -->
+  <Material ldraw="295"   lego="200295" /> <!-- Flamingo Pink / Flamingo_Pink -->
+  <Material ldraw="82"    lego="200082" /> <!-- Warm Gold, Drum Lacquered / Gold Metalized / Laquered Gold / Metallic_Gold -->
+  <Material ldraw="300"   lego="200300" /> <!-- Copper Drum Lacq / Metallic_Copper -->
   <Material ldraw="135"   lego="301" /> <!-- Silver / Pearl_Light_Grey -->
-  <Material ldraw="302"   lego="302" /> <!-- Transparent Light Blue with Glitter 2% / Glitter_Trans_Light_Blue -->
-  <Material ldraw="76"    lego="304" /> <!-- Cool Silver, Diffuse / Speckle_Dark_Bluish_Gray_Silver -->
-  <Material ldraw="75"    lego="306" /> <!-- Defused Copper / Speckle_Black_Copper -->
+  <Material ldraw="302"   lego="200302" /> <!-- Transparent Light Blue with Glitter 2% / Glitter_Trans_Light_Blue -->
+  <Material ldraw="76"    lego="200076" /> <!-- Cool Silver, Diffuse / Speckle_Dark_Bluish_Gray_Silver -->
+  <Material ldraw="75"    lego="200075" /> <!-- Defused Copper / Speckle_Black_Copper -->
   <Material ldraw="87"    lego="337" /> <!-- Titanium / Metallic_Dark_Grey -->
-  <Material ldraw="339"   lego="339" /> <!-- Transparent Fluorescent Green with Glitter 2% / Glitter_Trans_Neon_green -->
+  <Material ldraw="339"   lego="200339" /> <!-- Transparent Fluorescent Green with Glitter 2% / Glitter_Trans_Neon_green -->
   <!-- See 16 Pink below,
    Material ldraw="353"   lego="353" / --> <!-- Vibrant Coral / Coral -->
 
@@ -150,7 +190,7 @@
   <!-- Officialy, LDraw-353 should be Lego-353.
        For “near-enough”, LDraw-353 should be Lego-223, -101, -4,or -16,
        first 3 already officially matched. -->
-  <Material ldraw="353"   lego="16"  /> <!-- Pink / Coral -->
+  <Material ldraw="353"   lego="353"  /> <!-- Vibrant Coral / Coral -->
 
   <!-- === In LDD and in LDraw === -->
   <!-- Hidden in LDD                --> <!-- LEGO Name / LDraw_Name -->
@@ -172,16 +212,16 @@
   <Material ldraw="32"    lego="109" /> <!-- (PC) Black IR / Trans_Black_IR_Lens -->
   <Material ldraw="110"   lego="110" /> <!-- Bright Bluish Violet / Violet -->
   <Material ldraw="112"   lego="112" /> <!-- Medium Bluish Violet / Medium_Violet -->
-  <Material ldraw="114"   lego="114" /> <!-- Transparent Pink Glitter / Transparent Medium Reddish Violet Glitter / Glitter_Trans_Dark_Pink -->
+  <Material ldraw="114"   lego="200114" /> <!-- Transparent Pink Glitter / Transparent Medium Reddish Violet Glitter / Glitter_Trans_Dark_Pink -->
   <Material ldraw="115"   lego="115" /> <!-- Medium Yellowish Green / Medium_Lime -->
   <Material ldraw="11"    lego="116" /> <!-- Medium Bluish Green / Light_Turquoise -->
-  <Material ldraw="117"   lego="117" /> <!-- Transparent with Glitter / Glitter_Trans_Clear -->
+  <Material ldraw="117"   lego="200117" /> <!-- Transparent with Glitter / Glitter_Trans_Clear -->
   <Material ldraw="118"   lego="118" /> <!-- Light Bluish Green / Aqua -->
   <Material ldraw="120"   lego="120" /> <!-- Light Yellowish Green / Light_Lime -->
   <Material ldraw="125"   lego="125" /> <!-- Light Orange / Light_Orange -->
   <Material ldraw="142"   lego="127" /> <!-- Gold / Pearl_Light_Gold -->
   <Material ldraw="128"   lego="128" /> <!-- Dark Nougat / Dark_Nougat -->
-  <Material ldraw="129"   lego="129" /> <!-- Transparent Bluish Violet (Glitter) / Glitter_Trans_Purple -->
+  <Material ldraw="129"   lego="200129" /> <!-- Transparent Bluish Violet (Glitter) / Glitter_Trans_Purple -->
   <Material ldraw="179"   lego="131" /> <!-- Silver / Flat_Silver -->
   <Material ldraw="373"   lego="136" /> <!-- Sand Violet / Sand_Purple -->
   <Material ldraw="148"   lego="148" /> <!-- Metallic Dark Grey / Pearl_Dark_Gray -->

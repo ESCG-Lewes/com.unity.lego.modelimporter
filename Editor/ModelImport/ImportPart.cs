@@ -45,10 +45,17 @@ namespace LEGOModelImporter
         private void OnEnable()
         {
             logoTexture = AssetDatabase.LoadAssetAtPath<Texture>("Packages/com.unity.lego.modelimporter/Textures/LEGO logo.png");
+            if (partList == null) partList = PartUtility.GetPartList() ?? new List<string>();
+            if (filteredPartList == null) filteredPartList = new List<string>();
+            if (searchPart == null) searchPart = string.Empty;
         }
 
         private void OnGUI()
         {
+            if (partList == null) partList = PartUtility.GetPartList() ?? new List<string>();
+            if (filteredPartList == null) filteredPartList = new List<string>();
+            if (searchPart == null) searchPart = string.Empty;
+
             var labelWidth = 110.0f;
 
             minSize = new Vector2(leftMargin + labelWidth + 260, 226);

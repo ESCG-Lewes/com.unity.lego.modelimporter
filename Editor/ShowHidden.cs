@@ -5,7 +5,7 @@ using UnityEngine;
 // Editor utility for inspecting hidden imported LEGO body parts in loaded scenes.
 public static class ShowHidden
 {
-    const string k_menu = "I wish to see all objects/Show Hidden Objects";
+    const string k_menu = "LEGO Tools/Show Hidden Objects";
     static readonly Dictionary<Object, HideFlags> s_OriginalFlags = new Dictionary<Object, HideFlags>();
     static bool s_Showing;
 

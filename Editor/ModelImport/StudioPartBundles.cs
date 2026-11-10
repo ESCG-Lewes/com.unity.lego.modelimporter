@@ -12,7 +12,7 @@ namespace LEGOModelImporter
     internal static class StudioPartBundles
     {
         internal static readonly string GeometryPath = PartUtility.geometryPath + "/Studio";
-        private static readonly Regex ArchiveName = new Regex(@"\AStudioParts-(Animals|Props|Shapes)-[0-9]+\.zip\z");
+        private static readonly Regex ArchiveName = new Regex(@"\AStudioParts-(Animals|Props|Shapes|Minifigs)-[0-9]+\.zip\z");
         private static readonly Regex PartName = new Regex(@"\A[a-z0-9_.+-]+\.dat\z");
         private static readonly Regex Revision = new Regex(@"\A[0-9a-f]{16}\z");
 

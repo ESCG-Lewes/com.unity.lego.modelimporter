@@ -22,6 +22,13 @@ BUILDING_FAMILIES = ("Brick", "Slope", "Plate", "Tile", "Cylinder", "Dish", "Bar
 SMALL_FOOTPRINT = re.compile(r"\b[1-3]\s*x\s*[1-3]\b(?!\s*/)", re.IGNORECASE)
 MOULD_VARIANT = re.compile(r"[0-9]+[a-z]\.dat", re.ASCII)
 OBJECT_SUBCATEGORIES = {"Minifigure, Utensil", "Minifigure, Weapon", "Minifigure, Shield"}
+MINIFIG_SUBCATEGORIES = {
+    "Minifigure, Body Part", "Minifigure, Body Wear", "Minifigure, Hair",
+    "Minifigure, Head", "Minifigure, Head, Modified", "Minifigure, Headgear",
+    "Minifigure, Headgear Accessory", "Minifigure, Legs", "Minifigure, Legs, Decorated",
+    "Minifigure, Legs, Modified", "Minifigure, Legs, Modified, Decorated",
+    "Minifigure, Torso", "Minifigure, Torso Assembly", "Minifigure, Torso Assembly, Decor."
+}
 
 
 def rows(path):
@@ -36,21 +43,31 @@ def catalogue(studio):
         for row in rows(data / "StudioCategoryDefinition.txt")
         if row["Shape Name"].strip() == "Object"
         or row["BL CatalogName"].strip().startswith(tuple(OBJECT_SUBCATEGORIES))
+        or row["BL CatalogName"].strip() in MINIFIG_SUBCATEGORIES
         or row["BL Index"] in {"3", "6", "41", "42", "68"}
         or row["Shape Name"].strip() in COMMON_SHAPES
     }
     for row in rows(data / "StudioPartDefinition2.txt"):
         category = categories.get((row["BLCatalogIndex"], row["BLCatalogSubIndex"]))
         name = row["LDraw ItemNo"].strip().lower()
+        if name and not name.endswith(".dat"):
+            name = "bl_" + name + ".dat"
         if category and PART_NAME.fullmatch(name) and not row["flexible type"].strip():
             label, shape = category
             description = row["Description"]
             building_shape = shape in COMMON_SHAPES or label == "Bar"
             if label.startswith("Technic") or (building_shape and row["IsDecorated"].strip().casefold() != "false"):
                 continue
+            # Printed variants reuse the same mould and need decoration assets
+            # that are not part of the FBX geometry set. Keep the unprinted
+            # minifigure legs, torsos, heads, hair and hats here.
+            if row["BLCatalogIndex"] == "59" and row["IsDecorated"].strip().casefold() != "false":
+                continue
             if label == "Bar" and re.search(r"\bTechnic\b", description, re.IGNORECASE):
                 continue
-            if row["BLCatalogIndex"] == "3":
+            if row["BLCatalogIndex"] == "59":
+                group = "Minifigs"
+            elif row["BLCatalogIndex"] == "3":
                 group = "Animals"
             else:
                 group = "Shapes" if building_shape else "Props"
@@ -288,7 +305,9 @@ def build(studio, data, output, only):
             and MOULD_VARIANT.fullmatch(name)
             and (SMALL_FOOTPRINT.search(description) or category in {"Bar", "Cylinder", "Dish"})
         )
-        if name not in known or exact_mould:
+        # Keep the supplemental minifigure set even when Studio's mapping
+        # also lists the design, since the packaged LDraw library may not.
+        if name not in known or exact_mould or group == "Minifigs":
             selected[name] = (group, category, description)
     if only:
         selected = {name: selected[name] for name in only}

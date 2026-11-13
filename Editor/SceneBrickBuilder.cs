@@ -56,16 +56,6 @@ namespace LEGOModelImporter
         public const string nudgeDownMenuPath = "LEGO Tools/Rotate/Nudge Brick Down";
         public const string nudgeRightMenuPath = "LEGO Tools/Rotate/Nudge Brick Right";
 
-        private const string rotateUpModifierMenuPath = "LEGO Tools/Rotate/Rotate Brick Up (Modifier)";
-        private const string rotateLeftModifierMenuPath = "LEGO Tools/Rotate/Rotate Brick Left (Modifier)";
-        private const string rotateDownModifierMenuPath = "LEGO Tools/Rotate/Rotate Brick Down (Modifier)";
-        private const string rotateRightModifierMenuPath = "LEGO Tools/Rotate/Rotate Brick Right (Modifier)";
-
-        private const string moveForwardMenuPath = "LEGO Tools/Move/Move Brick Forward";
-        private const string moveBackwardMenuPath = "LEGO Tools/Move/Move Brick Backward";
-        private const string moveLeftMenuPath = "LEGO Tools/Move/Move Brick Left";
-        private const string moveRightMenuPath = "LEGO Tools/Move/Move Brick Right";
-
         #endregion
         #region Selection
         private static List<GameObject> queuedSelection = null;
@@ -101,6 +91,7 @@ namespace LEGOModelImporter
             {
                 rotateDirection = InteractionKey.None;
                 nudgeDirection = InteractionKey.None;
+                directRotateKeyDown = KeyCode.None;
                 currentSelectionState = value;
             }
         }
@@ -143,6 +134,7 @@ namespace LEGOModelImporter
         private static InteractionKey nudgeDirection = InteractionKey.None;
         private static InteractionKey rotateDirection = InteractionKey.None;
         private static ShortcutBinding currentShortcutDown;
+        private static KeyCode directRotateKeyDown = KeyCode.None;
 
         public static event Action<IEnumerable<Brick>> bricksMoved;
         public static event Action<IEnumerable<Brick>> bricksPlaced;
@@ -779,90 +771,113 @@ namespace LEGOModelImporter
             rotateDirection = key;
         }
 
-        /// <summary>
-        /// Limits the plain WASD and arrow key shortcuts to an active brick selection in the focused scene view.
-        /// This keeps the keys from interfering with normal scene view navigation and Unity's transform tools
-        /// when no bricks are selected.
-        /// </summary>
-        public class BrickSelectionShortcutContext : IShortcutContext
+        private static void HandleDirectSelectionKeys(Event current)
         {
-            public bool active => ToolsSettings.IsBrickBuildingOn
-                && !EditorApplication.isPlayingOrWillChangePlaymode
-                && CurrentSelectionState == SelectionState.Selected
-                && SceneView.lastActiveSceneView != null
-                && EditorWindow.focusedWindow == SceneView.lastActiveSceneView;
+            if(current == null)
+            {
+                return;
+            }
+
+            if(current.type == EventType.KeyUp)
+            {
+                if(current.keyCode == directRotateKeyDown)
+                {
+                    directRotateKeyDown = KeyCode.None;
+                }
+                return;
+            }
+
+            if(current.type != EventType.KeyDown || CurrentSelectionState != SelectionState.Selected)
+            {
+                return;
+            }
+
+            if(EditorApplication.isPlayingOrWillChangePlaymode || SceneView.lastActiveSceneView == null || EditorWindow.focusedWindow != SceneView.lastActiveSceneView)
+            {
+                return;
+            }
+
+            // Plain keys only. Modified keys are handled by the Shortcut Manager bindings above.
+            if(current.modifiers != EventModifiers.None)
+            {
+                return;
+            }
+
+            switch(current.keyCode)
+            {
+                case KeyCode.W:
+                    nudgeDirection = InteractionKey.Forward;
+                    current.Use();
+                    break;
+                case KeyCode.S:
+                    nudgeDirection = InteractionKey.Backward;
+                    current.Use();
+                    break;
+                case KeyCode.A:
+                    nudgeDirection = InteractionKey.Left;
+                    current.Use();
+                    break;
+                case KeyCode.D:
+                    nudgeDirection = InteractionKey.Right;
+                    current.Use();
+                    break;
+                case KeyCode.LeftArrow:
+                    if(directRotateKeyDown != KeyCode.LeftArrow)
+                    {
+                        directRotateKeyDown = KeyCode.LeftArrow;
+                        DoRotate(rotateLeftMenuPath, InteractionKey.Left, false);
+                    }
+                    current.Use();
+                    break;
+                case KeyCode.RightArrow:
+                    if(directRotateKeyDown != KeyCode.RightArrow)
+                    {
+                        directRotateKeyDown = KeyCode.RightArrow;
+                        DoRotate(rotateRightMenuPath, InteractionKey.Right, false);
+                    }
+                    current.Use();
+                    break;
+                case KeyCode.UpArrow:
+                    if(directRotateKeyDown != KeyCode.UpArrow)
+                    {
+                        directRotateKeyDown = KeyCode.UpArrow;
+                        DoRotate(rotateUpMenuPath, InteractionKey.Up, false);
+                    }
+                    current.Use();
+                    break;
+                case KeyCode.DownArrow:
+                    if(directRotateKeyDown != KeyCode.DownArrow)
+                    {
+                        directRotateKeyDown = KeyCode.DownArrow;
+                        DoRotate(rotateDownMenuPath, InteractionKey.Down, false);
+                    }
+                    current.Use();
+                    break;
+            }
         }
 
-        [Shortcut(rotateLeftMenuPath, typeof(BrickSelectionShortcutContext), KeyCode.LeftArrow)]
+        [Shortcut(rotateLeftMenuPath, KeyCode.LeftArrow, ShortcutModifiers.Action)]
         private static void RotateLeft()
         {
             DoRotate(rotateLeftMenuPath, InteractionKey.Left);
         }
 
-        [Shortcut(rotateRightMenuPath, typeof(BrickSelectionShortcutContext), KeyCode.RightArrow)]
+        [Shortcut(rotateRightMenuPath, KeyCode.RightArrow, ShortcutModifiers.Action)]
         private static void RotateRight()
         {
             DoRotate(rotateRightMenuPath, InteractionKey.Right);
         }
 
-        [Shortcut(rotateUpMenuPath, typeof(BrickSelectionShortcutContext), KeyCode.UpArrow)]
+        [Shortcut(rotateUpMenuPath, KeyCode.UpArrow, ShortcutModifiers.Action)]
         private static void RotateUp()
         {   
             DoRotate(rotateUpMenuPath, InteractionKey.Up);
         }
 
-        [Shortcut(rotateDownMenuPath, typeof(BrickSelectionShortcutContext), KeyCode.DownArrow)]
+        [Shortcut(rotateDownMenuPath, KeyCode.DownArrow, ShortcutModifiers.Action)]
         private static void RotateDown()
         {
             DoRotate(rotateDownMenuPath, InteractionKey.Down);
-        }
-
-        [Shortcut(rotateLeftModifierMenuPath, KeyCode.LeftArrow, ShortcutModifiers.Action)]
-        private static void RotateLeftWithModifier()
-        {
-            DoRotate(rotateLeftModifierMenuPath, InteractionKey.Left);
-        }
-
-        [Shortcut(rotateRightModifierMenuPath, KeyCode.RightArrow, ShortcutModifiers.Action)]
-        private static void RotateRightWithModifier()
-        {
-            DoRotate(rotateRightModifierMenuPath, InteractionKey.Right);
-        }
-
-        [Shortcut(rotateUpModifierMenuPath, KeyCode.UpArrow, ShortcutModifiers.Action)]
-        private static void RotateUpWithModifier()
-        {
-            DoRotate(rotateUpModifierMenuPath, InteractionKey.Up);
-        }
-
-        [Shortcut(rotateDownModifierMenuPath, KeyCode.DownArrow, ShortcutModifiers.Action)]
-        private static void RotateDownWithModifier()
-        {
-            DoRotate(rotateDownModifierMenuPath, InteractionKey.Down);
-        }
-
-        [Shortcut(moveForwardMenuPath, typeof(BrickSelectionShortcutContext), KeyCode.W)]
-        private static void MoveForward()
-        {
-            nudgeDirection = InteractionKey.Forward;
-        }
-
-        [Shortcut(moveBackwardMenuPath, typeof(BrickSelectionShortcutContext), KeyCode.S)]
-        private static void MoveBackward()
-        {
-            nudgeDirection = InteractionKey.Backward;
-        }
-
-        [Shortcut(moveLeftMenuPath, typeof(BrickSelectionShortcutContext), KeyCode.A)]
-        private static void MoveLeft()
-        {
-            nudgeDirection = InteractionKey.Left;
-        }
-
-        [Shortcut(moveRightMenuPath, typeof(BrickSelectionShortcutContext), KeyCode.D)]
-        private static void MoveRight()
-        {
-            nudgeDirection = InteractionKey.Right;
         }
 
         [Shortcut(nudgeLeftMenuPath, KeyCode.LeftArrow, ShortcutModifiers.Alt | ShortcutModifiers.Action)]
@@ -1885,6 +1900,7 @@ namespace LEGOModelImporter
             UpdateRemovedBricks();
 
             HandleRotateGizmo(sceneView.camera);
+            HandleDirectSelectionKeys(currentEvent);
 
             if (isCurrentPickingEvent)
             {

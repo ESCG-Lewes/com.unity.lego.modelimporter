@@ -2504,13 +2504,27 @@ namespace LEGOModelImporter
             SyncSceneBricks();
         }
 
-        private static void SyncAndUpdateBrickCollision(ICollection<Brick> bricksToSync)
+        private static void SyncAndUpdateBrickCollision(ICollection<Brick> bricksToSync, HashSet<Brick> ignoredBricks = null)
         {
             var previouslyColliding = new HashSet<Brick>();
             foreach (var brick in bricksToSync)
             {
+                // Bricks from a freshly imported model are known to be placed correctly.
+                // Their colliders intentionally interlock at studs and tubes, so do not
+                // report them as colliding or disconnect the connectivity that was just
+                // detected. This also keeps the imported hierarchy grouped.
+                if (ignoredBricks != null && ignoredBricks.Contains(brick))
+                {
+                    brick.UpdateColliding(false, ToolsSettings.IsBrickBuildingOn, false);
+                    if (!ToolsSettings.IsBrickBuildingOn)
+                    {
+                        brick.SetGhosted(false, false);
+                    }
+                    continue;
+                }
+
                 var didBrickCollide = brick.colliding;
-                brick.UpdateColliding(brick.IsColliding(out _), ToolsSettings.IsBrickBuildingOn, false);
+                brick.UpdateColliding(brick.IsColliding(out _, ignoredBricks), ToolsSettings.IsBrickBuildingOn, false);
                 if (brick.colliding)
                 {
                     brick.DisconnectAll();
@@ -2535,11 +2549,11 @@ namespace LEGOModelImporter
             }
         }
 
-        public static void SyncAndUpdateBrickCollision(bool forceSync = true)
+        public static void SyncAndUpdateBrickCollision(bool forceSync = true, HashSet<Brick> ignoredBricks = null)
         {
             sceneChanged = forceSync;
             SyncSceneBricks();
-            SyncAndUpdateBrickCollision(bricks);
+            SyncAndUpdateBrickCollision(bricks, ignoredBricks);
         }
 
         private static void ActiveSceneChanged(Scene previous, Scene active)

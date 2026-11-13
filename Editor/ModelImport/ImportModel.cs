@@ -387,7 +387,11 @@ namespace LEGOModelImporter
                         Selection.activeGameObject = model.gameObject;
                         Physics.SyncTransforms();
                     }
-                    SceneBrickBuilder.SyncAndUpdateBrickCollision(true);
+                    // Treat the bricks of the imported model as already valid. Checking them
+                    // against each other flags interlocking studs/tubes as collisions, which
+                    // ghosts the parts and disconnects the newly imported groups.
+                    var importedBricks = new HashSet<Brick>(model.GetComponentsInChildren<Brick>());
+                    SceneBrickBuilder.SyncAndUpdateBrickCollision(true, importedBricks);
                 }                
             }
 

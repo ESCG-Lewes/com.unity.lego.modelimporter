@@ -30,7 +30,9 @@ namespace LEGOModelImporter
             Left,
             Right,
             Up,
-            Down
+            Down,
+            Forward,
+            Backward
         }
 
         enum BrickBuildingState
@@ -53,6 +55,16 @@ namespace LEGOModelImporter
         public const string nudgeLeftMenuPath = "LEGO Tools/Rotate/Nudge Brick Left";
         public const string nudgeDownMenuPath = "LEGO Tools/Rotate/Nudge Brick Down";
         public const string nudgeRightMenuPath = "LEGO Tools/Rotate/Nudge Brick Right";
+
+        private const string rotateUpModifierMenuPath = "LEGO Tools/Rotate/Rotate Brick Up (Modifier)";
+        private const string rotateLeftModifierMenuPath = "LEGO Tools/Rotate/Rotate Brick Left (Modifier)";
+        private const string rotateDownModifierMenuPath = "LEGO Tools/Rotate/Rotate Brick Down (Modifier)";
+        private const string rotateRightModifierMenuPath = "LEGO Tools/Rotate/Rotate Brick Right (Modifier)";
+
+        private const string moveForwardMenuPath = "LEGO Tools/Move/Move Brick Forward";
+        private const string moveBackwardMenuPath = "LEGO Tools/Move/Move Brick Backward";
+        private const string moveLeftMenuPath = "LEGO Tools/Move/Move Brick Left";
+        private const string moveRightMenuPath = "LEGO Tools/Move/Move Brick Right";
 
         #endregion
         #region Selection
@@ -767,28 +779,90 @@ namespace LEGOModelImporter
             rotateDirection = key;
         }
 
-        [Shortcut(rotateLeftMenuPath, KeyCode.LeftArrow, ShortcutModifiers.Action)]
+        /// <summary>
+        /// Limits the plain WASD and arrow key shortcuts to an active brick selection in the focused scene view.
+        /// This keeps the keys from interfering with normal scene view navigation and Unity's transform tools
+        /// when no bricks are selected.
+        /// </summary>
+        public class BrickSelectionShortcutContext : IShortcutContext
+        {
+            public bool active => ToolsSettings.IsBrickBuildingOn
+                && !EditorApplication.isPlayingOrWillChangePlaymode
+                && CurrentSelectionState == SelectionState.Selected
+                && SceneView.lastActiveSceneView != null
+                && EditorWindow.focusedWindow == SceneView.lastActiveSceneView;
+        }
+
+        [Shortcut(rotateLeftMenuPath, typeof(BrickSelectionShortcutContext), KeyCode.LeftArrow)]
         private static void RotateLeft()
         {
             DoRotate(rotateLeftMenuPath, InteractionKey.Left);
         }
 
-        [Shortcut(rotateRightMenuPath, KeyCode.RightArrow, ShortcutModifiers.Action)]
+        [Shortcut(rotateRightMenuPath, typeof(BrickSelectionShortcutContext), KeyCode.RightArrow)]
         private static void RotateRight()
         {
             DoRotate(rotateRightMenuPath, InteractionKey.Right);
         }
 
-        [Shortcut(rotateUpMenuPath, KeyCode.UpArrow, ShortcutModifiers.Action)]
+        [Shortcut(rotateUpMenuPath, typeof(BrickSelectionShortcutContext), KeyCode.UpArrow)]
         private static void RotateUp()
         {   
             DoRotate(rotateUpMenuPath, InteractionKey.Up);
         }
 
-        [Shortcut(rotateDownMenuPath, KeyCode.DownArrow, ShortcutModifiers.Action)]
+        [Shortcut(rotateDownMenuPath, typeof(BrickSelectionShortcutContext), KeyCode.DownArrow)]
         private static void RotateDown()
         {
             DoRotate(rotateDownMenuPath, InteractionKey.Down);
+        }
+
+        [Shortcut(rotateLeftModifierMenuPath, KeyCode.LeftArrow, ShortcutModifiers.Action)]
+        private static void RotateLeftWithModifier()
+        {
+            DoRotate(rotateLeftModifierMenuPath, InteractionKey.Left);
+        }
+
+        [Shortcut(rotateRightModifierMenuPath, KeyCode.RightArrow, ShortcutModifiers.Action)]
+        private static void RotateRightWithModifier()
+        {
+            DoRotate(rotateRightModifierMenuPath, InteractionKey.Right);
+        }
+
+        [Shortcut(rotateUpModifierMenuPath, KeyCode.UpArrow, ShortcutModifiers.Action)]
+        private static void RotateUpWithModifier()
+        {
+            DoRotate(rotateUpModifierMenuPath, InteractionKey.Up);
+        }
+
+        [Shortcut(rotateDownModifierMenuPath, KeyCode.DownArrow, ShortcutModifiers.Action)]
+        private static void RotateDownWithModifier()
+        {
+            DoRotate(rotateDownModifierMenuPath, InteractionKey.Down);
+        }
+
+        [Shortcut(moveForwardMenuPath, typeof(BrickSelectionShortcutContext), KeyCode.W)]
+        private static void MoveForward()
+        {
+            nudgeDirection = InteractionKey.Forward;
+        }
+
+        [Shortcut(moveBackwardMenuPath, typeof(BrickSelectionShortcutContext), KeyCode.S)]
+        private static void MoveBackward()
+        {
+            nudgeDirection = InteractionKey.Backward;
+        }
+
+        [Shortcut(moveLeftMenuPath, typeof(BrickSelectionShortcutContext), KeyCode.A)]
+        private static void MoveLeft()
+        {
+            nudgeDirection = InteractionKey.Left;
+        }
+
+        [Shortcut(moveRightMenuPath, typeof(BrickSelectionShortcutContext), KeyCode.D)]
+        private static void MoveRight()
+        {
+            nudgeDirection = InteractionKey.Right;
         }
 
         [Shortcut(nudgeLeftMenuPath, KeyCode.LeftArrow, ShortcutModifiers.Alt | ShortcutModifiers.Action)]
@@ -874,6 +948,16 @@ namespace LEGOModelImporter
                     offset = -up * increment;
                 }
                 break;
+                case InteractionKey.Forward:
+                {
+                    offset = GetCameraForwardOnGroundPlane(camera) * BrickBuildingUtility.LU_10;
+                }
+                break;
+                case InteractionKey.Backward:
+                {
+                    offset = -GetCameraForwardOnGroundPlane(camera) * BrickBuildingUtility.LU_10;
+                }
+                break;
             }
 
             foreach (var brick in selectedBricks)
@@ -888,6 +972,23 @@ namespace LEGOModelImporter
             previouslyColliding.UnionWith(RecomputeConnectionsAfterNudgeRotate(previouslyColliding));
 
             bricksMoved?.Invoke(previouslyColliding.Union(selectedBricks));
+        }
+
+        private static Vector3 GetCameraForwardOnGroundPlane(Camera camera)
+        {
+            var forward = Vector3.ProjectOnPlane(camera.transform.forward, Vector3.up);
+            if(forward.sqrMagnitude < 0.0001f)
+            {
+                // When looking straight down, use the camera's up direction as the ground-plane forward.
+                forward = Vector3.ProjectOnPlane(camera.transform.up, Vector3.up);
+            }
+
+            if(forward.sqrMagnitude < 0.0001f)
+            {
+                forward = Vector3.forward;
+            }
+
+            return MathUtils.SnapMajorAxis(forward.normalized, true).normalized;
         }
 
         private static bool FindConnection(Brick brick, out (Connection, Connection) resultConnection, ICollection<ConnectionField> onlyConnectTo = null)

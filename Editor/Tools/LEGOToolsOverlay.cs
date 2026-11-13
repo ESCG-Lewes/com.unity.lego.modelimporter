@@ -134,6 +134,50 @@ namespace LEGOModelImporter
         }
     }
 
+    [EditorToolbarElement(id, typeof(SceneView))]
+    class LEGOControlsButton : EditorToolbarButton
+    {
+        public const string id = "LEGO Tools/Controls";
+
+        [InitializeOnLoadMethod]
+        static void AddToList()
+        {
+            LEGOToolsOverlay.AddToolbarButton(id);
+        }
+
+        public LEGOControlsButton()
+        {
+            text = "Controls";
+            tooltip = LEGOControlsWindow.ControlsText;
+            clicked += LEGOControlsWindow.ShowWindow;
+        }
+    }
+
+    internal class LEGOControlsWindow : EditorWindow
+    {
+        internal const string ControlsText =
+            "W / S — move selection forward/backward by one LEGO stud\n" +
+            "A / D — move selection left/right by one LEGO stud\n" +
+            "Arrow keys — rotate selection in 90° steps\n" +
+            "Cmd/Ctrl + Arrow — rotate selection in 90° steps (alternate)\n" +
+            "Alt + Cmd/Ctrl + Arrow — nudge selection by one LEGO stud (alternate)";
+
+        [MenuItem("LEGO Tools/Controls", priority = 60)]
+        internal static void ShowWindow()
+        {
+            var window = GetWindow<LEGOControlsWindow>();
+            window.titleContent = new GUIContent("LEGO Tools Controls");
+            window.minSize = new Vector2(420.0f, 150.0f);
+            window.Show();
+        }
+
+        private void OnGUI()
+        {
+            EditorGUILayout.LabelField("Brick Building Controls", EditorStyles.boldLabel);
+            EditorGUILayout.HelpBox(ControlsText, MessageType.Info);
+        }
+    }
+
     /// <summary>
     /// The LEGO tools overlay
     /// </summary>

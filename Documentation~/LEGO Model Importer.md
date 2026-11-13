@@ -54,4 +54,4 @@ The Model Importer supports basic connectiviy logic to move and snap bricks toge
 
 It currently doesn't support all connectivity types but will evolve over time. You can select connectivity on/off in the Scene View UI.
 
-The Connectivity System utilize a few shortcuts that you can find in the shortcut manager. 
+The Connectivity System utilize a few shortcuts that you can find in the shortcut manager. With a brick selection active in the Scene view, use WASD to move the selection by one LEGO stud and the arrow keys to rotate it in 90-degree steps. The previous modifier-based rotation shortcuts remain available. Use the Controls button in the LEGO Tools overlay, or LEGO Tools > Controls, to see the full list in the editor.

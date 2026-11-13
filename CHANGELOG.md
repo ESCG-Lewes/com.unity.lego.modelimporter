@@ -4,6 +4,13 @@ All notable changes to this package will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
+## [8.0.6] - 2026-11-12
+
+### Added
+
+- Added WASD movement and arrow-key rotation for selected bricks in the Scene view. WASD moves the selection by one LEGO stud; the existing modifier-based shortcuts remain available.
+- Added a Controls button to the LEGO Tools overlay and a LEGO Tools > Controls window describing the brick building shortcuts.
+
 ## [8.0.5] - 2026-11-06
 
 ### Added

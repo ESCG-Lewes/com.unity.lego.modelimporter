@@ -2511,11 +2511,13 @@ namespace LEGOModelImporter
 
         private static bool IsImportedBrick(Brick brick)
         {
-            if (!brick || string.IsNullOrEmpty(brick.uuid))
+            if (!brick)
             {
                 return false;
             }
 
+            // Some imported parts (including LDraw/Studio variants) have no UUID.
+            // The source metadata on the parent group is the reliable marker.
             foreach (var group in brick.GetComponentsInParent<ModelGroup>(true))
             {
                 if (group.processed ||

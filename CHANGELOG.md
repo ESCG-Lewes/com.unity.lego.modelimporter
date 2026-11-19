@@ -14,6 +14,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ### Fixed
 
 - Imported Studio models no longer ghost bricks or disconnect their groups by treating interlocking studs and tubes as collisions during import.
+- Imported models now stay in their original groups and positions after Play mode. Scene reloads no longer mark correctly placed imported bricks as overlapping or split their model groups.
 
 ## [8.0.5] - 2026-11-06
 

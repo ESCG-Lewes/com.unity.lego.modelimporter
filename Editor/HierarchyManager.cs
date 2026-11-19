@@ -303,14 +303,39 @@ namespace LEGOModelImporter
         {
             if(state == PlayModeStateChange.EnteredPlayMode)
             {
-                enabledBricks.Clear();
+                ResetTransientState();
                 suspendUpdate = true;
             }
             else if(state == PlayModeStateChange.EnteredEditMode)
             {
-                enabledBricks.Clear();
+                // The scene is reloaded from disk when Play mode ends. Any hierarchy
+                // changes queued before Play mode refer to the old scene objects and
+                // must not be applied to the restored model.
+                ResetTransientState();
                 suspendUpdate = false;
             }
+        }
+
+        private void ResetTransientState()
+        {
+            enabledBricks.Clear();
+            bricksRelatedToDeletedBricks.Clear();
+            bricksRelatedToMovingBricks.Clear();
+            changedBricks.Clear();
+            movedBrickModels.Clear();
+            deletedBrickModels.Clear();
+            modelsToRecompute.Clear();
+            brickParentChanged.Clear();
+            modelGroupParentChanged.Clear();
+            movedBrickModelGroups.Clear();
+            deletedBrickModelGroups.Clear();
+            modelGroupsToRecompute.Clear();
+            transformsWithNoChildren.Clear();
+            destroyList.Clear();
+            checkedThisFrame.Clear();
+            undoQueued = false;
+            collapseUndo = false;
+            brickMoveStarted = false;
         }
 
         private void OnImportStarted()

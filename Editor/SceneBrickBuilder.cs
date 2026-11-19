@@ -2373,11 +2373,16 @@ namespace LEGOModelImporter
                 UpdateBrickCollision(bricks);
             }
 
-            foreach (var changed in transformTracker.Changed)
+            // Rigidbody-driven movement from behaviours must not make the editor tear
+            // apart the connectivity of the edit-mode model when Play mode ends.
+            if (!CheckPlaying())
             {
-                var brick = transformTracker.GetComponent<Brick>(changed);
-                if (!brick) continue;
-                brick.DisconnectAllInvalid();
+                foreach (var changed in transformTracker.Changed)
+                {
+                    var brick = transformTracker.GetComponent<Brick>(changed);
+                    if (!brick) continue;
+                    brick.DisconnectAllInvalid();
+                }
             }
 
             hierarchyManager?.Update();
@@ -2468,7 +2473,7 @@ namespace LEGOModelImporter
                 bricks.UnionWith(obj.GetComponentsInChildren<Brick>());
             }
 
-            SyncAndUpdateBrickCollision(bricks);
+            SyncAndUpdateBrickCollision(bricks, preserveImportedBricks: true);
         }
 
         private static void PrefabStageClosing(PrefabStage stage)
@@ -2482,7 +2487,7 @@ namespace LEGOModelImporter
         private static void PrefabStageOpened(PrefabStage stage)
         {
             selectedBricks.Clear();
-            SyncAndUpdateBrickCollision();
+            SyncAndUpdateBrickCollision(preserveImportedBricks: true);
         }
 
         private static void OnSceneOpened(Scene scene, OpenSceneMode openMode)
@@ -2498,22 +2503,47 @@ namespace LEGOModelImporter
             {
                 bricks.UnionWith(rootObject.GetComponentsInChildren<Brick>());
             }
-            SyncAndUpdateBrickCollision(bricks);
+            SyncAndUpdateBrickCollision(bricks, preserveImportedBricks: true);
 
             sceneChanged = true;
             SyncSceneBricks();
         }
 
-        private static void SyncAndUpdateBrickCollision(ICollection<Brick> bricksToSync, HashSet<Brick> ignoredBricks = null)
+        private static bool IsImportedBrick(Brick brick)
         {
+            if (!brick || string.IsNullOrEmpty(brick.uuid))
+            {
+                return false;
+            }
+
+            foreach (var group in brick.GetComponentsInParent<ModelGroup>(true))
+            {
+                if (group.processed ||
+                    !string.IsNullOrEmpty(group.absoluteFilePath) ||
+                    !string.IsNullOrEmpty(group.relativeFilePath))
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        private static void SyncAndUpdateBrickCollision(ICollection<Brick> bricksToSync, HashSet<Brick> ignoredBricks = null, bool preserveImportedBricks = false)
+        {
+            var trustedImportedBricks = new HashSet<Brick>();
+            if (preserveImportedBricks)
+            {
+                // Imported bricks are placed correctly by the importer and their colliders
+                // intentionally interlock at studs and tubes. Re-checking them after a
+                // scene reload (for example when Play mode ends) flags those overlaps as
+                // collisions, disconnects the bricks and splits their model groups.
+                trustedImportedBricks.UnionWith(bricksToSync.Where(IsImportedBrick));
+            }
+
             var previouslyColliding = new HashSet<Brick>();
             foreach (var brick in bricksToSync)
             {
-                // Bricks from a freshly imported model are known to be placed correctly.
-                // Their colliders intentionally interlock at studs and tubes, so do not
-                // report them as colliding or disconnect the connectivity that was just
-                // detected. This also keeps the imported hierarchy grouped.
-                if (ignoredBricks != null && ignoredBricks.Contains(brick))
+                if (trustedImportedBricks.Contains(brick))
                 {
                     brick.UpdateColliding(false, ToolsSettings.IsBrickBuildingOn, false);
                     if (!ToolsSettings.IsBrickBuildingOn)
@@ -2549,11 +2579,11 @@ namespace LEGOModelImporter
             }
         }
 
-        public static void SyncAndUpdateBrickCollision(bool forceSync = true, HashSet<Brick> ignoredBricks = null)
+        public static void SyncAndUpdateBrickCollision(bool forceSync = true, HashSet<Brick> ignoredBricks = null, bool preserveImportedBricks = false)
         {
             sceneChanged = forceSync;
             SyncSceneBricks();
-            SyncAndUpdateBrickCollision(bricks, ignoredBricks);
+            SyncAndUpdateBrickCollision(bricks, ignoredBricks, preserveImportedBricks);
         }
 
         private static void ActiveSceneChanged(Scene previous, Scene active)
@@ -2567,7 +2597,7 @@ namespace LEGOModelImporter
             {
                 bricks.UnionWith(rootObject.GetComponentsInChildren<Brick>());
             }
-            SyncAndUpdateBrickCollision(bricks);
+            SyncAndUpdateBrickCollision(bricks, preserveImportedBricks: true);
         }
 
         private static void PlayModeStateChanged(PlayModeStateChange state)

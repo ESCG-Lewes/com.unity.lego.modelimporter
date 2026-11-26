@@ -66,13 +66,13 @@ namespace LEGOModelImporter
             EditorUtility.DisplayDialog("LEGO® asset data up to date", $"The asset data is up to date on version {currentVersion}.", "Ok");
         }
 
-        [MenuItem("LEGO Tools/Check Asset Version", priority = 100)]
+        [MenuItem("LEGO Tools/Check Asset Version", priority = 320)]
         private static void CheckAssetVersion()
         {
             EditorApplication.delayCall += () => CheckAndUpdate(true, true);
         }
 
-        [MenuItem("LEGO Tools/Dev/Force Update")]
+        [MenuItem("LEGO Tools/Dev/Force Update", priority = 400)]
         private static void ForceUpdate()
         {
             UpdateAssets();

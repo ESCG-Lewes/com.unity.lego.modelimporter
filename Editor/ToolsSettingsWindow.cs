@@ -10,7 +10,7 @@ namespace LEGOModelImporter
     {
         const string sceneBrickBuildingSettingsMenuPath = "LEGO Tools/Brick Building Settings";
 
-        [MenuItem(sceneBrickBuildingSettingsMenuPath, priority = 30)]
+        [MenuItem(sceneBrickBuildingSettingsMenuPath, priority = 120)]
         private static void ShowSettingsWindow()
         {
             ToolsSettingsWindow settings = (ToolsSettingsWindow)EditorWindow.GetWindow(typeof(ToolsSettingsWindow));

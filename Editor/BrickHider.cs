@@ -121,7 +121,7 @@ namespace LEGOModelImporter
             SetShowBricks(show, bricksInScene);
         }
 
-        [MenuItem(showAllBricksMenuPath + " " + showAllBricksShortcut, priority = 40)]
+        [MenuItem(showAllBricksMenuPath + " " + showAllBricksShortcut, priority = 210)]
         private static void ShowAllBricks()
         {
             var show = !EditorPrefs.GetBool(showAllBricksPrefsKey, showAllBricksDefault);

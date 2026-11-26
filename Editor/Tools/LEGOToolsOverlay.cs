@@ -162,7 +162,7 @@ namespace LEGOModelImporter
             "Cmd/Ctrl + Arrow — rotate selection in 90° steps (alternate)\n" +
             "Alt + Cmd/Ctrl + Arrow — nudge selection by one LEGO stud (alternate)";
 
-        [MenuItem("LEGO Tools/Controls", priority = 60)]
+        [MenuItem("LEGO Tools/Controls", priority = 310)]
         internal static void ShowWindow()
         {
             var window = GetWindow<LEGOControlsWindow>();

@@ -9,7 +9,7 @@ public static class ShowHidden
     static readonly Dictionary<Object, HideFlags> s_OriginalFlags = new Dictionary<Object, HideFlags>();
     static bool s_Showing;
 
-    [MenuItem(k_menu)]
+    [MenuItem(k_menu, priority = 300)]
     static void ToggleShowHidden()
     {
         s_Showing = !s_Showing;
@@ -47,7 +47,7 @@ public static class ShowHidden
         EditorApplication.RepaintHierarchyWindow();
     }
 
-    [MenuItem(k_menu, true)]
+    [MenuItem(k_menu, true, 300)]
     static bool ToggleShowHiddenValidate()
     {
         Menu.SetChecked(k_menu, s_Showing);

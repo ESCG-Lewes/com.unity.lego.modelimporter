@@ -356,7 +356,7 @@ namespace LEGOModelImporter
 
         #region Menu items
 
-        [MenuItem(lockBricksAfterPlacementMenuPath, priority = 41)]
+        [MenuItem(lockBricksAfterPlacementMenuPath, priority = 150)]
         static void ToggleLockBricksAfterPlacement()
         {
             LockBricksAfterPlacement = !LockBricksAfterPlacement;
@@ -369,7 +369,7 @@ namespace LEGOModelImporter
             return IsBrickBuildingOn;
         }
 
-        [MenuItem(autoProcessGroupsMenuPath, priority = 42)]
+        [MenuItem(autoProcessGroupsMenuPath, priority = 240)]
         static void ToggleAutoProcessGroups()
         {
             AutoProcessGroups = !AutoProcessGroups;
@@ -382,7 +382,7 @@ namespace LEGOModelImporter
             return IsBrickBuildingOn;
         }
 
-        [MenuItem(rotateGizmoOnMenuPath, priority = 40)]
+        [MenuItem(rotateGizmoOnMenuPath, priority = 140)]
         static void ToggleRotateGizmoOn()
         {
             ShowRotateGizmo = !ShowRotateGizmo;
@@ -395,7 +395,7 @@ namespace LEGOModelImporter
             return IsBrickBuildingOn;
         }
 
-        [MenuItem(selectConnectedMenuPath + " " + selectConnectedShortcut, priority = 35)]
+        [MenuItem(selectConnectedMenuPath + " " + selectConnectedShortcut, priority = 130)]
         static void ToggleSelectConnectedBricks()
         {
             SelectConnected = !SelectConnected;
@@ -408,7 +408,7 @@ namespace LEGOModelImporter
             return isBrickBuildingOn;
         }
 
-        [MenuItem(disablePrefabAutoSaveMenuPath, priority = 45)]
+        [MenuItem(disablePrefabAutoSaveMenuPath, priority = 160)]
         static void ToggleDisablePrefabAutoSave()
         {
             disablePrefabAutoSave = !disablePrefabAutoSave;
@@ -422,7 +422,7 @@ namespace LEGOModelImporter
             return true;
         }
 
-        [MenuItem(brickBuildingMenuPath + " " + brickBuildingShortcut, priority = 30)]
+        [MenuItem(brickBuildingMenuPath + " " + brickBuildingShortcut, priority = 110)]
         static void ToggleBrickBuilding()
         {
             IsBrickBuildingOn = !IsBrickBuildingOn;
@@ -435,7 +435,7 @@ namespace LEGOModelImporter
             return !EditorApplication.isPlaying;
         }
 
-        [MenuItem(showBrickBuildingToolsMenuPath, priority = 25)]
+        [MenuItem(showBrickBuildingToolsMenuPath, priority = 100)]
         static void ShowBrickBuildingTools()
         {
             ShowTools = !ShowTools;
@@ -449,7 +449,7 @@ namespace LEGOModelImporter
         }
 
 #if !PUBLIC
-        [MenuItem(autoUpdateHierarchyMenuPath, priority = 40)]
+        [MenuItem(autoUpdateHierarchyMenuPath, priority = 235)]
         static void ToggleAutoUpdateHierarchy()
         {
             AutoUpdateHierarchy = !AutoUpdateHierarchy;

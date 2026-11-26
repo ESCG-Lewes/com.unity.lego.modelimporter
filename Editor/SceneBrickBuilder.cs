@@ -1572,7 +1572,7 @@ namespace LEGOModelImporter
             }
         }
 
-        [MenuItem(expandSelectionMenuPath + " " + expandSelectionShortcut, priority = 40)]
+        [MenuItem(expandSelectionMenuPath + " " + expandSelectionShortcut, priority = 200)]
         public static void ExpandSelection()
         {
             var connectedBricks = new HashSet<Brick>();

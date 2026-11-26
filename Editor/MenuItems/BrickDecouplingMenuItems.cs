@@ -13,7 +13,7 @@ namespace LEGOModelImporter
     /// </summary>
     public static class BrickDecouplingMenuItems
     {
-        [MenuItem("LEGO Tools/Decouple Selected Bricks %&d", priority = 50)]
+        [MenuItem("LEGO Tools/Decouple Selected Bricks %&d", priority = 220)]
         private static void DecoupleSelectedBricks()
         {
             var bricks = GetSelectedBricks();

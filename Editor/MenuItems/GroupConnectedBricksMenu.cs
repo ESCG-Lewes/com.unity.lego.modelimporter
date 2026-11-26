@@ -9,7 +9,7 @@ namespace LEGOModelImporter
     {
         private const string MenuPath = "LEGO Tools/Group Connected Bricks";
 
-        [MenuItem(MenuPath, priority = 51)]
+        [MenuItem(MenuPath, priority = 230)]
         private static void GroupSelection()
         {
             var assemblies = GetSelectedModels().SelectMany(model =>

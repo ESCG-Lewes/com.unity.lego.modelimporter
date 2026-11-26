@@ -28,7 +28,7 @@ namespace LEGOModelImporter
         static ModelGroupImportSettings importSettings = new ModelGroupImportSettings();
 
 
-        [MenuItem("LEGO Tools/Import Part #&%p", priority = 0)]
+        [MenuItem("LEGO Tools/Import Part #&%p", priority = 10)]
         static void FindPartNumber()
         {
             if (partList == null)

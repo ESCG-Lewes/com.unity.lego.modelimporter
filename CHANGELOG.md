@@ -4,6 +4,12 @@ All notable changes to this package will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
+## [8.0.7] - 2026-11-26
+
+### Changed
+
+- Reorganized the LEGO Tools menu so related items are grouped with separators: Import, Brick Building, Selection & Bricks, Tools and Dev.
+
 ## [8.0.6] - 2026-11-12
 
 ### Added
